@@ -1,0 +1,38 @@
+{
+  "name": "docs-scaffold",
+  "version": "0.1.0",
+  "description": "Scaffold repo which documentations can fork from",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:eslint && npm run test:stylelint",
+    "commitmsg": "validate-commit-msg",
+    "test:eslint": "eslint index.js lib/**/*.js",
+    "test:stylelint": "stylelint scss/**/*.scss",
+    "release": "standard-version --silent",
+    "release:patch": "npm run release -- --release-as patch",
+    "release:minor": "npm run release -- --release-as minor",
+    "release:major": "npm run release -- --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TelenorFrontend/docs-scaffold.git"
+  },
+  "author": "frontend@telenordigital.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/TelenorFrontend/docs-scaffold/issues"
+  },
+  "homepage": "https://github.com/TelenorFrontend/docs-scaffold#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.2.0",
+    "husky": "^0.14.3",
+    "standard-version": "^4.2.0",
+    "stylelint": "^7.13.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.5.0",
+    "stylelint-scss": "^1.5.1",
+    "tn-conventions": "git+https://github.com/TelenorFrontend/conventions.git",
+    "validate-commit-msg": "^2.12.2"
+  }
+}
