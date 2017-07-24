@@ -4,10 +4,10 @@
   "description": "Scaffold repo which documentations can fork from",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf build/",
+    "clean": "del-cli build/",
     "build:style": "node lib/build-style.js",
     "build:docs": "node lib/build-docs.js",
-    "build": "npm run build:docs && npm run build:style",
+    "build": "npm run clean && npm run build:docs && npm run build:style",
     "test": "npm run test:eslint && npm run test:stylelint",
     "commitmsg": "validate-commit-msg",
     "test:eslint": "eslint index.js lib/**/*.js",
@@ -42,6 +42,7 @@
   "dependencies": {
     "metalsmith": "^2.3.0",
     "metalsmith-markdown": "^0.2.1",
+    "mkdir-recursive": "^0.3.0",
     "node-normalize-scss": "^3.0.0",
     "node-sass": "^4.5.3",
     "telenor-component-library": "git+https://github.com/TelenorFrontend/component-library.git"
