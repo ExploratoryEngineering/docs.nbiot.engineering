@@ -1,0 +1,10 @@
+.docs-wrapper {
+  position: relative;
+  min-height: 100vh;
+  margin-left: 260px;
+  padding-left: calc(50% - 940px / 2 - 260px);
+  background: white;
+  background-clip: content-box;
+  z-index: 1;
+  pointer-events: none;
+}

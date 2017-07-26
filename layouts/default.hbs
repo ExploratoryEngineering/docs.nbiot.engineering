@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="docs-html">
+<head>
+  <title>{{ title }} - {{ docName }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ webRoot }}style/style.css" >
+</head>
+<body class="docs-body">
+  <div class="docs-sidebar">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="{{ webRoot }}"></a>
+        {{> _nav navs.primary}}
+        {{#if navs.secondary }}
+          <hr class="docs-nav__hr" />
+          {{> _nav navs.secondary}}
+        {{/if}}
+        {{#if navs.tertiary }}
+          <hr class="docs-nav__hr" />
+          {{> _nav navs.tertiary}}
+        {{/if}}
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-topbar">
+      <div class="docs-topbar__search">
+        <input type="text" class="docs-topbar__searchinput" placeholder="Search"/>
+      </div>
+      <div class="docs-topbar__links">
+        <a class="docs-topbar__link" href="#">Support</a>
+        <a class="docs-topbar__link" href="#">Dashboard</a>
+      </div>
+    </div>
+    <div class="docs-content barba-container">
+      <h1>{{ title }}</h1>
+      {{> _breadcrumbs }}
+      {{{ contents }}}
+    </div>
+  </div>
+<script src="{{ webRoot }}script/script.js" ></script>
+</body>
+</html>

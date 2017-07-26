@@ -1,0 +1,10 @@
+.docs-content {
+  max-width: 940px;
+  padding: 48px;
+  box-sizing: border-box;
+  pointer-events: auto;
+
+  h1:first-child {
+    margin-top: -8px; // align page title
+  }
+}

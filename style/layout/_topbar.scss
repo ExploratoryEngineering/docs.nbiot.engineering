@@ -1,0 +1,32 @@
+@import "components/typography/tn-a";
+
+.docs-topbar {
+  display: flex;
+  max-width: 940px;
+  height: 64px;
+  padding: 0 48px;
+  box-sizing: border-box;
+  border-bottom: 1px solid $docs-color--lightgray;
+  line-height: 64px;
+  pointer-events: auto;
+
+  &__search {
+    flex: 1 1 100%;
+  }
+
+  &__searchinput {
+    width: 100%;
+    height: 48px;
+    border: none;
+    outline: none;
+  }
+
+  &__link {
+    margin-left: 12px;
+  }
+
+  &__links {
+    display: flex;
+    flex: 0 0 auto;
+  }
+}

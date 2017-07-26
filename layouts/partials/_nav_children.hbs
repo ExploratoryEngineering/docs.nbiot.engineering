@@ -1,0 +1,14 @@
+<li class="docs-nav__li{{#if file.nav_group}} docs-nav__li--group{{/if}}">
+    {{#if file}}
+        <a href="{{ @root.webRoot }}{{ path }}" class="docs-nav__item">{{file.title}}</a>
+    {{else}}
+        {{name}}
+    {{/if}}
+    {{#if children}}
+    <ul class="docs-nav__ul">
+        {{#each children}}
+            {{> _nav_children}}
+        {{/each}}
+    </ul>
+    {{/if}}
+</li>
