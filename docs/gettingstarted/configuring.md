@@ -6,4 +6,6 @@ nav_groups:
 ---
 Configuring your new documentation project is as simple as altering the configuration files in the `config` folder.
 
+Make sure that your `config/config.js` variable `webRoot` matches the root folder of where the documentation will be hosted. For example: if you plan on hosting the documentation at `https://you.github.io/your-documentation`, the `webRoot` should be `/your-documentation/`.
+
 If you would like to use a logo of a different aspect ratio than the example logo `144x40px` you might have to adjust the margins in `style/layout/_nav.scss`.

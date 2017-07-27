@@ -16,3 +16,9 @@ The elements are nested according to where they appear in the file structure. To
 ## Ordering pages in the navigation
 
 Pages are ordered alphabetically, to override this: add a `nav_sort` metadata to the files.
+
+## Special entries
+
+To make a file appear as a **bold** group, simply give it the metadata `nav_group: true`.
+
+To make a file appear only as a category (unclickable), you should give it the metadata `nav_category: true`.

@@ -1,0 +1,24 @@
+@import "components/elements/tn-table-mixins";
+
+table {
+  @include tn-table;
+
+  th {
+    @include tn-th;
+    @include tn-table__cell;
+  }
+
+  td {
+    @include tn-table__cell;
+  }
+
+  tr + tr > td,
+  tr + tr > th {
+    @include tn-table__cell--border-top;
+  }
+
+  thead tr > td,
+  thead tr > th {
+    @include tn-table__cell--border-bottom;
+  }
+}
