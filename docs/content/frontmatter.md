@@ -22,6 +22,7 @@ If you see mentions of metadata other places in this documentation, it is ususll
 | nav_sort | int | no | Specifies the order the element should be ordered in the navigation. Overrides the default alphabetical order |
 | nav_group | bool | no | Specifies that the file should appear as an emphasized group in the navigation |
 | nav_category | bool | no | Specifies that the file should appear only as an category in the navigation (cannot be clicked itself) |
+| openApiUrl | string | no | An url pointing to a Open API spec |
 
 ## Example
 In the following example the metatata tag `title` is set to `Example page`, and the page content is `This is the example page`.

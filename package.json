@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "del-cli build/",
-    "build:script": "mkdirp build/script && uglifyjs script/script.js node_modules/barba.js/dist/barba.min.js --output build/script/script.js",
+    "build:script": "mkdirp build/script && uglifyjs script/script.js node_modules/barba.js/dist/barba.min.js node_modules/swagger-ui-dist/swagger-ui-bundle.js node_modules/swagger-ui-docs-preset/dist/swagger-ui-docs-preset.js --output build/script/script.js",
     "build:style": "node lib/build-style.js",
     "build:docs": "node lib/build-docs.js",
     "build": "npm run clean && npm run build:docs && npm run build:style && npm run build:script",
@@ -47,11 +47,14 @@
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-navigation": "^0.2.9",
+    "metalsmith-swagger-ui": "git+https://github.com/TelenorFrontend/metalsmith-swagger-ui.git",
     "mkdir-recursive": "^0.3.0",
     "mkdirp": "^0.5.1",
     "node-normalize-scss": "^3.0.0",
     "node-sass": "^4.5.3",
+    "swagger-ui-dist": "^3.0.21",
+    "swagger-ui-docs-preset": "github:TelenorFrontend/swagger-ui-docs-preset",
     "telenor-component-library": "git+https://github.com/TelenorFrontend/component-library.git",
-    "uglify-js": "^3.0.26"
+    "uglify-es": "^3.0.27"
   }
 }
