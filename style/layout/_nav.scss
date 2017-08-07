@@ -5,7 +5,7 @@
   left: 0;
   width: 260px;
   padding: 0 0 16px;
-  padding-left: calc(50% - 940px / 2 - 260px);
+  padding-left: calc(50% - 940px / 2 - 260px + .5 * (100vw - 100%));
   background-color: #f5f5f5;
   overflow-x: hidden;
   overflow-y: auto;
@@ -13,7 +13,7 @@
   &__hr {
     margin: 18px 24px;
     border: none;
-    border-top: 1px solid rgba($docs-color--lightgray, .5);
+    border-top: 1px solid $docs-color--black12;
   }
 
   &__logo {
@@ -31,12 +31,12 @@
   &__item {
     display: block;
     padding: 2px 16px;
-    color: $docs-color--darkgray;
+    color: $docs-color--black87;
     font-size: 14px;
     line-height: 1.5;
 
     &[href]:hover {
-      color: $docs-color--gray;
+      color: $docs-color--black54;
     }
   }
 
@@ -63,7 +63,7 @@
 
       > .docs-nav__item {
         margin-top: 12px;
-        color: $docs-color--gray;
+        color: $docs-color--black54;
         font-size: 12px;
       }
     }

@@ -4,6 +4,7 @@
   <title>{{ title }} - {{ docName }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{{ webRoot }}style/style.css" >
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="docs-body">
   <div class="docs-sidebar">
@@ -22,8 +23,11 @@
   </div>
   <div id="barba-wrapper" class="docs-wrapper">
     <div class="docs-topbar">
+      <div class="docs-topbar__search-icon">
+        <i class="material-icons md-64">search</i>
+      </div>
       <div class="docs-topbar__search">
-        <input type="text" class="docs-topbar__searchinput" placeholder="Search"/>
+        <input id="docs-search-box" type="text" class="docs-topbar__searchinput" placeholder="Search" tabindex="1" autocapitalize="none" autocomplete="off" autocorrect="off" type="text" autofocus />
       </div>
       <div class="docs-topbar__links">
         <a class="docs-topbar__link" href="#">Support</a>
@@ -34,6 +38,12 @@
       <h1>{{ title }}</h1>
       {{> _breadcrumbs }}
       {{{ contents }}}
+      {{#if editUrl }}
+        <a class="docs-edit-btn" href="{{ editUrl }}" target="_blank">Edit this page</a>
+      {{/if}}
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search__results" class="docs-search__results"></ul>
     </div>
   </div>
 <script src="{{ webRoot }}script/script.js" ></script>

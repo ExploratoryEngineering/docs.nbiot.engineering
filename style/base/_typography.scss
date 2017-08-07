@@ -1,6 +1,7 @@
 @import "components/_variables/common";
 @import "components/_variables/typography";
 @import "components/typography/tn-headings-mixins";
+@import "components/typography/tn-pre";
 
 html,
 body {
@@ -31,5 +32,15 @@ a {
 
   &:hover {
     color: rgba($tn-color--brand, .87);
+  }
+}
+
+pre {
+  @include tn-pre;
+
+  .hljs {
+    padding: 0;
+    background: none;
+    font-size: 14px;
   }
 }

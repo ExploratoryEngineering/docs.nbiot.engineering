@@ -6,7 +6,9 @@ nav_groups:
 ---
 The npm build script will package assets and build the documentation.
 
-> $ npm run build
+```shell
+$ npm run build
+```
 
 In order, the steps run are:
 1. Delete the build folder to get rid of any previous builds

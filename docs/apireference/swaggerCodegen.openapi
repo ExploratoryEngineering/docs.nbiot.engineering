@@ -1,0 +1,7 @@
+---
+title: Swagger Codegen
+nav_sort: 2
+nav_groups:
+  - tertiary
+openApiUrl: https://generator.swagger.io/api/swagger.json
+---

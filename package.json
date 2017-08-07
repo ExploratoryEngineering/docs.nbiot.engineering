@@ -11,7 +11,7 @@
     "build": "npm run clean && npm run build:docs && npm run build:style && npm run build:script",
     "test": "npm run test:eslint && npm run test:stylelint",
     "commitmsg": "validate-commit-msg",
-    "test:eslint": "eslint index.js lib/**/*.js",
+    "test:eslint": "eslint index.js lib/**/*.js script/**/*.js",
     "test:stylelint": "stylelint style/**/*.scss",
     "release": "standard-version --silent",
     "release:patch": "npm run release -- --release-as patch",
@@ -42,10 +42,13 @@
   },
   "dependencies": {
     "barba.js": "^1.0.0",
+    "del-cli": "^1.1.0",
     "handlebars": "^4.0.10",
+    "highlight.js": "^9.12.0",
     "metalsmith": "^2.3.0",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-markdown": "^0.2.1",
+    "metalsmith-metallic": "^2.0.1",
     "metalsmith-navigation": "^0.2.9",
     "metalsmith-swagger-ui": "git+https://github.com/TelenorFrontend/metalsmith-swagger-ui.git",
     "mkdir-recursive": "^0.3.0",
@@ -53,7 +56,7 @@
     "node-normalize-scss": "^3.0.0",
     "node-sass": "^4.5.3",
     "swagger-ui-dist": "^3.0.21",
-    "swagger-ui-docs-preset": "github:TelenorFrontend/swagger-ui-docs-preset",
+    "swagger-ui-docs-preset": "git+https://github.com/TelenorFrontend/swagger-ui-docs-preset.git",
     "telenor-component-library": "git+https://github.com/TelenorFrontend/component-library.git",
     "uglify-es": "^3.0.27"
   }
