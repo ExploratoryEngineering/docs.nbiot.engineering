@@ -31,7 +31,7 @@
 </div>
 
 <script>
-  function pageReady(container) {
+  window.pageReady = (container) => {
     const id = "swagger-ui-" + Date.now();
     container.querySelector("#swagger-ui").setAttribute("id", id);
 

@@ -1,0 +1,46 @@
+.docs-search {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 940px;
+  height: calc(100% - 64px);
+  box-sizing: border-box;
+  pointer-events: auto;
+  margin-top: 64px;
+  z-index: 1;
+
+  &__close {
+    width: 48px;
+    margin-top: 6px;
+    color: $docs-color--black54;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+      color: $docs-color--black38;
+    }
+  }
+
+  &__results {
+    height: calc(100% - 64px);
+    list-style-type: none;
+    margin: 0;
+    padding: 48px;
+    padding-top: 12px;
+    background-color: white;
+
+    h2 {
+      margin-top: 32px;
+    }
+  }
+
+  &__details {
+    margin: 0;
+    color: $docs-color--black54;
+  }
+
+  &__result {
+    margin-top: 32px;
+  }
+}

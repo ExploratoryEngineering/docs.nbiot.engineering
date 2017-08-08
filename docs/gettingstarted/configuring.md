@@ -1,8 +1,12 @@
 ---
 title: Configuring
+lunr: true
 nav_sort: 1
 nav_groups:
   - primary
+tags:
+  - config
+  - configuring
 ---
 Configuring your new documentation project is as simple as altering the configuration files in the `config` folder.
 

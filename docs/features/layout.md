@@ -1,8 +1,12 @@
 ---
 title: Layout
+lunr: true
 nav_sort: 1
 nav_groups:
   - primary
+tags:
+  - layout
+  - handlebars
 ---
 The scaffold applies a standard layout to your documentation using [handlebars](http://handlebarsjs.com/) and [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts).
 

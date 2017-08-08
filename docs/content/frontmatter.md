@@ -1,8 +1,13 @@
 ---
 title: Front Matter
+lunr: true
 nav_sort: 2
 nav_groups:
   - primary
+tags:
+  - front
+  - matter
+  - metadata
 ---
 Front matter allows you to attach metadata to files by prepending a yaml document to it. Metalsmith parses this yaml document and passes it along to the plugins that transform the content into beautiful documentation.
 
@@ -23,6 +28,8 @@ If you see mentions of metadata other places in this documentation, it is ususll
 | nav_group | bool | no | `false` | Specifies that the file should appear as an emphasized group in the navigation |
 | nav_category | bool | no | `false` | Specifies that the file should appear only as an category in the navigation (cannot be clicked itself) |
 | openApiUrl | string | no | `null` | An url pointing to a Open API spec |
+| lunr | bool | no | `false` | Toogles if the page should show up in search results. For more info see the [search documentation](../features/search.html) |
+| tags | string or string[] | no | `null` | Tags that the page should show up as a search result for. Tags have twice the weight of the title, and 10 times the weight of page content in the ordering of results. If an array of strings is used, matching will be less forgiving |
 
 ## Example
 In the following example the metadata tag `title` is set to `Example page`, and the page content is `This is the example page`.

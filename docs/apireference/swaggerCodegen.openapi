@@ -1,7 +1,9 @@
 ---
 title: Swagger Codegen
+lunr: true
 nav_sort: 2
 nav_groups:
   - tertiary
 openApiUrl: https://generator.swagger.io/api/swagger.json
+tags: api, specification, swagger, codegen, code
 ---

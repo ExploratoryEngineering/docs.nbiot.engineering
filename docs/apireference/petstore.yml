@@ -1,8 +1,16 @@
 ---
 title: Pet Store
+lunr: true
 nav_sort: 1
 nav_groups:
   - tertiary
+tags:
+  - api
+  - specification
+  - spec
+  - petstore.swagger.io
+  - petstore.swagger.io/api
+  - /api
 ---
   swagger: "2.0"
   info:

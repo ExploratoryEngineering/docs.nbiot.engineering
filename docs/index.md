@@ -1,6 +1,10 @@
 ---
 title: Home
+lunr: true
 index: true
+tags:
+  - index
+  - home
 ---
 Welcome to the docs scaffold!
 

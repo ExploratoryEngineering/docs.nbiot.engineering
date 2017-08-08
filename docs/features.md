@@ -1,9 +1,12 @@
 ---
 title: Features
+lunr: true
 nav_sort: 2
 nav_groups:
   - primary
 nav_group: true
+tags:
+  - features
 ---
 The docs-scaffold comes with a limited number of features, but they can easily be expanded upon by modifying the [Metalsmith](http://www.metalsmith.io/) build pipe.
 
