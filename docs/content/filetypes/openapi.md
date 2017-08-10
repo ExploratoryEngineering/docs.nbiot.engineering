@@ -1,7 +1,7 @@
 ---
 title: Open API Spec
 lunr: true
-nav_sort: 2
+nav_sort: 3
 nav_groups:
   - primary
 tags:

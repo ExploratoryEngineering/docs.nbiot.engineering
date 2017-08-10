@@ -1,0 +1,18 @@
+---
+title: HTML
+lunr: true
+nav_sort: 2
+nav_groups:
+  - primary
+tags: htm, html, hypertext markup language
+---
+<p>Pure html pages will be wrapped in the layout, but otherewise remain as-is.</p>
+
+<h2>Script tags</h2>
+If the page contains script tags anything that should be run should be set to the `window.pageReady` function like so. This is to make sure the script is properly run on Barba.js page transitions.
+
+<pre><code class="hljs js"><span class="hljs-regexp">&lt;script&gt;</span>
+  <span class="hljs-built_in">window</span>.pageReady = <span class="hljs-function">(<span class="hljs-params">container</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The container containing the page is "</span> + container);
+  }
+<span class="hljs-regexp">&lt;/script&gt;</span></code></pre>
