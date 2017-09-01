@@ -8,7 +8,9 @@
     "build:script": "webpack && uglifyjs node_modules/barba.js/dist/barba.min.js node_modules/lunr/lunr.js node_modules/swagger-ui-dist/swagger-ui-bundle.js node_modules/swagger-ui-docs-preset/dist/swagger-ui-docs-preset.js --output build/script/vendor.js",
     "build:style": "node lib/build-style.js",
     "build:docs": "node lib/build-docs.js",
+    "build:docs:dev": "npm run build:docs -- --dev",
     "build": "npm run clean && npm run build:docs && npm run build:style && npm run build:script",
+    "dev": "gulp watch",
     "test": "npm run test:eslint && npm run test:stylelint",
     "commitmsg": "validate-commit-msg",
     "test:eslint": "eslint index.js lib/**/*.js script/**/*.js webpack.config.js",
@@ -32,6 +34,8 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.2.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
     "husky": "^0.14.3",
     "standard-version": "^4.2.0",
     "stylelint": "^7.13.0",
