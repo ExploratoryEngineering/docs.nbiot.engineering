@@ -32,12 +32,9 @@
 
 <script>
   window.pageReady = (container) => {
-    const id = "swagger-ui-" + Date.now();
-    container.querySelector("#swagger-ui").setAttribute("id", id);
-
     const ui = SwaggerUIBundle({
       url: "{{ openApiUrl }}",
-      dom_id: "#"+id,
+      domNode: container.querySelector("#swagger-ui"),
       presets: [
         SwaggerUIBundle.presets.apis,
         SwaggerUIDocsPreset
