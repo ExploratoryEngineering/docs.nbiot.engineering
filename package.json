@@ -67,6 +67,7 @@
     "swagger-ui-dist": "^3.0.21",
     "swagger-ui-docs-preset": "git+https://github.com/TelenorFrontend/swagger-ui-docs-preset.git",
     "telenor-component-library": "git+https://github.com/TelenorFrontend/component-library.git",
+    "textversionjs": "^1.0.2",
     "uglify-es": "^3.0.27",
     "webpack": "^3.5.0"
   }
