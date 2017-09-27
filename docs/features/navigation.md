@@ -9,7 +9,7 @@ tags: navigation
 The navigation is powered by [metalsmith-navigation](https://github.com/unstoppablecarl/metalsmith-navigation).
 
 ## Adding pages to the navigation
-The `nav_groups` metadata of a file decides if/where it shoud appear in the navigation.
+The `nav_groups` metadata of a file decides if/where it should appear in the navigation.
 
 There are three available values: `primary`, `secondary`, `tertiary`. The primary nav appears at the top, the secondary in the middle, and the tertiary last.
 

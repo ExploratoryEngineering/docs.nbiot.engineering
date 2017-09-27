@@ -21,7 +21,7 @@ Images should usually be located in the `img` folder, and should be referenced u
 
 ![Stock Photo](../img/pexels-photo-272887.jpeg)
 
-If the image should be resized, a little bit of inline html is nessecary.
+If the image should be resized, a little bit of inline html is necessary.
 
 ``` html
 <img src="../img/pexels-photo-272887.jpeg" alt="Small Stock Photo" width="100" />

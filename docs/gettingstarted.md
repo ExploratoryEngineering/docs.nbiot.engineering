@@ -27,7 +27,13 @@ $ npm install
 
 Start by modifying the config files in the `config` folder, and the documentation itself in the `docs` folder.
 
-To build the documentation, all you have to do is run the npm script `build`. This will package all the assets and generate static html pages from the documentation in the `docs` folder.
+To start the development server run the following command.
+
+```shell
+$ npm run dev
+```
+
+To build the documentation run the npm script `build`. This will package all the assets and generate static html pages from the documentation in the `docs` folder.
 
 ```shell
 $ npm run build
