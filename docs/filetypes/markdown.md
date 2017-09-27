@@ -16,18 +16,18 @@ Files with `.md` or `.markdown` extensions will be parsed by [metalsmith-markdow
 Images should usually be located in the `img` folder, and should be referenced using relative paths. The image will be displayed with its native resolution unless it is too big to fit the container (in which case it will be downsized).
 
 ```markdown
-![Stock Photo](../../img/pexels-photo-272887.jpeg)
+![Stock Photo](../img/pexels-photo-272887.jpeg)
 ```
 
-![Stock Photo](../../img/pexels-photo-272887.jpeg)
+![Stock Photo](../img/pexels-photo-272887.jpeg)
 
 If the image should be resized, a little bit of inline html is nessecary.
 
 ``` html
-<img src="../../img/pexels-photo-272887.jpeg" alt="Small Stock Photo" width="100" />
+<img src="../img/pexels-photo-272887.jpeg" alt="Small Stock Photo" width="100" />
 ```
 
-<img src="../../img/pexels-photo-272887.jpeg" alt="Small Stock Photo" width="100" />
+<img src="../img/pexels-photo-272887.jpeg" alt="Small Stock Photo" width="100" />
 
 ## Inline html
 

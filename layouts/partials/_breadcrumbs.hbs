@@ -5,17 +5,23 @@
         </li>
     {{/unless}}
     {{#each breadcrumb_path}}
-      {{#unless file.nav_category}}
+      {{#if file.nav_category}}
+        {{#if file.title}}
+          <li class="tn-breadcrumb">
+                  {{~ file.title ~}}
+          </li>
+        {{/if}}
+      {{else}}
       <li class="tn-breadcrumb">
-          {{#if file}}
+          {{#if file.title}}
               <a href="{{ @root.webRoot }}{{ path }}">{{ file.title }}</a>
           {{else}}
-              {{ name }}
+              {{~ name ~}}
           {{/if}}
       </li>
-      {{/unless}}
+      {{/if}}
     {{/each}}
     <li class="tn-breadcrumb tn-breadcrumb--active">
-        {{ title }}
+        {{~ title ~}}
     </li>
 </ol>
