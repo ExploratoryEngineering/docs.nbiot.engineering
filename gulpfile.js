@@ -78,10 +78,21 @@ gulp.task("script", (cb) => {
         .on("end", cb);
 });
 
+gulp.task("script:dev", (cb) => {
+    browserify({
+        entries: ["./script/script.js"]
+    })
+        .transform(babelify, { presets: ["es2015"] })
+        .bundle()
+        .pipe(source("script.js"))
+        .pipe(gulp.dest("./build/script"))
+        .on("end", cb);
+});
+
 gulp.task("script:watch", () => {
     gulp.watch(
         [`${ scriptFolder }/*.js`, `${ scriptFolder }/**/*.js`],
-        ["script", "connect:reload:script"]
+        ["script:dev", "connect:reload:script"]
     );
 });
 
@@ -112,7 +123,7 @@ gulp.task("connect", function() {
     });
 });
 
-gulp.task("connect:reload", ["script", "sass", "docs:dev"], function() {
+gulp.task("connect:reload", ["script:dev", "sass", "docs:dev"], function() {
     gulp.src([
         `${ buildFolder }/**/*.html`,
         `${ buildFolder }/**/*.css`,
@@ -132,7 +143,7 @@ gulp.task("connect:reload:sass", ["sass"], function() {
     ]).pipe(connect.reload());
 });
 
-gulp.task("connect:reload:script", ["script"], function() {
+gulp.task("connect:reload:script", ["script:dev"], function() {
     gulp.src([
         `${ buildFolder }/**/*.js`
     ]).pipe(connect.reload());
@@ -141,7 +152,7 @@ gulp.task("connect:reload:script", ["script"], function() {
 gulp.task("lib:watch", () => {
     gulp.watch(
         [`${ libFolder }/*.js`, `${ libFolder }/**/*.js`],
-        ["docs:dev", "sass", "script", "connect:reload"]
+        ["docs:dev", "sass", "script:dev", "connect:reload"]
     );
 });
 
@@ -150,5 +161,5 @@ gulp.task("clean", (cb) => {
 });
 
 gulp.task("build", ["docs", "sass", "script", "vendor"]);
-gulp.task("watch", ["docs:dev", "sass", "script", "vendor:dev", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
+gulp.task("watch", ["docs:dev", "sass", "script:dev", "vendor:dev", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
 gulp.task("default", ["watch"]);
