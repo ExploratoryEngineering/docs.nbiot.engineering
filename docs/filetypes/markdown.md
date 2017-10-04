@@ -35,6 +35,8 @@ Inline html can be written anywhere in a markdown file if advanced components ar
 
 ### Example inline html component
 
+The following component is from [the Telenor Frontend component library](https://github.com/TelenorFrontend/component-library).
+
 ```html
 <ol class="tn-steps">
  <li class="tn-step tn-step--active">Identify problem</li>
