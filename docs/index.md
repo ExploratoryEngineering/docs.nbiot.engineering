@@ -2,6 +2,7 @@
 title: Home
 lunr: true
 index: true
+priority: 0.8
 tags:
   - index
   - home
