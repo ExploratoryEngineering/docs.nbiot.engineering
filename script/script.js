@@ -11,6 +11,7 @@ function initBarba() {
     Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container) {
         delete window.pageReady;
         hideSearchResults();
+        scrollToTop();
 
         const js = container.querySelector("script");
         if (js === null) {
@@ -28,4 +29,9 @@ function initBarba() {
     if (typeof pageReady === "function") {
         pageReady(document);
     }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
