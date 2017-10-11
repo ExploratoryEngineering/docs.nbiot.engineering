@@ -1,5 +1,6 @@
 ---
 title: Open API Spec
+description: Details on the SwaggerUI OpenApi support.
 lunr: true
 nav_sort: 3
 nav_groups:

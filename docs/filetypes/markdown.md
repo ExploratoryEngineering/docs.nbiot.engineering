@@ -1,5 +1,6 @@
 ---
 title: Markdown
+description: Example of a markdown file.
 lunr: true
 nav_sort: 1
 nav_groups:

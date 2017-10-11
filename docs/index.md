@@ -1,5 +1,6 @@
 ---
 title: Home
+description: The documentation scaffold makes creating beautiful documentation fast and simple!
 lunr: true
 index: true
 priority: 0.8

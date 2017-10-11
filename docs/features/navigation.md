@@ -1,5 +1,6 @@
 ---
 title: Navigation
+description: Details on how the documentation scaffold generates navigation.
 lunr: true
 nav_sort: 2
 nav_groups:

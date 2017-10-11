@@ -1,5 +1,6 @@
 ---
 title: Front Matter
+description: Details on how metalsmith and the documentation scaffold handles metadata.
 lunr: true
 nav_sort: 2
 nav_groups:
@@ -17,6 +18,8 @@ If you see mentions of metadata other places in this documentation, it is usuall
 | name| type | required | default | details |
 |---|---|-----|---|---|
 | title | string | yes | `null` | Every page must have a title that appears on top of the page and in the navigation (if the page is listed there) |
+| description | string | no | `null` | (**Strongly recommended**) A concise summary of the page. Will appear in search results. No longer than 155 characters |
+| thumbnail | string | no | `config.thumbnail` | Open Graph thumbnail image for the page, if not set it will default to the image set in `config/config.js`. Minimum 250x250px  |
 | index | bool | no | `false` | The home/index page must be tagged with `index: true` |
 
 ## Plugin tags

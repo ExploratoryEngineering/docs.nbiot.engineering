@@ -1,5 +1,6 @@
 ---
 title: Search
+description: The documentation scaffold has a built in search feature powered by lunr.
 lunr: true
 nav_sort: 3
 nav_groups:

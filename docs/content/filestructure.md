@@ -1,5 +1,6 @@
 ---
 title: File Structure
+description: Details on the documentation scaffold file structure.
 lunr: true
 nav_sort: 1
 nav_groups:

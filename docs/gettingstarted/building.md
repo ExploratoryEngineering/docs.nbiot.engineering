@@ -1,5 +1,6 @@
 ---
 title: Building
+description: Detailed information on the documentation scaffold build process.
 lunr: true
 nav_sort: 3
 nav_groups:

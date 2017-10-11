@@ -1,5 +1,6 @@
 ---
 title: Deploying
+description: Tips and tricks to deploy the finished documentation.
 lunr: true
 nav_sort: 4
 nav_groups:

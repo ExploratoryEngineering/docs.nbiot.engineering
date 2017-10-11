@@ -1,5 +1,6 @@
 ---
 title: Syntax Highlighting
+description: The documentation scaffold uses metalsmith-metallic to highlight code in markdown files.
 lunr: true
 nav_sort: 4
 nav_groups:

@@ -1,5 +1,6 @@
 ---
 title: Getting started
+description: The getting started page guides you through starting a new documentation project using the documentation scaffold.
 lunr: true
 nav_sort: 1
 nav_groups:

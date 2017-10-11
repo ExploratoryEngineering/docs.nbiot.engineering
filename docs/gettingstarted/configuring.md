@@ -1,5 +1,6 @@
 ---
 title: Configuring
+description: Detailed information on the documentation scaffold configuration process.
 lunr: true
 nav_sort: 1
 nav_groups:

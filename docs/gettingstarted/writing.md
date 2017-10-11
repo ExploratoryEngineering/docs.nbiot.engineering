@@ -1,5 +1,6 @@
 ---
 title: Writing
+description: Detailed information on the documentation authoring process.
 lunr: true
 nav_sort: 2
 nav_groups:

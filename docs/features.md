@@ -1,5 +1,6 @@
 ---
 title: Features
+description: Details on how to add and remove features from the documentation scaffold.
 lunr: true
 nav_sort: 2
 nav_groups:

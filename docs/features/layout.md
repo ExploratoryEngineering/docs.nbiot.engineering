@@ -1,5 +1,6 @@
 ---
 title: Layout
+description: The documentation scaffold uses handlebars layouts to format each page.
 lunr: true
 nav_sort: 1
 nav_groups:

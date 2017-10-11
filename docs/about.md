@@ -1,5 +1,6 @@
 ---
 title: About
+description: Learn what makes the documentation scaffold tick!
 lunr: true
 nav_sort: 1
 nav_groups:

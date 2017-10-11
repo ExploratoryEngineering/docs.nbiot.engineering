@@ -2,7 +2,26 @@
 <html class="docs-html">
 <head>
   <title>{{ title }} - {{ docName }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  {{#if description}}
+    <meta name="description" content="{{ description }}">
+  {{/if}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }} - {{ docName }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ thumbnail }}">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{{ title }} - {{ docName }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ hostname }}{{ url }}" />
+  <meta property="og:image" content="{{ thumbnail }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:site_name" content="{{ docName }}" />
+
   <link rel="stylesheet" type="text/css" href="{{ webRoot }}style/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link id="searchIndex" href="{{ webRoot }}index.json" rel="preload" as="fetch">
