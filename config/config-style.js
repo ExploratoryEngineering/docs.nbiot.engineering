@@ -7,7 +7,6 @@ module.exports = {
     targetFile: "style.css",
     includePaths: [require("node-normalize-scss").includePaths,
         path.join(__dirname, "..", "node_modules", "telenor-component-library"),
-        path.join(__dirname, "..", "node_modules", "swagger-ui-docs-preset", "dist"),
         path.join(__dirname, "..", "node_modules/highlight.js/styles")
     ]
 };

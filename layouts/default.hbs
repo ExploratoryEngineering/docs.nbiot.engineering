@@ -23,6 +23,9 @@
   <meta property="og:site_name" content="{{ docName }}" />
 
   <link rel="stylesheet" type="text/css" href="{{ webRoot }}style/style.css">
+  {{#if enableOpenApi }}
+    <link rel="stylesheet" type="text/css" href="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.css">
+  {{/if}}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link id="searchIndex" href="{{ webRoot }}index.json" rel="preload" as="fetch">
 </head>
@@ -67,6 +70,10 @@
       <ul id="docs-search__results" class="docs-search__results"></ul>
     </div>
   </div>
+  {{#if enableOpenApi }}
+    <script src="{{ webRoot }}script/swagger-ui/swagger-ui-bundle.js" ></script>
+    <script src="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.js" ></script>
+  {{/if}}
   <script src="{{ webRoot }}script/vendor.js" ></script>
   <script src="{{ webRoot }}script/script.js" ></script>
 </body>

@@ -25,9 +25,13 @@ const libFolder = "lib";
 
 const vendorJs = [
     path.resolve(__dirname, "node_modules", "barba.js", "dist", "barba.js"),
-    path.resolve(__dirname, "node_modules", "lunr", "lunr.js"),
+    path.resolve(__dirname, "node_modules", "lunr", "lunr.js")
+];
+
+const swaggerUi = [
     path.resolve(__dirname, "node_modules", "swagger-ui-dist", "swagger-ui-bundle.js"),
-    path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.js")
+    path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.js"),
+    path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.css")
 ];
 
 gulp.task("docs", (cb) => {
@@ -115,6 +119,16 @@ gulp.task("vendor:dev", (cb) => {
         .on("end", cb);
 });
 
+gulp.task("swaggerui", (cb) => {
+    if (config.enableOpenApi) {
+        gulp.src(swaggerUi)
+            .pipe(gulp.dest("./build/script/swagger-ui"))
+            .on("end", cb);
+    } else {
+        cb();
+    }
+});
+
 gulp.task("connect", function() {
     connect.server({
         root: buildFolder,
@@ -160,6 +174,6 @@ gulp.task("clean", (cb) => {
     rimraf(path.resolve(__dirname, buildFolder), cb);
 });
 
-gulp.task("build", ["docs", "sass", "script", "vendor"]);
-gulp.task("watch", ["docs:dev", "sass", "script:dev", "vendor:dev", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
+gulp.task("build", ["docs", "sass", "script", "vendor", "swaggerui"]);
+gulp.task("watch", ["docs:dev", "sass", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
 gulp.task("default", ["watch"]);
