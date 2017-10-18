@@ -54,6 +54,7 @@
     "babelify": "^7.3.0",
     "barba.js": "^1.0.0",
     "browserify": "^14.4.0",
+    "cheerio": "^1.0.0-rc.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
