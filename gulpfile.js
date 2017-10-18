@@ -8,6 +8,10 @@ const babelify = require("babelify");
 const browserify = require("browserify");
 const uglify = require("gulp-uglify");
 const streamify = require("gulp-streamify");
+const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps");
+const autoprefixer = require("autoprefixer");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const source = require("vinyl-source-stream");
@@ -55,17 +59,34 @@ gulp.task("docs:watch", () => {
     );
 });
 
-gulp.task("sass", (cb) => {
-    exec("npm run build:style", function(err, stdout, stderr) {
-        console.error(stderr);
-        cb(err);
-    });
+gulp.task("sass", () => {
+    return gulp.src(path.join(__dirname, configStyle.sourceFolder, configStyle.sourceFile))
+        .pipe(rename(configStyle.targetFile))
+        .pipe(sass({
+            includePaths: configStyle.includePaths,
+            outputStyle: "compressed"
+        }).on("error", sass.logError))
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(gulp.dest(path.join(__dirname, config.targetDir, configStyle.targetFolder)));
+});
+
+gulp.task("sass:dev", () => {
+    return gulp.src(path.join(__dirname, configStyle.sourceFolder, configStyle.sourceFile))
+        .pipe(rename(configStyle.targetFile))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: configStyle.includePaths,
+            outputStyle: "compressed"
+        }).on("error", sass.logError))
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(path.join(__dirname, config.targetDir, configStyle.targetFolder)));
 });
 
 gulp.task("sass:watch", () => {
     gulp.watch(
         [`${ styleFolder }/*.scss`, `${ styleFolder }/**/*.scss`],
-        ["sass", "connect:reload:sass"]
+        ["sass:dev", "connect:reload:sass"]
     );
 });
 
@@ -137,7 +158,7 @@ gulp.task("connect", function() {
     });
 });
 
-gulp.task("connect:reload", ["script:dev", "sass", "docs:dev"], function() {
+gulp.task("connect:reload", ["script:dev", "sass:dev", "docs:dev"], function() {
     gulp.src([
         `${ buildFolder }/**/*.html`,
         `${ buildFolder }/**/*.css`,
@@ -151,7 +172,7 @@ gulp.task("connect:reload:docs", ["docs:dev"], function() {
     ]).pipe(connect.reload());
 });
 
-gulp.task("connect:reload:sass", ["sass"], function() {
+gulp.task("connect:reload:sass", ["sass:dev"], function() {
     gulp.src([
         `${ buildFolder }/**/*.css`
     ]).pipe(connect.reload());
@@ -166,7 +187,7 @@ gulp.task("connect:reload:script", ["script:dev"], function() {
 gulp.task("lib:watch", () => {
     gulp.watch(
         [`${ libFolder }/*.js`, `${ libFolder }/**/*.js`],
-        ["docs:dev", "sass", "script:dev", "connect:reload"]
+        ["docs:dev", "sass:dev", "script:dev", "connect:reload"]
     );
 });
 
@@ -175,5 +196,5 @@ gulp.task("clean", (cb) => {
 });
 
 gulp.task("build", ["docs", "sass", "script", "vendor", "swaggerui"]);
-gulp.task("watch", ["docs:dev", "sass", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
+gulp.task("watch", ["docs:dev", "sass:dev", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
 gulp.task("default", ["watch"]);
