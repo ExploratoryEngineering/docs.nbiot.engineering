@@ -7,7 +7,11 @@ const markdown = require("metalsmith-markdown");
 const blc = require("metalsmith-broken-link-checker");
 const prepluginprocessor = require("../lib/prepluginprocessor");
 const postpluginprocessor = require("../lib/postpluginprocessor");
+const isMarkdown = require("../lib/utils").isMarkdown;
 
+const report = require("vfile-reporter");
+const remark = require("remark");
+const styleGuide = require("remark-preset-lint-recommended");
 
 const expect = require("chai").expect;
 
@@ -61,6 +65,32 @@ describe("documentation", () => {
                     if (err) throw err;
                     done();
                 });
+        });
+    });
+
+    describe("markdown", () => {
+        it("should conform to the style guide", (done) => {
+            let passed = true;
+            Object.keys(files).filter(isMarkdown).forEach((file) => {
+                const lint = remark().use(styleGuide).processSync(files[file].contents.toString());
+                if (lint.messages.length > 0) {
+                    // eslint-disable-next-line no-console
+                    console.log("     ", file + ":");
+                    // eslint-disable-next-line no-console
+                    console.log("     ", report(lint).replace(/\n\r?/g, "\n      "));
+                }
+                for (i in lint.messages) {
+                    if (lint.messages[i].fatal) {
+                        passed = false;
+                    }
+                }
+            });
+
+            if (passed) {
+                done();
+            } else {
+                done(new Error("Markdown linting failed"));
+            }
         });
     });
 });

@@ -39,6 +39,9 @@
     "husky": "^0.14.3",
     "metalsmith-broken-link-checker": "^1.0.1",
     "mocha": "^4.0.0",
+    "remark": "^8.0.0",
+    "remark-lint": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.1",
     "rewire": "^2.5.2",
     "standard-version": "^4.2.0",
     "stylelint": "^8.2.0",
@@ -46,7 +49,8 @@
     "stylelint-order": "^0.5.0",
     "stylelint-scss": "^1.5.1",
     "tn-conventions": "git+https://github.com/TelenorFrontend/conventions.git",
-    "validate-commit-msg": "^2.12.2"
+    "validate-commit-msg": "^2.12.2",
+    "vfile-reporter": "^4.0.0"
   },
   "dependencies": {
     "autoprefixer": "^7.1.4",
@@ -76,7 +80,6 @@
     "metalsmith-swagger-ui": "git+https://github.com/TelenorFrontend/metalsmith-swagger-ui.git",
     "mkdirp": "^0.5.1",
     "node-normalize-scss": "^3.0.0",
-    "remark": "^8.0.0",
     "remark-html": "^6.0.1",
     "rimraf": "^2.6.2",
     "swagger-ui-dist": "^3.0.21",
