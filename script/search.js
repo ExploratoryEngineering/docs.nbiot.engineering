@@ -96,14 +96,8 @@ function search(text) {
         const details = document.createElement("p");
         details.className = "docs-search__details";
 
-        for (const match in results[key].matchData.metadata) {
-            if (details.innerHTML.length < 1) {
-                if (results[key].matchData.metadata[match].plaintext) {
-                    details.innerHTML += getPreviewAtPos(results[key].matchData.metadata[match].plaintext.position[0][0], searchFiles[results[key].ref].plaintext);
-                } else {
-                    details.innerHTML += getPreviewAtPos(0, searchFiles[results[key].ref].plaintext);
-                }
-            }
+        if (typeof searchFiles[results[key].ref].description === "string") {
+            details.innerHTML = searchFiles[results[key].ref].description;
         }
 
         result.appendChild(details);
@@ -127,39 +121,5 @@ function hideSearchResults() {
 function clearSearchBox() {
     document.getElementById("docs-search-box").value = "";
 }
-
-function getPreviewAtPos(target, str) {
-    let pos = 0;
-    let sentence = "";
-    let sentenceNum = 0;
-
-    const sentences = str.split(/\r\n|\r|\n|[.|!|?]\s/gi);
-    for (let i = 0; i < sentences.length; i++) {
-        if (sentences[i] === "") {
-            sentences.splice(i, 1);
-            i--;
-        }
-    }
-
-    for (let i = 0; i < sentences.length; i++) {
-        pos += sentences[i].length + 1;
-        if (pos >= target) {
-            sentence += sentences[i] + ".";
-            sentenceNum = i;
-            break;
-        }
-    }
-
-    if (sentence.length < 120 && sentenceNum + 1 in sentences) {
-        sentence += " " + sentences[sentenceNum + 1] + ".";
-    }
-
-    if (sentence.length < 120 && sentenceNum - 1 in sentences) {
-        sentence = sentences[sentenceNum - 1] + ". " + sentence;
-    }
-
-    return sentence;
-}
-
 
 export { initSearch, hideSearchResults };
