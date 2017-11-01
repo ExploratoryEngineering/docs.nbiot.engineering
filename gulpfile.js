@@ -38,6 +38,11 @@ const swaggerUi = [
     path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.css")
 ];
 
+function swallowError(error) {
+    console.error(error.toString());
+    this.emit("end");
+}
+
 gulp.task("docs", (cb) => {
     exec("npm run build:docs", function(err, stdout, stderr) {
         console.error(stderr);
@@ -56,7 +61,7 @@ gulp.task("docs:watch", () => {
     gulp.watch(
         [`${ docsFolder }/*.*`, `${ docsFolder }/**/*.*`],
         ["docs:dev", "connect:reload:docs"]
-    );
+    ).on("error", swallowError);
 });
 
 gulp.task("sass", () => {
@@ -87,7 +92,7 @@ gulp.task("sass:watch", () => {
     gulp.watch(
         [`${ styleFolder }/*.scss`, `${ styleFolder }/**/*.scss`],
         ["sass:dev", "connect:reload:sass"]
-    );
+    ).on("error", swallowError);
 });
 
 gulp.task("script", (cb) => {
@@ -118,7 +123,7 @@ gulp.task("script:watch", () => {
     gulp.watch(
         [`${ scriptFolder }/*.js`, `${ scriptFolder }/**/*.js`],
         ["script:dev", "connect:reload:script"]
-    );
+    ).on("error", swallowError);
 });
 
 gulp.task("vendor", (cb) => {
@@ -188,7 +193,7 @@ gulp.task("lib:watch", () => {
     gulp.watch(
         [`${ libFolder }/*.js`, `${ libFolder }/**/*.js`],
         ["docs:dev", "sass:dev", "script:dev", "connect:reload"]
-    );
+    ).on("error", swallowError);
 });
 
 gulp.task("clean", (cb) => {
