@@ -1,4 +1,4 @@
-extends: ./node_modules/tn-conventions/scss/.stylelintrc.yml
+extends: ./node_modules/@telenorfrontend/tn-conventions/scss/.stylelintrc.yml
 rules:
   selector-max-type: 2
   at-rule-no-unknown:
