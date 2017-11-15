@@ -35,8 +35,8 @@ const vendorJs = [
 
 const swaggerUi = [
     path.resolve(__dirname, "node_modules", "swagger-ui-dist", "swagger-ui-bundle.js"),
-    path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.js"),
-    path.resolve(__dirname, "node_modules", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.css")
+    path.resolve(__dirname, "node_modules", "@telenorfrontend", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.js"),
+    path.resolve(__dirname, "node_modules", "@telenorfrontend", "swagger-ui-docs-preset", "dist", "swagger-ui-docs-preset.css")
 ];
 
 function swallowError(error) {
