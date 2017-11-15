@@ -1,0 +1,7 @@
+@media print {
+  /* stylelint-disable-next-line selector-max-universal */
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}

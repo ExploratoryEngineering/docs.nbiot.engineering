@@ -13,6 +13,10 @@
     padding-top: 110px;
   }
 
+  @media print {
+    padding: 24px 0 0 !important;
+  }
+
   h1:first-child {
     margin-top: -8px; // align page title
   }

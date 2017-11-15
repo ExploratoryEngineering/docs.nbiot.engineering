@@ -30,7 +30,7 @@
   <link id="searchIndex" href="{{ webRoot }}index.json" rel="preload" as="fetch">
 </head>
 <body class="docs-body">
-  <div id="docs-topbar" class="docs-topbar">
+  <div id="docs-topbar" class="docs-topbar no-print">
     <div id="docs-topbar__inner" class="docs-topbar__inner">
       <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i class="material-icons md-64">menu</i></a>
       <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i class="material-icons md-64">arrow_back</i></a>
@@ -47,7 +47,7 @@
       <ul id="docs-search-results" class="docs-search-results"></ul>
     </div>
   </div>
-  <div id="docs-sidebar" class="docs-sidebar visible-desktop">
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
     <nav class="docs-nav">
       <a class="docs-nav__logo" href="{{ webRoot }}"></a>
         {{> _nav navs.primary}}
@@ -79,7 +79,7 @@
       {{/unless}}
       {{{ contents }}}
       {{#if editUrl }}
-        <a class="docs-edit-btn" href="{{ editUrl }}" target="_blank">Edit this page</a>
+        <a class="docs-edit-btn no-print" href="{{ editUrl }}" target="_blank">Edit this page</a>
       {{/if}}
     </div>
   </div>
