@@ -26,6 +26,7 @@ const docsFolder = configDocs.sourceDir;
 const styleFolder = configStyle.sourceFolder;
 const scriptFolder = "script";
 const libFolder = "lib";
+const layoutFolder = "layouts";
 
 const vendorJs = [
     path.resolve(__dirname, "node_modules", "barba.js", "dist", "barba.js"),
@@ -196,10 +197,17 @@ gulp.task("lib:watch", () => {
     ).on("error", swallowError);
 });
 
+gulp.task("layout:watch", () => {
+    gulp.watch(
+        [`${ layoutFolder }/*.hbs`, `${ layoutFolder }/**/*.hbs`],
+        ["docs:dev", "connect:reload"]
+    ).on("error", swallowError);
+});
+
 gulp.task("clean", (cb) => {
     rimraf(path.resolve(__dirname, buildFolder), cb);
 });
 
 gulp.task("build", ["docs", "sass", "script", "vendor", "swaggerui"]);
-gulp.task("watch", ["docs:dev", "sass:dev", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch"]);
+gulp.task("watch", ["docs:dev", "sass:dev", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch", "layout:watch"]);
 gulp.task("default", ["watch"]);

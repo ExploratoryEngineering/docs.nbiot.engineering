@@ -30,7 +30,24 @@
   <link id="searchIndex" href="{{ webRoot }}index.json" rel="preload" as="fetch">
 </head>
 <body class="docs-body">
-  <div class="docs-sidebar">
+  <div id="docs-topbar" class="docs-topbar">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i class="material-icons md-64">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i class="material-icons md-64">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-64">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1" autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-64">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-64">search</i></a>
+
+      {{#each menuLinks}}
+          <a class="docs-topbar__link visible-desktop" href="{{ this }}">{{ @key }}</a>
+      {{/each}}
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop">
     <nav class="docs-nav">
       <a class="docs-nav__logo" href="{{ webRoot }}"></a>
         {{> _nav navs.primary}}
@@ -42,32 +59,28 @@
           <hr class="docs-nav__hr" />
           {{> _nav navs.tertiary}}
         {{/if}}
+        <div class="docs-sidebar__menuLinks hidden-desktop">
+          <hr class="docs-nav__hr" />
+          <ul class="docs-nav__ul">
+            {{#each menuLinks}}
+              <li class="docs-nav__li">
+                <a href="{{ this }}" class="docs-nav__item">{{ @key }}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
     </nav>
   </div>
   <div id="barba-wrapper" class="docs-wrapper">
-    <div class="docs-topbar">
-      <div class="docs-topbar__search-icon">
-        <i class="material-icons md-64">search</i>
-      </div>
-      <div class="docs-topbar__search">
-        <input id="docs-search-box" type="text" class="docs-topbar__searchinput" placeholder="Search" tabindex="1" autocapitalize="none" autocomplete="off" autocorrect="off" type="text" autofocus />
-      </div>
-      <a href="#" id="docs-search__close" class="docs-search__close"><i class="material-icons md-64">close</i></a>
-      <div class="docs-topbar__links">
-        <a class="docs-topbar__link" href="#">Support</a>
-        <a class="docs-topbar__link" href="#">Dashboard</a>
-      </div>
-    </div>
     <div class="docs-content barba-container">
       <h1>{{ title }}</h1>
-      {{> _breadcrumbs }}
+      {{#unless index }}
+        {{> _breadcrumbs }}
+      {{/unless}}
       {{{ contents }}}
       {{#if editUrl }}
         <a class="docs-edit-btn" href="{{ editUrl }}" target="_blank">Edit this page</a>
       {{/if}}
-    </div>
-    <div id="docs-search" class="docs-search">
-      <ul id="docs-search__results" class="docs-search__results"></ul>
     </div>
   </div>
   {{#if enableOpenApi }}

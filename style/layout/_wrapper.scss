@@ -1,10 +1,13 @@
 .docs-wrapper {
   position: relative;
   min-height: 100vh;
-  margin-left: 260px;
-  padding-left: calc(50% - 940px / 2 - 260px + .5 * (100vw - 100%));
-  background: white;
+  background: $docs-color-background--default;
   background-clip: content-box;
   z-index: 1;
   pointer-events: none;
+
+  @include desktop {
+    width: $docs-width-content--desktop + $docs-width-sidebar * 2;
+    margin: auto;
+  }
 }

@@ -1,42 +1,100 @@
 @import "components/typography/tn-a";
 
 .docs-topbar {
-  display: flex;
-  max-width: 940px;
-  height: 64px;
-  padding: 0 48px;
-  padding-left: 32px;
-  box-sizing: border-box;
-  border-bottom: 1px solid $docs-color--black12;
-  line-height: 64px;
+  position: fixed;
+  top: 0;
+  width: $docs-width-content--mobile;
   pointer-events: auto;
+  z-index: 2;
 
-  &__search {
-    flex: 1 1 100%;
+  @include desktop {
+    min-width: $docs-width-content--desktop + $docs-width-sidebar * 2;
   }
 
-  &__search-icon {
-    width: 48px;
-    margin-top: 6px;
-    color: rgba(0, 0, 0, .54);
-    overflow: hidden;
-    user-select: none;
-    pointer-events: none;
-  }
+  &__inner {
+    display: flex;
+    width: $docs-width-content--mobile;
+    max-width: 100vw;
+    height: 64px;
+    background-color: $docs-color-background--default;
+    line-height: 64px;
+    box-sizing: content-box;
 
-  &__searchinput {
-    width: 100%;
-    height: 48px;
-    border: none;
-    outline: none;
+    @include desktop {
+      max-width: $docs-width-content--desktop;
+      margin: auto;
+      border-bottom: 1px solid $docs-color--black12;
+    }
+
+    &--search-open {
+      border-bottom: 1px solid $docs-color--black12;
+
+      .docs-topbar__search-box {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+
+      .docs-topbar__icon--search-hide {
+        display: block;
+
+        /* stylelint-disable-next-line max-nesting-depth */
+        @include desktop {
+          display: none;
+        }
+      }
+
+      .docs-topbar__icon--menu-toggle,
+      .docs-topbar__icon-search-show {
+        display: none !important;
+      }
+    }
   }
 
   &__link {
-    margin-left: 12px;
+    margin-right: 16px;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 20px;
+    }
   }
 
-  &__links {
-    display: flex;
-    flex: 0 0 auto;
+  &__icon {
+    @include docs-glyph-hover;
+
+    &--search {
+      flex: 0 0 28px;
+      margin-left: 28px;
+      padding-top: 20px;
+      pointer-events: none;
+    }
+
+    &--search-hide {
+      display: none;
+    }
+
+    &--search-close {
+      width: 48px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__search-box {
+    width: 100%;
+    height: 100%;
+    padding: 6px 0;
+    border: none;
+    outline: none;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    box-sizing: border-box;
+
+    @include desktop {
+      font-size: $tn-font-size--default;
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

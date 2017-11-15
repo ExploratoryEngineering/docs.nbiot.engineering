@@ -1,3 +1,11 @@
+html {
+  overflow-y: scroll;
+}
+
 .docs-body {
-  min-width: 1024px;
+  min-width: 320px;
+
+  @include desktop {
+    overflow-x: hidden;
+  }
 }

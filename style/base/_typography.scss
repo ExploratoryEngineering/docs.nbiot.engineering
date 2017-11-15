@@ -38,6 +38,8 @@ a {
 pre {
   @include tn-pre;
 
+  overflow: auto;
+
   .hljs {
     padding: 0;
     background: none;

@@ -1,0 +1,294 @@
+$phone-break-max: 768px;
+$tablet-break-min: 768px;
+$tablet-break-max: 1023px;
+$desktop-break-min: 1024px;
+$desktop-large-break-min: 1221px;
+
+$container-tablet: 768px;
+$container-desktop: 1024px;
+$container-desktop-large: 1221px;
+
+// Screen functions
+@mixin screen-min($min) {
+  @media only screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin screen-max($max) {
+  @media only screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin screen($min, $max: false) {
+  @if $max!=false {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else {
+    @media only screen and (max-width: $min) {
+      @content;
+    }
+  }
+}
+
+@mixin screen-max-height($max) {
+  @media only screen and (max-height: $max) {
+    @content;
+  }
+}
+
+// Basic queries
+@mixin phone {
+  @include screen-max($phone-break-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include screen($tablet-break-min, $tablet-break-max) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include screen-min($desktop-break-min) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @include screen-min($desktop-large-break-min) {
+    @content;
+  }
+}
+
+// Hidden-helpers
+.hidden-phone {
+  &.inline {
+    display: inline;
+  }
+
+  &.block {
+    display: block;
+  }
+
+  &.inline-block {
+    display: inline-block;
+  }
+}
+
+@include phone {
+  .hidden-phone {
+    display: none;
+
+    &.inline {
+      display: none;
+    }
+
+    &.block {
+      display: none;
+    }
+
+    &.inline-block {
+      display: none;
+    }
+  }
+}
+
+.hidden-tablet {
+  &.inline {
+    display: inline;
+  }
+
+  &.block {
+    display: block;
+  }
+
+  &.inline-block {
+    display: inline-block;
+  }
+}
+
+@include tablet {
+  .hidden-tablet {
+    display: none;
+
+    &.inline {
+      display: none;
+    }
+
+    &.block {
+      display: none;
+    }
+
+    &.inline-block {
+      display: none;
+    }
+  }
+}
+
+.hidden-desktop {
+  &.inline {
+    display: inline;
+  }
+
+  &.block {
+    display: block;
+  }
+
+  &.inline-block {
+    display: inline-block;
+  }
+}
+
+@include desktop {
+  .hidden-desktop {
+    display: none;
+
+    &.inline {
+      display: none;
+    }
+
+    &.block {
+      display: none;
+    }
+
+    &.inline-block {
+      display: none;
+    }
+  }
+}
+
+th,
+td {
+  &.hidden-phone {
+    display: table-cell;
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  &.hidden-tablet {
+    display: table-cell;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &.hidden-desktop {
+    display: table-cell;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &.visible-phone {
+    display: none;
+
+    @include phone {
+      display: table-cell;
+    }
+  }
+
+  &.visible-tablet {
+    display: none;
+
+    @include tablet {
+      display: table-cell;
+    }
+  }
+
+  &.visible-desktop {
+    display: none;
+
+    @include desktop {
+      display: table-cell;
+    }
+  }
+}
+
+// Visible-helpers
+.visible-phone {
+  display: none;
+
+  &.inline {
+    display: none;
+  }
+
+  &.block {
+    display: none;
+  }
+}
+
+@include phone {
+  .visible-phone {
+    display: inherit;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.block {
+      display: block;
+    }
+  }
+}
+
+.visible-tablet {
+  display: none;
+
+  &.inline {
+    display: none;
+  }
+
+  &.block {
+    display: none;
+  }
+}
+
+@include tablet {
+  .visible-tablet {
+    display: inherit;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.block {
+      display: block;
+    }
+  }
+}
+
+.visible-desktop {
+  display: none;
+
+  &.inline {
+    display: none;
+  }
+
+  &.block {
+    display: none;
+  }
+}
+
+@include desktop {
+  .visible-desktop {
+    display: inherit;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.block {
+      display: block;
+    }
+  }
+}

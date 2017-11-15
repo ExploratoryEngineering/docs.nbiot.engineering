@@ -1,3 +1,5 @@
 .docs-sidebar {
-  padding-left: calc(100vw - 100%);
+  &--open {
+    display: block;
+  }
 }

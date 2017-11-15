@@ -1,8 +1,17 @@
 .docs-content {
-  max-width: 940px;
-  padding: 48px;
+  max-width: $docs-width-content--mobile;
+  padding: 24px;
+  padding-top: 88px;
+  overflow: auto;
   box-sizing: border-box;
   pointer-events: auto;
+
+  @include desktop {
+    max-width: $docs-width-content--desktop;
+    margin: auto;
+    padding: 48px;
+    padding-top: 110px;
+  }
 
   h1:first-child {
     margin-top: -8px; // align page title
