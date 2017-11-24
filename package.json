@@ -1,5 +1,5 @@
 {
-  "name": "docs-scaffold",
+  "name": "id-docs.telenordigital.com",
   "version": "0.1.0",
   "description": "Scaffold repo which documentations can fork from",
   "main": "index.js",
@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TelenorFrontend/docs-scaffold.git"
+    "url": "git+https://github.com/telenordigital/id-docs.telenordigital.com.git"
   },
   "author": "frontend@telenordigital.com",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/TelenorFrontend/docs-scaffold/issues"
+    "url": "https://github.com/telenordigital/id-docs.telenordigital.com/issues"
   },
-  "homepage": "https://github.com/TelenorFrontend/docs-scaffold#readme",
+  "homepage": "https://github.com/telenordigital/id-docs.telenordigital.com#readme",
   "devDependencies": {
     "@telenorfrontend/tn-conventions": "^0.4.0",
     "babel-eslint": "^7.2.3",
