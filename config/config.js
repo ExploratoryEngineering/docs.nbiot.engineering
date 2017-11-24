@@ -4,7 +4,7 @@ module.exports = {
     webrootDev: "/",
     targetDir: "build", // relative to the project root
     menuLinks: {
-        "On Github": "https://github.com/telenordigital/id-docs.telenordigital.com"
+        "On Github": "https://github.com/TelenorFrontend/docs-scaffold"
     },
     hostname: "https://telenordigital.github.io",
     editUrl: "https://github.com/TelenorDigital/id-docs.telenordigital.com/edit/master/", // empty string will disable edit button
