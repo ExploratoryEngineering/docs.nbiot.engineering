@@ -1,7 +1,7 @@
 {
   "name": "id-docs.telenordigital.com",
   "version": "0.1.0",
-  "description": "Scaffold repo which documentations can fork from",
+  "description": "Documentation for CONNECT ID APIs and SDKs",
   "main": "index.js",
   "scripts": {
     "build:style": "node lib/build-style.js",
