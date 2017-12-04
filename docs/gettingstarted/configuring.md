@@ -8,6 +8,8 @@ nav_groups:
 tags:
   - config
   - configuring
+collection: gettingstarted
+order: 2
 ---
 Configuring your new documentation project is as simple as altering the configuration files in the `config` folder.
 

@@ -8,6 +8,8 @@ nav_groups:
 tags:
   - deploy
   - travis
+collection: gettingstarted
+order: 5
 ---
 After building, the `build` folder contains standalone, static html files that can be published to any web server.
 

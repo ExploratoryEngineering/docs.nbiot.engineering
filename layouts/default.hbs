@@ -78,6 +78,14 @@
         {{> _breadcrumbs }}
       {{/unless}}
       {{{ contents }}}
+      <div class="lesson-nav">
+        {{#if previous}}
+          <a class="prev" href="{{{previous.url}}}">&larr; {{{previous.title}}}</a>
+        {{/if}}
+        {{#if next}}
+          <a class="next right" href="{{{next.url}}}">{{{next.title}}} &rarr;</a>
+        {{/if}}
+      </div>
       {{#if editUrl }}
         <a class="docs-edit-btn no-print" href="{{ editUrl }}" target="_blank">Edit this page</a>
       {{/if}}

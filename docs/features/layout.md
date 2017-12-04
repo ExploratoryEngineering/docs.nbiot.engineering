@@ -8,6 +8,8 @@ nav_groups:
 tags:
   - layout
   - handlebars
+collection: features
+order: 2
 ---
 The scaffold applies a standard layout to your documentation using [handlebars](http://handlebarsjs.com/) and [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts).
 

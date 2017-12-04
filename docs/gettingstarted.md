@@ -9,6 +9,8 @@ nav_subgroup: true
 tags:
   - starting
   - setup
+collection: gettingstarted
+order: 1
 ---
 To start a new documentation project, start by cloning or forking the [docs-scaffold](https://github.com/TelenorFrontend/docs-scaffold) repository.
 

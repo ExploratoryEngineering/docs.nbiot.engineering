@@ -8,6 +8,8 @@ nav_groups:
 tags:
   - lunr
   - search
+collection: features
+order: 4
 ---
 The scaffold includes a client side search library for javascript by the name of [lunr](https://lunrjs.com/) that searches an index built by [metalsmith-lunr](https://github.com/TelenorFrontend/metalsmith-lunr).
 

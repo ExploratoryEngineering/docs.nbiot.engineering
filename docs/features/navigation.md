@@ -6,6 +6,8 @@ nav_sort: 2
 nav_groups:
   - primary
 tags: navigation
+collection: features
+order: 3
 ---
 The navigation is powered by [metalsmith-navigation](https://github.com/unstoppablecarl/metalsmith-navigation).
 
@@ -25,3 +27,31 @@ Pages are ordered alphabetically, to override this: add a `nav_sort` metadata to
 To make a file appear as a **bold** group, simply give it the metadata `nav_group: true`.
 
 To make a file appear only as a category (unclickable), you should give it the metadata `nav_category: true`.
+
+## Collections
+
+To link a series of pages together with PREVIOUS and NEXT page links, you can create a collection.
+
+In the build-docs.js, you can find the metalsmith-collections plugin, under which you will find a configuration like this:
+
+```js
+    .use(collections({
+        gettingstarted:{
+            sortBy: 'order',
+        },
+        features:{
+            sortBy: 'order',
+        }
+    }))
+```
+
+In this setup we have two collections: `gettingstarted` and `features`. Both are sorted by `order`.
+
+To add pages to a collection, we can add the following tags to the metadata:
+
+```
+collection: gettingstarted
+order: 1
+```
+
+This would add a page to the collection at the first page. If you were to add another page to the collection at order 2 the page at order 1 would have a link at the bottom pointing towards the page at order 2, and vice versa.

@@ -6,6 +6,8 @@ nav_sort: 4
 nav_groups:
   - primary
 tags: syntax highlighting
+collection: features
+order: 5
 ---
 [metalsmith-metallic](https://github.com/weswigham/metalsmith-metallic) will highlight code in markdown files. The color scheme can be selected from any [highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles), and set in `style/vendors`. Supported languages can be found in the [highlight.js documentation](http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases).
 

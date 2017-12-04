@@ -8,6 +8,8 @@ nav_groups:
 tags:
   - build
   - npm
+collection: gettingstarted
+order: 4
 ---
 The npm build script will package assets and build the documentation.
 

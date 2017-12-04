@@ -8,6 +8,8 @@ nav_groups:
 nav_subgroup: true
 tags:
   - features
+collection: features
+order: 1
 ---
 The docs-scaffold comes with a limited number of features, but they can easily be expanded upon by modifying the [Metalsmith](http://www.metalsmith.io/) build pipe.
 
