@@ -10,7 +10,7 @@ function setActiveLink() {
     document.querySelectorAll("a.docs-nav__item--active").forEach(el => el.classList.remove("docs-nav__item--active"));
     const activeLink = document.querySelector(`a.docs-nav__item[href='${window.location.pathname}']`);
     if (activeLink !== null) {
-        activeLink.classList.add("docs-nav__item--active")
+        activeLink.classList.add("docs-nav__item--active");
     }
 }
 
