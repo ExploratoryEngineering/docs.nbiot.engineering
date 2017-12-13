@@ -1,16 +1,18 @@
 import { initSearch, hideSearchField, hideSearchResults } from "./search";
-import { initSidebar, closeSidebar } from "./sidebar";
+import { initSidebar, closeSidebar, setActiveLink } from "./sidebar";
 
 document.addEventListener("DOMContentLoaded", function(event) {
     initBarba();
     initSearch();
     initSidebar();
+    setActiveLink();
 });
 
 function initBarba() {
     Barba.Pjax.start();
     Barba.Prefetch.init();
     Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container) {
+        setActiveLink();
         delete window.pageReady;
         hideSearchResults();
         hideSearchField();
