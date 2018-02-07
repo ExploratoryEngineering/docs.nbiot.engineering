@@ -20,4 +20,14 @@
   h1:first-child {
     margin-top: -8px; // align page title
   }
+
+  // move headers under the search bar for anchor links
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: -48px;
+    padding-top: 80px;
+  }
 }
