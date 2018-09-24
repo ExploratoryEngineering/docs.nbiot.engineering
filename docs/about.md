@@ -12,7 +12,7 @@ tags:
 ---
 
 ## Backend
-The backend is written in go and delivers a restful service for simple yet powerful implementation towards the Telenor LoRa stack.
+The backend is written in go and delivers a restful service for simple yet powerful implementation towards the Telenor NB-IoT stack.
 
 ## The team
 The service is delivered to you by [Exploratory Engineering](https://exploratory.engineering) with love and passion for good software and hardware.

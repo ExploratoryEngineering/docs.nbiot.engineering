@@ -1,12 +1,14 @@
-# docs-scaffold
+# NB-IoT server doc and tutorials
 [![Build Status](https://img.shields.io/travis/TelenorFrontend/docs-scaffold.svg)](https://travis-ci.org/TelenorFrontend/docs-scaffold)
 [![Dependencies](https://img.shields.io/david/TelenorFrontend/docs-scaffold.svg)](https://david-dm.org/telenorfrontend/docs-scaffold)
-[![Dev Dependencies](https://img.shields.io/david/dev/TelenorFrontend/docs-scaffold.svg)](https://david-dm.org/TelenorFrontend/docs-scaffold?type=dev)
 
-Scaffold repo which documentations can fork from.
+Repo containing documentation and tutorials for interacting with Horde, Telenors NB-IoT server.
 
 ## Setup
-Clone, `npm install`, `npm run build`
+Clone, `npm install`, `npm run build`.
 
-## Demo and documentation
-This repo includes many example pages that also serve as documentation for the scaffold itself. They are available in their built state on [github pages](https://telenorfrontend.github.io/docs-scaffold/).
+## Development
+Run `npm run dev` to run a local server on http://localhost:8888.
+
+## Contributing
+We love contributions. Fork the repo or create issues and we will be sure to follow up.
