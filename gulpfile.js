@@ -41,31 +41,31 @@ const swaggerUi = [
 
 function swallowError(error) {
     console.error(error.toString());
-    this.emit("end");
+    this.emit("finish");
 }
 
-gulp.task("docs", (cb) => {
+gulp.task("docs", function buildDocs(cb) {
     exec("npm run build:docs", function(err, stdout, stderr) {
         console.error(stderr);
         cb(err);
     });
 });
 
-gulp.task("docs:dev", (cb) => {
+gulp.task("docs:dev", function buildDocsDev(cb) {
     exec("npm run build:docs:dev", function(err, stdout, stderr) {
         console.error(stderr);
         cb(err);
     });
 });
 
-gulp.task("docs:watch", () => {
+gulp.task("docs:watch", function docsWatch() {
     gulp.watch(
         [`${ docsFolder }/*.*`, `${ docsFolder }/**/*.*`],
-        ["docs:dev", "connect:reload:docs"]
+        gulp.series("docs:dev", "connect:reload:docs")
     ).on("error", swallowError);
 });
 
-gulp.task("sass", () => {
+gulp.task("sass", function buildSass() {
     return gulp.src(path.join(__dirname, configStyle.sourceFolder, configStyle.sourceFile))
         .pipe(rename(configStyle.targetFile))
         .pipe(sass({
@@ -76,7 +76,7 @@ gulp.task("sass", () => {
         .pipe(gulp.dest(path.join(__dirname, config.targetDir, configStyle.targetFolder)));
 });
 
-gulp.task("sass:dev", () => {
+gulp.task("sass:dev", function buildSassDev() {
     return gulp.src(path.join(__dirname, configStyle.sourceFolder, configStyle.sourceFile))
         .pipe(rename(configStyle.targetFile))
         .pipe(sourcemaps.init())
@@ -89,68 +89,63 @@ gulp.task("sass:dev", () => {
         .pipe(gulp.dest(path.join(__dirname, config.targetDir, configStyle.targetFolder)));
 });
 
-gulp.task("sass:watch", () => {
+gulp.task("sass:watch", function buildSassWatch() {
     gulp.watch(
         [`${ styleFolder }/*.scss`, `${ styleFolder }/**/*.scss`],
-        ["sass:dev", "connect:reload:sass"]
+        gulp.series("sass:dev", "connect:reload:sass")
     ).on("error", swallowError);
 });
 
-gulp.task("script", (cb) => {
-    browserify({
+gulp.task("script", function buildScript() {
+    return browserify({
         entries: ["./script/script.js"]
     })
         .transform(babelify, { presets: ["es2015"] })
         .bundle()
         .pipe(source("script.js"))
         .pipe(streamify(uglify()))
-        .pipe(rename("script.js"))
-        .pipe(gulp.dest("./build/script"))
-        .on("end", cb);
+        .pipe(gulp.dest("./build/script"));
 });
 
-gulp.task("script:dev", (cb) => {
-    browserify({
+gulp.task("script:dev", function buildScriptDev() {
+    return browserify({
         entries: ["./script/script.js"]
     })
         .transform(babelify, { presets: ["es2015"] })
         .bundle()
         .pipe(source("script.js"))
-        .pipe(gulp.dest("./build/script"))
-        .on("end", cb);
+        .pipe(gulp.dest("./build/script"));
 });
 
-gulp.task("script:watch", () => {
+gulp.task("script:watch", function buildScriptWatch() {
     gulp.watch(
         [`${ scriptFolder }/*.js`, `${ scriptFolder }/**/*.js`],
-        ["script:dev", "connect:reload:script"]
+        gulp.series("script:dev", "connect:reload:script")
     ).on("error", swallowError);
 });
 
-gulp.task("vendor", (cb) => {
-    gulp.src(vendorJs)
+gulp.task("vendor", function buildVendor() {
+    return gulp.src(vendorJs)
         .pipe(concat("vendor.js"))
         .pipe(streamify(uglify({
             output: {
                 comments: uglifySaveLicense
             }
         })))
-        .pipe(gulp.dest("./build/script"))
-        .on("end", cb);
+        .pipe(gulp.dest("./build/script"));
 });
 
-gulp.task("vendor:dev", (cb) => {
-    gulp.src(vendorJs)
+gulp.task("vendor:dev", function buildVendorDev() {
+    return gulp.src(vendorJs)
         .pipe(concat("vendor.js"))
-        .pipe(gulp.dest("./build/script"))
-        .on("end", cb);
+        .pipe(gulp.dest("./build/script"));
 });
 
-gulp.task("swaggerui", (cb) => {
+gulp.task("swaggerui", function buildSwaggerUi(cb) {
     if (config.enableOpenApi) {
         gulp.src(swaggerUi)
             .pipe(gulp.dest("./build/script/swagger-ui"))
-            .on("end", cb);
+            .on("finish", cb);
     } else {
         cb();
     }
@@ -164,7 +159,7 @@ gulp.task("connect", function() {
     });
 });
 
-gulp.task("connect:reload", ["script:dev", "sass:dev", "docs:dev"], function() {
+gulp.task("connect:reload", gulp.parallel("script:dev", "sass:dev", "docs:dev"), function() {
     gulp.src([
         `${ buildFolder }/**/*.html`,
         `${ buildFolder }/**/*.css`,
@@ -172,35 +167,35 @@ gulp.task("connect:reload", ["script:dev", "sass:dev", "docs:dev"], function() {
     ]).pipe(connect.reload());
 });
 
-gulp.task("connect:reload:docs", ["docs:dev"], function() {
+gulp.task("connect:reload:docs", gulp.series("docs:dev"), function() {
     gulp.src([
         `${ buildFolder }/**/*.html`
     ]).pipe(connect.reload());
 });
 
-gulp.task("connect:reload:sass", ["sass:dev"], function() {
+gulp.task("connect:reload:sass", gulp.series("sass:dev"), function() {
     gulp.src([
         `${ buildFolder }/**/*.css`
     ]).pipe(connect.reload());
 });
 
-gulp.task("connect:reload:script", ["script:dev"], function() {
-    gulp.src([
+gulp.task("connect:reload:script", gulp.series("script:dev"), function() {
+    return gulp.src([
         `${ buildFolder }/**/*.js`
     ]).pipe(connect.reload());
 });
 
 gulp.task("lib:watch", () => {
-    gulp.watch(
+    return gulp.watch(
         [`${ libFolder }/*.js`, `${ libFolder }/**/*.js`],
-        ["docs:dev", "sass:dev", "script:dev", "connect:reload"]
+        gulp.series("docs:dev", "sass:dev", "script:dev", "connect:reload")
     ).on("error", swallowError);
 });
 
 gulp.task("layout:watch", () => {
-    gulp.watch(
+    return gulp.watch(
         [`${ layoutFolder }/*.hbs`, `${ layoutFolder }/**/*.hbs`],
-        ["docs:dev", "connect:reload"]
+        gulp.series("docs:dev", "connect:reload")
     ).on("error", swallowError);
 });
 
@@ -208,6 +203,6 @@ gulp.task("clean", (cb) => {
     rimraf(path.resolve(__dirname, buildFolder), cb);
 });
 
-gulp.task("build", ["docs", "sass", "script", "vendor", "swaggerui"]);
-gulp.task("watch", ["docs:dev", "sass:dev", "script:dev", "vendor:dev", "swaggerui", "connect", "sass:watch", "docs:watch", "script:watch", "lib:watch", "layout:watch"]);
-gulp.task("default", ["watch"]);
+gulp.task("build", gulp.series("docs", "sass", "script", "vendor", "swaggerui"));
+gulp.task("watch", gulp.series("docs:dev", "sass:dev", "script:dev", "vendor:dev", "swaggerui", gulp.parallel("connect", "sass:watch", "docs:watch", "script:watch", "lib:watch", "layout:watch")));
+gulp.task("default", gulp.series("watch"));
