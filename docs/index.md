@@ -10,5 +10,5 @@ tags:
 ---
 
 ## Overview
-The NB-IoT backend server is called *Horde* (as in "a horde of crows"). 
+The NB-IoT backend server is called *Horde* (as in "a horde of ravens"). 
 
