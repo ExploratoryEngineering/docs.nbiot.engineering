@@ -8,6 +8,6 @@ tags:
   - arduino
 ---
 
-Incoming arduino tutorial.
+Incoming arduino tutorials.
 
-## Arduino tutorial 
+## Arduino tutorials
