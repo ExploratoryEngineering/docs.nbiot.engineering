@@ -49,9 +49,6 @@ You can use any serial terminal application you like. We'll only explain how to 
 
 1. [Download and install CoolTerm for your OS](http://freeware.the-meiers.org/)
 1. Open app and click the «Options» button
-
-    ![CoolTerm Serial Port options screenshot](img/coolterm-serialport.png)
-    ![CoolTerm Terminal options screenshot](img/coolterm-terminal.png)
 1. Choose which serial port to use
     - This depends on which driver and operating system you use. 
         - In Linux the serial ports are treated as files, typical examples would be `/dev/ttyS0`, `/dev/ttyUSB0` if you use a USB to serial adapter or `/dev/ttyAMA0` on the Raspberry Pi.
@@ -59,10 +56,14 @@ You can use any serial terminal application you like. We'll only explain how to 
         - At last there is Windows. In Windows, the serial port is an abstraction called a "COM port". You can find these by looking the device manager. In the screenshot below, we have connected a TTL-232 USB cable to the machine:
         ![Device manager screenshot](img/device-manager-arrow.png)
 1. Set the baud rate to 9600
+
+  ![CoolTerm Serial Port options screenshot](img/coolterm-serialport.png)
 1. Go to «Terminal» options (on the left)
 1. Change to «Line Mode»
 1. Check «Local Echo» to see the commands you've sent
 1. Leave the rest of the options as default and click «OK»
+
+  ![CoolTerm Terminal options screenshot](img/coolterm-terminal.png)
 1. Click the «Connect»-button
 1. Enter commands in the input field near the bottom of the window
 
