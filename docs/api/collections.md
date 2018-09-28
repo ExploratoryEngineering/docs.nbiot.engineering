@@ -107,7 +107,8 @@ The server responds with a `204 NO CONTENT` when a collection is removed.
 The server provides a WebSocket to monitor the output of the devices. All data
 transmitted by the devices will be forwarded to the WebSocket.
 
-The data sent by the device is included in the field `payload`
+The data sent by the devices are included in the field `payload` and is [base64-encoded](https://en.wikipedia.org/wiki/Base64).
+
 
 ```json
 {
