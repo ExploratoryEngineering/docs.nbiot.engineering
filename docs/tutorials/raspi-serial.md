@@ -49,14 +49,16 @@ Reboot to apply!
 [![EE-NBIOT-01 connected to a Raspberry Pi](img/raspi-nbiot-small.jpg)<br/>
 See image in full resolution](img/raspi-nbiot.jpg)
 
-The picture above shows how to connect the EE-NBIOT-01 to the Raspberry Pi. The connections are as follows (from Raspberry Pi to the EE-NBIOT-01):
+The picture above shows how to connect the EE-NBIOT-01 to the Raspberry Pi. The connections are as follows:
 
-- PIN 2 (5V) to CC
-- PIN 6 (GND) to GND
-- PIN 8 (TX) to TX
-- PIN 10 (RX) to RX
+Raspberry Pi | EE-NBIOT-01
+-------------|------------
+PIN 2 (VCC 5V) - red | VCC
+PIN 6 (GND) - black | GND
+PIN 8 (TX) - orange | TXD
+PIN 10 (RX) - yellow | RXD
 
-The observant reader might have noticed the absurdity of connecting the RX pin (receive) to another RX pin and vice versa for the TX (transmit). The reason for this is that Ublox designed their SARA-N2 NB-IoT module to switch the pins around internally. See the [U-blox SARA-N2 integration manual](https://www.u-blox.com/sites/default/files/SARA-N2_SysIntegrManual_%28UBX-17005143%29.pdf) for more on the serial interface. Also, see https://www.raspberrypi.org/documentation/usage/gpio/ for more info on the Raspberry Pi pin layout.
+The observant reader might have noticed the absurdity of connecting the RX pin (receive) to another RX pin and vice versa for the TX (transmit). The reason for this is that u-blox designed their SARA-N2 NB-IoT module to switch the pins around internally. See the [u-blox SARA-N2 integration manual](https://www.u-blox.com/sites/default/files/SARA-N2_SysIntegrManual_%28UBX-17005143%29.pdf) for more on the serial interface. Also, see https://www.raspberrypi.org/documentation/usage/gpio/ for more info on the Raspberry Pi pin layout.
 
 ## Code Examples
 We've included two code examples of using serial to communicate with the EE-NBIOT-01, one written in Python and another written in C. They might not be pretty, but should give a glimpse of how to deal with serial communication on our board. In both examples, the command `AT+CGMI?` is sent to the board, to which it replies:
