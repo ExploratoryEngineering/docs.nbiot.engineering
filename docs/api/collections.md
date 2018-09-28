@@ -18,7 +18,7 @@ more than one collection at a time.
 Devices can be shared between team members by having a shared collection owned
 by the team.
 
-## List of collections: /collections
+## List of collections: `/collections`
 
 The list of collections contains a list of all collections you have access to,
 both read-only and read-write (ie you can administer). New collections can
