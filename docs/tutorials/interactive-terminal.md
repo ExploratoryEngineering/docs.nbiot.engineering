@@ -192,8 +192,8 @@ Most commands have 3 syntaxes. Read (`COMMAND?`), set (`COMMAND=...`) and test (
 | PDP context definition      | `AT+CGDCONT=[<cid>[,<PDP_ type>[,<APN>[,<PDP_addr>]]]]` ¹ | OK | Define the connection parameters for a PDP context. Usually to configure APN settings manually. See example further up. |
 | Device statistics           | `AT+NUESTATS[=<type>]` | `NUESTATS: <type>,<param_ name>,<value>`<br/>[NUESTATS: ...]<br/>OK | Request the most recent operational statistics of the module. Should be called right after sending. Some interesting values: TX power, ECL (equipment coverage class), throughput, bytes received, bytes sent, cell info. See chapter 4.8 in «SARA-N2 AT Commands» for full description of all fields and available `<type>`s. |
 | Reboot                      | `AT+NRB` | REBOOT_CAUSE_APPLICATION_AT<br/>u-blox<br/>OK | Reboot the SARA-N210. There is a short delay after the command issuing before the SARA-N210 reboots. |
-| Power saving mode settings  | `AT+CPSMS=[<mode>[,,,<Requested_Periodic_TAU>[,<Requested_Active_Time>]]]` ¹ | OK | Enable and configure the power saving mode. See own low power tutorial for full details and examples. |
-| Enable/disable eDRX         | `AT+CEDRXS=<mode>[,<AcT_type>[,<Requested_eDRX_value>]]` | OK | Configure extended discontinuous reception (eDRX) parameters. See own low power tutorial for full details and examples. |
+| Power saving mode settings  | `AT+CPSMS=[<mode>[,,,<Requested_Periodic_TAU>[,<Requested_Active_Time>]]]` ¹ | OK | Enable and configure the power saving mode. See own [low power tutorial](low-power.html) for full details and examples. |
+| Enable/disable eDRX         | `AT+CEDRXS=<mode>[,<AcT_type>[,<Requested_eDRX_value>]]` | OK | Configure extended discontinuous reception (eDRX) parameters. See own [low power tutorial](low-power.html) for full details and examples. |
 
 ¹ - Simplified syntax. See «SARA-N2 AT Commands» for full syntax.
 
