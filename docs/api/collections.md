@@ -24,87 +24,80 @@ The list of collections contains a list of all collections you have access to,
 both read-only and read-write (ie you can administer). New collections can
 be created by POSTing to this resource.
 
-### Sample request
-```shell
-curl https://api.nbiot.engineering/collections
+```bash
+$ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections
 {
   "collections": [
-    { "collectionId": "<id>", "owner": "<team id>", "tags": {} },
-    //... more collections
-    { "collectionId": "<id>", "owner": "<team id>", "tags": {} }
+    {
+      "collectionId": "17dh0cf43jfgl8",
+      "teamId": "17dh0cf43jfgl8",
+      "tags": {
+        "name": "My default collection"
+      }
+    }
   ]
 }
 ```
 
-## Collection detail: /collections/{collectionId}
-Details for each collection is available at the detail resource. This resource
-accepts GET, PATCH and DELETE verbs.
+### Creating a new collection
 
-### Sample request
-```shell
-curl https://api.nbiot.engineering/collections/{collectionid}
+Send a `POST` request to the `/collections` resource to create a new collection. There is
+no required fields so an empty JSON object is sufficient. It is recommended to use the [tags](tags.md)
+resource and add an attribute named `name` to identify the collection. The console will use this attribute
+when displaying the list of collections.
+
+```bash
+$ curl -HX-API-Token:${TOKEN} -XPOST -d'{"tags":{"name": "My first collection"}}' \
+    https://api.nbiot.telenor.io/collections
 {
-  "collectionId": "<collectionid>",
-  "tags": { },
-  "devices": [ <list of devices> ],
-  "owner": "<team id>"
+  "collectionId": "17dh0cf43jfgli",
+  "teamId": "17dh0cf43jfgl8",
+  "tags": {
+    "name": "My first collection"
+  }
 }
 ```
 
-Note that the list of devices might be truncated if there's a lot of devices
-in the collection.
+## Collection detail: `/collections/{collectionId}`
+Details for each collection is available at the detail resource:
 
-Updating the collection with a new owner requires a PATCH verb:
-
-```shell
-curl -XPATCH -d'{"owner": "<new team owner>"}' https://api.nbiot.engineering/collections/{id}
-{ <updated collection as response> }
-```
-
-## Device list: /collections/{collectionId}/devices
-The list of devices can be found in the devices resource:
-
-```shell
-curl https://api.nbiot.engineering/collections/{id}/devices
+```bash
+curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections/17dh0cf43jfgli
 {
-  "devices": [
-    { "deviceId": "<id>", "imsi": "<imsi>", "imei": "<imei>", "tags":{}},
-    // ... more devices
-  ]
+  "collectionId": "17dh0cf43jfgli",
+  "teamId": "17dh0cf43jfgl8",
+  "tags": {
+    "name": "My first collection"
+  }
 }
 ```
 
-## Device detail: /collections/{collectionId}/devices/{deviceId}
+### Updating a collection
 
-You can access a single device by GETting the device resource. The device
-can be removed by using the DELETE verb and transferred to another collection
-using the PATCH verb.
+Use `PATCH` to update the collection. You must be the administrator of the team owning the
+collection *and* and administrator of the team you assign the collection to if you change the ownership
+of an collection.
 
-### Reading a device
-```shell
-curl https://api.nbiot.engineering/collections/{collectionid}/devices/{deviceid}
+```bash
+$ curl -HX-API-Token:${TOKEN} -XPATCH -d'{"teamId": "17dh0cf43jfgl9"}' \
+    https://api.nbiot.telenor.io/collections/17dh0cf43jfgli
 {
-  "deviceId": "<id>",
-  "imsi": "<imsi>",
-  "imei": "<imei>",
-  "tags":{}
-}
-```
-### Removing a device
-```shell
-curl -XDELETE https://api.nbiot.engineering/collections/{collectionid}/devices/{deviceid}
-Transfer or update device
-curl -XPATCH -d'{"collectionId": "<new collection>"}' https://api.nbiot.engineering/collections/{collectionid}/devices/{deviceId}
-{
-  "deviceId": "<id>",
-  "imsi": "<imsi>",
-  "imei": "<imei>",
-  "tags":{},
-  "collectionId": "<updated collection>"
+  "collectionId": "17dh0cf43jfgli",
+  "teamId": "17dh0cf43jfgl9",
+  "tags": {
+    "name": "My first collection"
+  }
 }
 ```
 
-## Data from devices in a collection: /collections/{collectionId}/from
-This resource works identical to the device `from` resource but includes data
-rom all devices in the collection.
+The server responds with the updated collectino when successful.
 
+### Removing a collection
+
+Use `DELETE` to remove a collection. The collection can't contain any devices or outputs when it is deleted.
+
+```bash
+$ curl -HX-API-Token:${TOKEN} -XDELETE https://api.nbiot.telenor.io/collections/17dh0cf43jfgli
+```
+
+The server responds with a `204 NO CONTENT` when a collection is removed.
