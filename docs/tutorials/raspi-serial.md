@@ -7,10 +7,11 @@ tags:
   - tutorial
   - raspberry pi
   - serial communication
+  - ee-nbiot-01
 ---
 
 ## Preface
-This tutorial will not cover how to connect to, or to configure the IP stack of your Raspberry Pi. It will focus on how to set up, configure, and use serial ports (UART) to communicate with the EE-NBIOT-01. 
+This tutorial will focus on how to set up, configure, and use serial ports (UART) to communicate with the [EE-NBIOT-01](https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module). It will not cover how to connect to or configure the IP stack of your Raspberry Pi. 
 
 ## Serial Communication
 All versions of the Raspberry Pi have two serial ports, one is simple and flaky and the other is steady and implemented in hardware. We are interested in the hardware serial port for our application but on the Raspberry Pi 3 and the Raspberry Zero, alas, this serial port is used for the on-board Bluetooth module. **So, if you plan to use the Raspberry Pi 3 or the Zero, you will have to configure you Raspberry Pi to free the serial port from the Bluetooth module's shackles.** Fortunately this is quite simple. The first step is to enable the _GPIO serial port_. This can be done by editing `/boot/config.txt` and adding the following to the end of the file: 
