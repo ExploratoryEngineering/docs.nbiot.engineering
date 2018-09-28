@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi serial communication tutorial
+title: Raspberry Pi serial communication
 lunr: true
 nav_groups:
   - primary
