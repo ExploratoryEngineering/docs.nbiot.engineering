@@ -49,6 +49,7 @@ You can use any serial terminal application you like. We'll only explain how to 
 
 1. [Download and install CoolTerm for your OS](http://freeware.the-meiers.org/)
 1. Open app and click the «Options» button
+
     ![CoolTerm Serial Port options screenshot](img/coolterm-serialport.png)
     ![CoolTerm Terminal options screenshot](img/coolterm-terminal.png)
 1. Choose which serial port to use
