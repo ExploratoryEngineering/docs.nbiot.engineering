@@ -90,7 +90,7 @@ $ curl -HX-API-Token:${TOKEN} -XPATCH -d'{"teamId": "17dh0cf43jfgl9"}' \
 }
 ```
 
-The server responds with the updated collectino when successful.
+The server responds with the updated collection when successful.
 
 ### Removing a collection
 
@@ -101,3 +101,37 @@ $ curl -HX-API-Token:${TOKEN} -XDELETE https://api.nbiot.telenor.io/collections/
 ```
 
 The server responds with a `204 NO CONTENT` when a collection is removed.
+
+## Collection data stream: `/collections/{collectionId}/from`
+
+The server provides a WebSocket to monitor the output of the devices. All data
+transmitted by the devices will be forwarded to the WebSocket.
+
+The data sent by the device is included in the field `payload`
+
+```json
+{
+  "device": {
+    "deviceId":"17dh0cf43jfgl8",
+    "collectionId":"17dh0cf43jfgli",
+    "imei":"111222333444",
+    "imsi":"123456789",
+    "tags":{
+      "name":"My first device"
+    }
+  },
+  "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
+  "received":1538163685141
+}
+```
+
+At regular intervals the server will send a keepAlive message on the WebSocket:
+
+```json
+{
+  "keepAlive": true
+}
+```
+
+The keep-alive message will only be sent if there has been no data for 30s.
+
