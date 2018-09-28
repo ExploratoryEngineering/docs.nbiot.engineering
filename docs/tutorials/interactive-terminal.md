@@ -120,7 +120,6 @@ Now we're ready to update the config. It's not persisted on the SARA-N210, so re
     > OK
     > OK
     > OK
-    > OK
 
 ### Hello world!
 Enable the radio:
