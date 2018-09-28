@@ -9,10 +9,6 @@ tags:
   - ee-nbiot-01
 ---
 
-## TODO
-- [ ] Update link to "See own guide on low power"
-- [ ] Add link to how to set up a device in the NB-IoT Developer Platform
-
 The [EE-NBIOT-01][1] board is just a breakout board to the [u-blox SARA-N210][2] radio module with a Telenor Norway SIM-card, antenna and a voltage regulator.
 
 This guide is a simple walk-through of how to get started with communication with the module directly from your computer without the use of a microcontroller. The same commands can of course be called from a microcontroller instead, so with this knowledge you can implement a library for the EE-NBIOT-01 for any microcontroller in any language you prefer.
