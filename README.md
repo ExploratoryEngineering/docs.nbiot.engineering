@@ -1,6 +1,6 @@
 # NB-IoT server doc and tutorials
-[![Build Status](https://img.shields.io/travis/TelenorFrontend/docs-scaffold.svg)](https://travis-ci.org/TelenorFrontend/docs-scaffold)
-[![Dependencies](https://img.shields.io/david/TelenorFrontend/docs-scaffold.svg)](https://david-dm.org/telenorfrontend/docs-scaffold)
+[![Build Status](https://travis-ci.com/ExploratoryEngineering/docs.nbiot.engineering.svg?branch=master)](https://travis-ci.com/ExploratoryEngineering/docs.nbiot.engineering)
+[![Dependencies](https://img.shields.io/david/ExploratoryEngineering/docs.nbiot.engineering.svg)](https://david-dm.org/exploratoryengineering/docs.nbiot.engineering)
 
 Repo containing documentation and tutorials for interacting with Horde, Telenors NB-IoT server.
 
