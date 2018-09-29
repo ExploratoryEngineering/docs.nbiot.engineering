@@ -1,7 +1,7 @@
 ---
 title: Collections
 lunr: true
-nav_sort: 1
+nav_sort: 10
 nav_groups:
   - primary
 tags:

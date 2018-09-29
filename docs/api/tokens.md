@@ -1,7 +1,7 @@
 ---
 title: Tokens
 lunr: true
-nav_sort: 7
+nav_sort: 70
 nav_groups:
   - primary
 tags:

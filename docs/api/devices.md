@@ -1,7 +1,7 @@
 ---
 title: Devices
 lunr: true
-nav_sort: 3
+nav_sort: 20
 nav_groups:
   - primary
 tags:

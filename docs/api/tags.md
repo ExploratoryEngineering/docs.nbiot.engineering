@@ -1,7 +1,7 @@
 ---
 title: Tags on resorces
 lunr: true
-nav_sort: 3
+nav_sort: 60
 nav_groups:
   - primary
 tags:

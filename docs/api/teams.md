@@ -1,7 +1,7 @@
 ---
 title: Teams
 lunr: true
-nav_sort: 5
+nav_sort: 40
 nav_groups:
   - primary
 tags:

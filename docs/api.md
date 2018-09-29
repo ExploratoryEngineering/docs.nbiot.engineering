@@ -42,12 +42,15 @@ After setting the appropriate access settings, click the Create button. Your
 newly created token will then be listed along with any others that you created
 before.
 
-An API token must be provided in the `X-API-Token` header with every request.
+An API token must be provided in the `X-API-Token` header with every request. The examples
+assumes an environment variable named `TOKEN` with the actual value.
 
-You can f.e. use `cURL` or `wget` to query the API.
+You can f.e. use `cURL` or `wget` to query the API. All of the examples assumes an
+environment variable with the token. If you prefer a local app the [Postman app](https://www.getpostman.com/) is an alternative.
 
 ```shell
-curl -HX-API-Token:<your token here> https://api.nbiot.telenor.io/collections
+$ export TOKEN=<your API token>
+curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections
 {
   "collections": [
     {

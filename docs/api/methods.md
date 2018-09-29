@@ -1,7 +1,7 @@
 ---
 title: HTTP Methods
 lunr: true
-nav_sort: 70
+nav_sort: 80
 nav_groups:
   - primary
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Errors
 lunr: true
-nav_sort: 80
+nav_sort: 100
 nav_groups:
   - primary
 tags:

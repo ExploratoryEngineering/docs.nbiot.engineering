@@ -1,7 +1,7 @@
 ---
 title: Team invites
 lunr: true
-nav_sort: 5
+nav_sort: 50
 nav_groups:
   - primary
 tags:

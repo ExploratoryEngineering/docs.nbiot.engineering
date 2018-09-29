@@ -1,7 +1,7 @@
 ---
 title: Outputs
 lunr: true
-nav_sort: 2
+nav_sort: 30
 nav_groups:
   - primary
 tags:
