@@ -113,7 +113,7 @@ The server responds with a `204 NO CONTENT` when the device is deleted.
 
 ## Device data stream: `/collections/{collectionId}/devices/{deviceId}/from`
 
-Like the WebSocket on the [collection](collection.md) you can monitor the data received from the device
+Like the WebSocket on the [collection](collections.md) you can monitor the data received from the device
 on a WebSocket. The format is identical to the collection's WebSocket but you'll only
 see data from a single device:
 

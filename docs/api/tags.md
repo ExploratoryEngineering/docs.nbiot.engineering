@@ -14,10 +14,10 @@ tags:
 
 **Tags** are user-defined attributes for [collections](devices.md), [teams](teams.md), [devices](devices.md), [outputs](outputs.md) and [tokens](tokens.md). All tags are strings and must be unique for each item, ie you can't have two attributes called "name". The examples uses `/teams/{teamId}/tags` but the same methods applies to tags on
 
-  * Collections at `/collections/{collectionId}/devices/{deviceId}/tags`
-  * Teams found at `/teams/{teamId}/tags`
-  * Outputs at `/collections/{collectionId}/outputs/{outputId}/tags`
-  * Tokens at `/tokens/{token}/tags`
+* Collections at `/collections/{collectionId}/devices/{deviceId}/tags`
+* Teams found at `/teams/{teamId}/tags`
+* Outputs at `/collections/{collectionId}/outputs/{outputId}/tags`
+* Tokens at `/tokens/{token}/tags`
 
 ## List tags: `.../tags`
 
