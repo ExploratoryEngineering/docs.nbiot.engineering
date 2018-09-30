@@ -1,6 +1,7 @@
 ---
-title: Using Arduino as serial adapter
+title: Arduino as serial adapter
 lunr: true
+nav_sort: 50
 nav_groups:
   - primary
 tags:

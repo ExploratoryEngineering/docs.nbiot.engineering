@@ -1,6 +1,7 @@
 ---
-title: Interactive terminal to EE-NBIOT-01
+title: Interactive terminal
 lunr: true
+nav_sort: 20
 nav_groups:
   - primary
 tags:

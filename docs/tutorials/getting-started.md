@@ -1,6 +1,7 @@
 ---
 title: Getting started with Telenor NB-IoT Developer Platform
 lunr: true
+nav_sort: 10
 nav_groups:
   - primary
 tags:

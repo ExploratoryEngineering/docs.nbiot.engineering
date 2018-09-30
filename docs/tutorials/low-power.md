@@ -1,6 +1,7 @@
 ---
 title: Conserving battery power
 lunr: true
+nav_sort: 60
 nav_groups:
   - primary
 tags:

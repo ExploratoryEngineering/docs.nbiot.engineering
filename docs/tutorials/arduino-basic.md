@@ -1,6 +1,7 @@
 ---
-title: Arduino tutorial for EE-NBIOT-01
+title: Arduino getting started
 lunr: true
+nav_sort: 30
 nav_groups:
   - primary
 tags:

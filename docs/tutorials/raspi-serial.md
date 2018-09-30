@@ -1,6 +1,7 @@
 ---
-title: Raspberry Pi serial communication
+title: Raspberry Pi getting started
 lunr: true
+nav_sort: 40
 nav_groups:
   - primary
 tags:
