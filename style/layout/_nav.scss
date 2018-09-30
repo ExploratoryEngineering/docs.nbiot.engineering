@@ -4,7 +4,7 @@
 
 .docs-nav {
   position: fixed;
-  top: 0;
+  top: 4px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -19,7 +19,7 @@
   z-index: 3;
 
   @include desktop {
-    top: 0;
+    top: 4px;
     width: $docs-width-sidebar;
     padding-left: calc(50% - #{$docs-width-content--desktop} / 2 - #{$docs-width-sidebar});
     border-right: none;

@@ -9,3 +9,13 @@ html {
     overflow-x: hidden;
   }
 }
+
+.docs-brand-border {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background-color: #007ad0;
+  z-index: 5;
+}
