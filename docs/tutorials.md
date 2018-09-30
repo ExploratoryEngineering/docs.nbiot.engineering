@@ -4,7 +4,7 @@ lunr: true
 nav_sort: 2
 nav_groups:
   - primary
-nav_group: true
+nav_subgroup: true
 tags:
   - tutorial
   - how to
