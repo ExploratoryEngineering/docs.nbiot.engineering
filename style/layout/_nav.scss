@@ -37,12 +37,17 @@
     width: 100%;
     height: 64px;
     margin-bottom: 24px;
+    padding-left: 16px;
     border-bottom: 1px solid $docs-color--black12;
     // background-image: url(../logo_text_grey.png);
     background-repeat: no-repeat;
     background-position: 16px center;
     background-size: $docs-width-logo--mobile auto;
     box-sizing: border-box;
+    color: rgba(0, 0, 0, .87);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 64px;
 
     @include desktop {
       margin-bottom: 40px;

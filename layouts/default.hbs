@@ -1,10 +1,11 @@
 <!doctype html>
 <html class="docs-html">
+
 <head>
   <meta charset="utf-8">
   <title>{{ title }} - {{ docName }}</title>
   {{#if description}}
-    <meta name="description" content="{{ description }}">
+  <meta name="description" content="{{ description }}">
   {{/if}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,23 +25,27 @@
 
   <link rel="stylesheet" type="text/css" href="{{ webRoot }}style/style.css">
   {{#if enableOpenApi }}
-    <link rel="stylesheet" type="text/css" href="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.css">
+  <link rel="stylesheet" type="text/css" href="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.css">
   {{/if}}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link id="searchIndex" href="{{ webRoot }}index.json" rel="preload" as="fetch">
 </head>
+
 <body class="docs-body">
   <div id="docs-topbar" class="docs-topbar no-print">
     <div id="docs-topbar__inner" class="docs-topbar__inner">
-      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i class="material-icons md-24">menu</i></a>
-      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i class="material-icons md-24">arrow_back</i></a>
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
       <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
-      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1" autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
       <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
       <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
 
       {{#each menuLinks}}
-          <a class="docs-topbar__link visible-desktop" href="{{ this }}">{{ @key }}</a>
+      <a class="docs-topbar__link visible-desktop" href="{{ this }}">{{ @key }}</a>
       {{/each}}
     </div>
     <div id="docs-search" class="docs-search">
@@ -49,53 +54,54 @@
   </div>
   <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
     <nav class="docs-nav">
-      <a class="docs-nav__logo" href="{{ webRoot }}"></a>
-        {{> _nav navs.primary}}
-        {{#if navs.secondary }}
-          <hr class="docs-nav__hr" />
-          {{> _nav navs.secondary}}
-        {{/if}}
-        {{#if navs.tertiary }}
-          <hr class="docs-nav__hr" />
-          {{> _nav navs.tertiary}}
-        {{/if}}
-        <div class="docs-sidebar__menuLinks hidden-desktop">
-          <hr class="docs-nav__hr" />
-          <ul class="docs-nav__ul">
-            {{#each menuLinks}}
-              <li class="docs-nav__li">
-                <a href="{{ this }}" class="docs-nav__item">{{ @key }}</a>
-              </li>
-            {{/each}}
-          </ul>
-        </div>
+      <a class="docs-nav__logo" href="{{ webRoot }}">NB-IoT Docs</a>
+      {{> _nav navs.primary}}
+      {{#if navs.secondary }}
+      <hr class="docs-nav__hr" />
+      {{> _nav navs.secondary}}
+      {{/if}}
+      {{#if navs.tertiary }}
+      <hr class="docs-nav__hr" />
+      {{> _nav navs.tertiary}}
+      {{/if}}
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          {{#each menuLinks}}
+          <li class="docs-nav__li">
+            <a href="{{ this }}" class="docs-nav__item">{{ @key }}</a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
     </nav>
   </div>
   <div id="barba-wrapper" class="docs-wrapper">
     <div class="docs-content barba-container">
       <h1>{{ title }}</h1>
       {{#unless index }}
-        {{> _breadcrumbs }}
+      {{> _breadcrumbs }}
       {{/unless}}
       {{{ contents }}}
       <div class="lesson-nav">
         {{#if previous}}
-          <a class="prev" href="{{{previous.url}}}">&larr; {{{previous.title}}}</a>
+        <a class="prev" href="{{{previous.url}}}">&larr; {{{previous.title}}}</a>
         {{/if}}
         {{#if next}}
-          <a class="next right" href="{{{next.url}}}">{{{next.title}}} &rarr;</a>
+        <a class="next right" href="{{{next.url}}}">{{{next.title}}} &rarr;</a>
         {{/if}}
       </div>
       {{#if editUrl }}
-        <a class="docs-edit-btn no-print" href="{{ editUrl }}" target="_blank">Edit this page</a>
+      <a class="docs-edit-btn no-print" href="{{ editUrl }}" target="_blank">Edit this page</a>
       {{/if}}
     </div>
   </div>
   {{#if enableOpenApi }}
-    <script src="{{ webRoot }}script/swagger-ui/swagger-ui-bundle.js" ></script>
-    <script src="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.js" ></script>
+  <script src="{{ webRoot }}script/swagger-ui/swagger-ui-bundle.js"></script>
+  <script src="{{ webRoot }}script/swagger-ui/swagger-ui-docs-preset.js"></script>
   {{/if}}
-  <script src="{{ webRoot }}script/vendor.js" ></script>
-  <script src="{{ webRoot }}script/script.js" ></script>
+  <script src="{{ webRoot }}script/vendor.js"></script>
+  <script src="{{ webRoot }}script/script.js"></script>
 </body>
+
 </html>
