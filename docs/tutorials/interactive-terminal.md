@@ -122,6 +122,16 @@ Now we're ready to update the config. It's not persisted on the SARA-N210, so re
     > OK
     > OK
 
+If you haven't registered the devie in the [Telenor NB-IoT Developer Platform](https://nbiot.engineering) yet, now is a good time. You'll need the IMSI and IMEI:
+
+    AT+CIMI;+CGSN=1;
+    > <IMSI number>
+    > OK
+    > +CGSN: <IMEI number>
+    > OK
+
+Save these numbers and follow the [getting started guide](getting-started.html).
+
 ### Hello world!
 Enable the radio:
 
