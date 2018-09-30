@@ -1,5 +1,5 @@
 ---
-title: Tags on resorces
+title: Tags on resources
 lunr: true
 nav_sort: 60
 nav_groups:
