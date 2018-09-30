@@ -46,8 +46,9 @@ So now we've disabled the console, let's swap the serial ports around so we can 
 Reboot to apply!
 
 ## How to connect
-[![EE-NBIOT-01 connected to a Raspberry Pi](img/raspi-nbiot-small.jpg)<br/>
-See image in full resolution](img/raspi-nbiot.jpg)
+
+<a href="img/raspi-nbiot.jpg" target="_blank">![EE-NBIOT-01 connected to a Raspberry Pi](img/raspi-nbiot-small.jpg)<br/>
+  See image in full resolution</a>
 
 The picture above shows how to connect the EE-NBIOT-01 to the Raspberry Pi. The connections are as follows:
 

@@ -16,15 +16,15 @@ If you don't have a USB to serial adapter but would still like to get started pl
 ### Arduino with 3.3V operating voltage
 The boards with 3.3V logic don't need a voltage divider and are straightforward to use: Arduino Zero, Arduino MKR Zero, Arduino M0, Arduino Due. See the photo below for how to connect these boards.
 
-[![Arduino MKR Zero serial forwarder](img/mkrzero-small.jpg)<br/>
-See image in full resolution](img/mkrzero.jpg)
+<a href="img/mkrzero.jpg" target="_blank">![Arduino MKR Zero serial forwarder](img/mkrzero-small.jpg)<br/>
+See image in full resolution</a>
 
 ### Arduino with 5V operating voltage
 Using a 100Ω resistor for R1 and a 220Ω resistor for R2 should give an output of 3.4V - which is well below the max of 4.25V of the SARA-N210. Because the EE-NBIOT-01 uses 3.3V internally, RX will be 3.3V already, which is enough to trigger high on the Arduino pin. In other words we don't need a voltage divider for RX.
 
 ![Arduino serial forwarder schematics](img/arduino-serial-forwarder-sch.png)
-[![Arduino serial forwarder breadboard](img/arduino-serial-forwarder-small.jpg)<br/>
-See image in full resolution](img/arduino-serial-forwarder.jpg)
+<a href="img/arduino-serial-forwarder.jpg" target="_blank">![Arduino serial forwarder breadboard](img/arduino-serial-forwarder-small.jpg)<br/>
+See image in full resolution</a>
 
 ### Arduino NB-IoT Serial Forwarder
 You'll also need to upload this sketch to the Arduino board

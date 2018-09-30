@@ -94,8 +94,8 @@ GND - black | GND
 RX - yellow | RXD
 TX (**3.3V**) - orange | TXD
 
-[![FTDI to EE-NBIOT-01](img/ftdi-small.jpg)<br/>
-See image in full resolution](img/ftdi.jpg)
+<a href="img/ftdi.jpg" target="_blank">![FTDI to EE-NBIOT-01](img/ftdi-small.jpg)<br/>
+See image in full resolution</a>
 
 ## Terminal commands
 You control the u-blox SARA-N210 by sending it AT-commands over the serial connection. The response will be prefixed with `> ` to indicate it's a response and not something you should write in the terminal.
