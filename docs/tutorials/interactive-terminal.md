@@ -130,7 +130,7 @@ If you haven't registered the devie in the [Telenor NB-IoT Developer Platform](h
     > +CGSN: <IMEI number>
     > OK
 
-Save these numbers and follow the [getting started guide](getting-started.html).
+Save these numbers and follow the [getting started guide](getting-started.html) to add the device, so you'll be able to watch the incoming data that you're about to send in the next section.
 
 ### Hello world!
 Enable the radio:
