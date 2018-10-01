@@ -50,7 +50,7 @@ Because the I/O on the Arduino Uno is 5V, you need a voltage divider on TX so we
 See image in full resolution](img/arduino-uno.jpg)
 
 ## Arduino NB-IoT library
-Download and install our [Telenor NB-IoT Arduino library](https://github.com/ExploratoryEngineering/ArduinoNBIoT/blob/master/README.md). After it is installed, you will find two example sketches under:
+Download and install our [Telenor NB-IoT Arduino library](https://github.com/ExploratoryEngineering/ArduinoNBIoT/). After it is installed, you will find two example sketches under:
 - File
     - Examples
         - Telenor NB-IoT
