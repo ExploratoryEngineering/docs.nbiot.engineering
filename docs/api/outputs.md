@@ -125,7 +125,8 @@ The array of messages might contain more than one message if there's a lot of me
             }
         },
         "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
-        "received":1538163685141
+        "received":1538163685141,
+        "type": "data"
     }]
 }
 ```
@@ -176,7 +177,8 @@ The payload is a JSON structure identical to the [WebSocket](devices.md) output:
         }
     },
     "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
-    "received":1538163685141
+    "received":1538163685141,
+    "type": "data
 }
 ```
 
