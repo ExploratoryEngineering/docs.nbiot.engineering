@@ -129,7 +129,8 @@ see data from a single device:
     }
   },
   "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
-  "received":1538163685141
+  "received":1538163685141,
+  "type": "data"
 }
 ```
 
@@ -137,7 +138,7 @@ At regular intervals the server will send a keepAlive message on the WebSocket:
 
 ```json
 {
-  "keepAlive": true
+  "type": "keepAlive"
 }
 ```
 
