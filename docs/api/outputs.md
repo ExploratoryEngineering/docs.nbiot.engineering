@@ -152,12 +152,12 @@ The MQTT output sends data to a MQTT broker.
 
 ```json
 {
-    "endpoint": "<endpoint for broker, required>",
-    "certCheck": <flag for certificate check, optional>,
-    "username": "<user name for broker, optional>",
-    "password": "<password for broker, optional>",
-    "clientId": "<client id to use when connecting to broker, required>",
-    "topicName": "<topic to use, required>"
+    "endpoint":         "<endpoint for broker, required>",
+    "disableCertCheck": <flag to disable certificate check, optional>,
+    "username":         "<user name for broker, optional>",
+    "password":         "<password for broker, optional>",
+    "clientId":         "<client id to use when connecting to broker, required>",
+    "topicName":        "<topic to use, required>"
 }
 ```
 The endpoint must be formatted as `tcp://<host>:<port>` for unencrypted connections, `ssl://<host>:<port>` for TLS connections. TLS connections is highly recommended. If you use a self-signed certificate you can disable the certificate check by setting the check flag.
