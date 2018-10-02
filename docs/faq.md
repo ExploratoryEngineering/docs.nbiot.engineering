@@ -10,6 +10,24 @@ tags:
   - questions
 ---
 
+## What IP and port should I send the data to?
+
+The default IP for the backend server is **172.16.15.14** and the port should be set to **1234**. 
+
+## What local port should I use?
+
+You can use any port you like for the local port (the `AT+NSOCR` command).
+
+## What commands do I need to send data from the SARA N2 module?
+
+This will send "Hello world" ("48656C6C6F20576F726C6421") to the backend server:
+
+```text
+AT+NSOCR="DGRAM",17,8888,1
+AT+NSOST=0,"172.16.15.14",1234,12,"48656C6C6F20576F726C6421"
+AT+NSOCL=0
+```
+
 ## NB-IoT and LTE Cat M1 (LTE-M)
 
 ### What is NarrowBand-IoT (NB-IoT)?
