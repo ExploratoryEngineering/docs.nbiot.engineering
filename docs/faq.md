@@ -10,9 +10,11 @@ tags:
   - questions
 ---
 
+![Frequently Asked Questions](undraw_faq.png)
+
 ## What IP and port should I send the data to?
 
-The default IP for the backend server is **172.16.15.14** and the port should be set to **1234**. 
+The default IP for the backend server is **172.16.15.14** and the port should be set to **1234**.
 
 ## What local port should I use?
 

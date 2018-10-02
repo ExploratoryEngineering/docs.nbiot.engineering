@@ -13,6 +13,7 @@ tags:
 
 The REST API is hosted at https://api.nbiot.telenor.io/.
 
+![The NB-IoT API](undraw_api.png)
 ## Introduction
 The NB-IoT devices are - not surprisingly - called **devices**. Devices are
 grouped into **collections**. A collection may contain zero or more devices.
