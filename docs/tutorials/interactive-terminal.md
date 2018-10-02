@@ -133,17 +133,7 @@ If you haven't registered the devie in the [Telenor NB-IoT Developer Platform](h
 Save these numbers and follow the [getting started guide](getting-started.html) to add the device, so you'll be able to watch the incoming data that you're about to send in the next section.
 
 ### Hello world!
-Enable the radio:
-
-    AT+CFUN=1
-    > OK
-
-Register the device on the network:
-
-    AT+CGATT=1
-    > OK
-
-Are we registered on the network yet?:
+Check if we are registered on the network yet?:
 
     AT+CEREG?
     > +CEREG: 0,2
@@ -165,13 +155,13 @@ Then open a new UDP socket. If successful, the first line of the response will b
 
 Now socket 0 is ready to send UDP data to a server. The APN we configured earlier will forward data from devices in the Telenor network to your application server.
 
-    AT+NSOST=0,"172.16.7.197",31415,12,"48656C6C6F20576F726C6421"
+    AT+NSOST=0,"172.16.15.14",1234,12,"48656C6C6F20576F726C6421"
     > 0,12
     > OK
 
 The first response line is `<socket>`,`<sent_length>`, followed by OK if it was successful.
 
-The socket we used (`0`) should be closed after sending.
+To close socket 0:
 
     AT+NSOCL=0
 
