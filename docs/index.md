@@ -24,10 +24,10 @@ for the [outputs](api/outputs.md) which shows you how the data is sent to f.e. M
 
 We have several client libraries available that you can experiment with:
 
-* [Python](https://github.com/telenordigital/horde-python)
+* [Python](https://github.com/telenordigital/nbiot-python)
 * [Go](https://github.com/telenordigital/nbiot-go)
 * [Java](https://github.com/telenordigital/nbiot-java)
-* [C#](https://github.com/telenordigital/horde-csharp)
+* [C#](https://github.com/telenordigital/nbiot-csharp)
 
 # Backend IP address
 
