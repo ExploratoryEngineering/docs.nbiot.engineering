@@ -20,7 +20,7 @@ The outputs have three common elements
 ## Output list
 The currently listed outputs
 ```bash
-$ curl -HX-API-Token:${TOKEN} http://localhost:8080/collections/17dh0cf43jfglk/outputs
+$ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs
 {
   "collectionId": "17dh0cf43jfglk",
   "outputs": []
