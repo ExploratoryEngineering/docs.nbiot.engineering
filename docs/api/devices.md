@@ -144,6 +144,11 @@ At regular intervals the server will send a keepAlive message on the WebSocket:
 
 The keep-alive message will only be sent if there has been no data for 30s.
 
+### API key as query parameter
+
+Most WebSocket libraries doesn't support headers in requests; the API token can
+be supplied through the `api_token` parameter. The API token *must* be readonly.
+
 ## Downstream messages: `/collections/{collectionId}/devices/{deviceId}/to`
 
 If you want to send a message *to* a device you `POST` the following JSON structure

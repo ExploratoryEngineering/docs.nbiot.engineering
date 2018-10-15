@@ -110,7 +110,6 @@ WebSocket.
 
 The data sent by the devices are included in the field `payload` and is [base64-encoded](https://en.wikipedia.org/wiki/Base64).
 
-
 ```json
 {
   "device": {
@@ -136,6 +135,11 @@ At regular intervals the server will send a keepAlive message on the WebSocket:
 ```
 
 The keep-alive message will only be sent if there has been no data for 30s.
+
+### API key as query parameter
+
+Most WebSocket libraries doesn't support headers in requests; the API token can
+be supplied through the `api_token` parameter. The API token *must* be readonly.
 
 ## Downstream data: `/collections/{collectionId}/to`
 
