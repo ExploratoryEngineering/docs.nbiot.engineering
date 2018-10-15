@@ -106,7 +106,7 @@ $ curl -HX-API-Token:${TOKEN} -XPATCH -d'{"imei": "111222333444"}' \
 Devices can be removed with the `DELETE` method:
 
 ```bash
-$ curl -HX-API-Token:${TOKEN} -XDELETE http://localhost:8080/collections/17dh0cf43jfglk/devices/17dh0cf43jfgl8
+curl -HX-API-Token:${TOKEN} -XDELETE http://localhost:8080/collections/17dh0cf43jfglk/devices/17dh0cf43jfgl8
 ```
 
 The server responds with a `204 NO CONTENT` when the device is deleted.
@@ -144,3 +144,18 @@ At regular intervals the server will send a keepAlive message on the WebSocket:
 
 The keep-alive message will only be sent if there has been no data for 30s.
 
+## Downstream messages: `/collections/{collectionId}/devices/{deviceId}/to`
+
+If you want to send a message *to* a device you `POST` the following JSON structure
+to the resource:
+
+```json
+{
+  "port": <port number>,
+  "payload": "<base 64 encoded bytes>"
+}
+```
+
+Both port and payload are required fields. Payload is base64 encoded. The device
+must listen on the specified port. If successful the service will respond with
+`204 NO CONTENT`.
