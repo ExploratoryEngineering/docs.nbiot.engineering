@@ -29,11 +29,14 @@ We have several client libraries available that you can experiment with:
 * [Java](https://github.com/telenordigital/nbiot-java)
 * [C#](https://github.com/telenordigital/nbiot-csharp)
 
-# Backend IP address
+# Backend IP address and APN
 
 This is the **official address** for the NB-IoT backend:
 
 Send data to `172.16.15.14` on port `1234`
+
+The APN on your device **must** be set to `mda.ee` if you want to send data to
+the IoT backend. Other APNs does not work.
 
 # SARA N2 AT command cheat sheet
 
