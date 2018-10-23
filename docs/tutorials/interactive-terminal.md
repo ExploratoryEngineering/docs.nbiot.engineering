@@ -194,6 +194,7 @@ Most commands have 3 syntaxes. Read (`COMMAND?`), set (`COMMAND=...`) and test (
 | Reboot                      | `AT+NRB` | REBOOT_CAUSE_APPLICATION_AT<br/>u-blox<br/>OK | Reboot the SARA-N210. There is a short delay after the command issuing before the SARA-N210 reboots. |
 | Power saving mode settings  | `AT+CPSMS=[<mode>[,,,<Requested_Periodic_TAU>[,<Requested_Active_Time>]]]` ¹ | OK | Enable and configure the power saving mode. See own [low power tutorial](low-power.html) for full details and examples. |
 | Enable/disable eDRX         | `AT+CEDRXS=<mode>[,<AcT_type>[,<Requested_eDRX_value>]]` | OK | Configure extended discontinuous reception (eDRX) parameters. See own [low power tutorial](low-power.html) for full details and examples. |
+| Get network time/clock | AT+CCLK? | `+CCLK: "YY/MM/DD,HH:MM:SS+ZZ"`<br>OK| Fetches the network time/clock. |
 
 ¹ - Simplified syntax. See «SARA-N2 AT Commands» for full syntax.
 
