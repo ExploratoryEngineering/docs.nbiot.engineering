@@ -9,7 +9,7 @@ tags:
   - home
 ---
 
-Welcome! This is the documentation site for the Telenor NB-IoT service.
+Welcome! This is the documentation site for the Telenor NB-IoT service. Please join our [Slack channel](https://join.slack.com/t/telenor-nbiot/shared_invite/enQtNDQ2MjczOTk4MDM2LWE4MGY3ZjYzMDM0NGFjMzdlMTQ1NzUyOWYwMGI3Mzk2NzFkNmQ2Mjg5MGIxNzEyNmI2ZmUyYWE5MjVmMjRkYzY) if you have any questions.
 
 ![Welcome to tutorials](undraw_programming_2svr.png)
 
