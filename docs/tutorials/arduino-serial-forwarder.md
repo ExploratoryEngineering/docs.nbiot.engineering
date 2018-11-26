@@ -34,12 +34,12 @@ You'll also need to upload this sketch to the Arduino board
 #ifdef SERIAL_PORT_HARDWARE_OPEN
 // For Arduino boards with a hardware serial port separate from USB serial. This is usually mapped to Serial1.
 // Check which pins are used for Serial1 on the board you're using.
-#define serial SERIAL_PORT_HARDWARE_OPEN
+#define nbiot SERIAL_PORT_HARDWARE_OPEN
 #else
 // For Arduino boards with only one hardware serial port, like Arduino Uno. It is mapped to USB, so we use
 // SoftwareSerial on pin 10 and 11 instead.
 #include <SoftwareSerial.h>
-SoftwareSerial serial(10, 11);
+SoftwareSerial nbiot(10, 11);
 #endif
 
 void setup() {
