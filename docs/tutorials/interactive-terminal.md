@@ -103,7 +103,7 @@ See image in full resolution</a>
 You control the u-blox SARA-N210 by sending it AT-commands over the serial connection. The response will be prefixed with `> ` to indicate it's a response and not something you should write in the terminal.
 
 ### Preparations
-All EE-NBIOT-01 modules have the APN set manually before we send them out, but in case you have another module or need to set it manually, see [Setting APN manually](#setting-apn-manually).
+All EE-NBIOT-01 modules have the APN set manually before we send them out, but in case you have another module or need to set it manually, see [APN config](#apn-config).
 
 If you haven't registered the devie in the [Telenor NB-IoT Developer Platform](https://nbiot.engineering) yet, now is a good time. You'll need the IMSI and IMEI:
 
