@@ -23,9 +23,10 @@ This guide is a simple walk-through of how to get started with communication wit
     - [Serial terminal application](#serial-terminal-application)
     - [Connecting the cables](#connecting-the-cables)
 - [Terminal commands](#terminal-commands)
-    - [APN config](#apn-config)
+    - [Preparations](#preparations)
     - [Hello world](#hello-world-)
     - [Important AT commands cheat sheet](#important-at-commands-cheat-sheet)
+    - [APN config](#apn-config)
 
 ## Parts needed
 * A computer with Windows/macOS/linux
@@ -101,26 +102,8 @@ See image in full resolution</a>
 ## Terminal commands
 You control the u-blox SARA-N210 by sending it AT-commands over the serial connection. The response will be prefixed with `> ` to indicate it's a response and not something you should write in the terminal.
 
-### APN config
-We need to set the [APN](https://en.wikipedia.org/wiki/Access_Point_Name) so that our devices' upstream messages are forwarded correctly and so that our devices are assigned IP addresses to which can send downstream messages.
-
-Before changing the config we must disable auto-connect because we don't want the device to start connecting while we're modifying the config. Then we need to reboot before the changes will take effect.
-
-    AT+NCONFIG="AUTOCONNECT","FALSE";+NRB
-    > OK
-    ...
-    > REBOOT_CAUSE_APPLICATION_AT
-    > u-blox 
-    > OK
-
-
-Now we're ready to update the config. It's not persisted on the SARA-N210, so remember to run this after every reboot:
-
-    AT+CFUN=1;+COPS=1,2,"24201";+CGDCONT=1,"IP","mda.ee";+CGACT=1,1
-    > OK
-    > OK
-    > OK
-    > OK
+### Preparations
+All EE-NBIOT-01 modules have the APN set manually before we send them out, but in case you have another module or need to set it manually, see [Setting APN manually](#setting-apn-manually).
 
 If you haven't registered the devie in the [Telenor NB-IoT Developer Platform](https://nbiot.engineering) yet, now is a good time. You'll need the IMSI and IMEI:
 
@@ -208,6 +191,27 @@ Most commands have 3 syntaxes. Read (`COMMAND?`), set (`COMMAND=...`) and test (
 | length            | Number | Size of the data to send. The maximum length 512 bytes. |
 | data              | String | Data to be sent (as a hexadecimal string)          |
 | flags (for NSOSTF) | Number | Specifies the type of message transmission in hexadecimal format. Values of this argument are formed by logically OR'ing zero or more of the following flags:<br/>• 0x000: no flags are set<br/>• 0x100: exception message. Send message with high priority<br/>• 0x200: release indicator. Indicate release after next message<br/>• 0x400: release indicator. Indicate release after next message has been replied to |
+
+### APN config
+We need to set the [APN](https://en.wikipedia.org/wiki/Access_Point_Name) so that our devices' upstream messages are forwarded correctly and so that our devices are assigned IP addresses to which can send downstream messages.
+
+Before changing the config we must disable auto-connect because we don't want the device to start connecting while we're modifying the config. Then we need to reboot before the changes will take effect.
+
+    AT+NCONFIG="AUTOCONNECT","FALSE";+NRB
+    > OK
+    ...
+    > REBOOT_CAUSE_APPLICATION_AT
+    > u-blox 
+    > OK
+
+
+Now we're ready to update the config. It's not persisted on the SARA-N210, so remember to run this after every reboot:
+
+    AT+CFUN=1;+COPS=1,2,"24201";+CGDCONT=1,"IP","mda.ee";+CGACT=1,1
+    > OK
+    > OK
+    > OK
+    > OK
 
 [1]: https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module
 [2]: https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources
