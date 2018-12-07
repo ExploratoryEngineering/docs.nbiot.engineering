@@ -1,0 +1,79 @@
+---
+title: NB-IoT on micro:bit
+lunr: true
+nav_sort: 35
+nav_groups:
+  - primary
+tags:
+  - tutorial
+  - microbit
+  - ee-nbiot-01
+---
+
+This tutorial will show you how to send data over NB-IoT from a micro:bit using the Telenor [EE-NBIOT-01][1] module.  The [EE-NBIOT-01][1] is a developer kit we've made to lower the barrier for experimenting with NB-IoT.  It is a breakout board to the [u-blox SARA-N210][2] radio module with a Telenor Norway SIM-card, an antenna, and a voltage regulator. The guide also relies on our self service NB-IoT Developer Platform. See our separate tutorial on how to [setup a device in the NB-IoT Developer Platform](getting-started.html). As of 1st October 2018 the platform is only enabled for Telenor Norway.
+
+**Prerequisites**
+- A [micro:bit](https://microbit.org/resellers/)
+- The [EE-NBIOT-01][1] board
+- 4 jumper cables
+    - Female to male/female (depends on method below)
+- A method to connect to the micro:bit
+    - [Be creative using what yout might have](https://lorrainbow.wordpress.com/2017/11/11/how-to-connect-wires-to-the-microbit/)
+    - Get an [Edge connector breakout board](https://www.kitronik.co.uk/5601b-edge-connector-breakout-board-for-bbc-microbit-pre-built.html)
+
+## Wiring
+The micro:bit has 3.3V power and on the I/O (input/output) pins, which is a perfect match for the EE-NBIOT-01. However if you power the micro:bit from a battery, be aware that the battery needs to have at least 3.1V - which means that two fully charged AA batteries is not enough.
+
+Connect the jumper wires between the following pins:
+
+micro:bit   | EE-NBIOT-01
+-----------:|------------
+3V - red    | VCC
+GND - black | GND
+P0 - yellow | RXD
+P1 - orange | TXD
+
+## Register device
+
+Before we start prototyping, we need the IMEI and IMSI and register the device in our NB-IoT Developer Platform:
+
+1. Open [this makecode project](https://makecode.microbit.org/_gfV43eEt51Er) and click the «Edit»-button
+1. Use a micro-USB cable to connect the micro:bit to your computer
+1. The micro:bit should show up as a regular USB memory stick on your computer, called MICROBIT
+1. Click the ![big download](img/makecode-download.png) button to download the sketch and save it to the MICROBIT drive
+1. The sketch will now magically be flashed to the micro:bit
+1. After a few seconds you should see «PRESS A/B» scroll by on the LEDs on the micro:bit
+1. Get a pen and paper, press the A/B buttons and write down the numbers
+1. Follow our [Getting started with the Telenor NB-IoT Developer Platform guide](getting-started.html) and use the IMEI/IMSI from the step above
+1. Leave the browser tab with live device data open, so we can see data we send in the next section
+
+## Install nbiot extension
+1. Go to [makecode.microbit.org](https://makecode.microbit.org/)
+1. Click on the big *«New Project»-button*
+1. Click the *gear* in the top right, then *Extensions*
+    - ![Extensions screenshot](img/makecode-extensions.png)
+1. In the search field, enter the URL below and click the search button
+    1. https://github.com/ExploratoryEngineering/pxt-nbiot
+    1. Select «nbiot» in the search result
+    - ![nbiot extension](img/makecode-nbiot-install.png)
+1. You should now get an «NB-IoT» category in the blocks menu
+    - ![nbiot menu](img/makecode-nbiot-menu.png)
+
+
+## Hello World
+
+Drag-n-drop blocks from the menu to reproduce the blocks below:
+
+![Hello World example](img/microbit-hello.png)
+
+### What's going on here?
+In the block editor, every chain of blocks starts with an event (something happened). All the blocks inside of it will be executed in order from top to bottom.
+
+“on start” is only run once, when the micro:bit starts. So here you typically add blocks that should be run before any other code, and only needs to run once. For the NB-IoT extension to work, we need to tell it what pins on the micro:bit it is connected to, and what server IP and port to send data to.
+
+“on nbiot connected” is run once, when the device is successfully connected to the NB-IoT nettwork, and get an IP address from our NB-IoT Development Platform. If the device is not registered (see steps above), you'll not get an IP address and will not be able to connect. First show a heart in the LED display to indicate that we connected, then send the text string «Hello World!». If you still have the browser tab from the NB-IoT Developer Platform open (see [Register Device](#register-device)), you should see that some data has arrived. If it shows up as «SGVsbG8gV29ybGQh», you need to tick the «Decode base 64 payload» checkbox to show it as text.
+
+![Hello world in NB-IoT Developer Platform](img/payload-hello.png)
+
+[1]: https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module
+[2]: https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources
