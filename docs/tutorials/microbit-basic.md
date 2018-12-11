@@ -12,7 +12,7 @@ tags:
 
 This tutorial will show you how to send data over NB-IoT from a micro:bit using the Telenor [EE-NBIOT-01][1] module.  The [EE-NBIOT-01][1] is a developer kit we've made to lower the barrier for experimenting with NB-IoT.  It is a breakout board to the [u-blox SARA-N210][2] radio module with a Telenor Norway SIM-card, an antenna, and a voltage regulator. The guide also relies on our self service NB-IoT Developer Platform. See our separate tutorial on how to [setup a device in the NB-IoT Developer Platform](getting-started.html). As of 1st October 2018 the platform is only enabled for Telenor Norway.
 
-**Prerequisites**
+## Prerequisites
 - A [micro:bit](https://microbit.org/resellers/)
 - The [EE-NBIOT-01][1] board
 - 4 jumper cables
@@ -44,7 +44,6 @@ If you don't have an edge connector nearby and don't have time to wait for one, 
 ![Improvise connection](img/microbit-screws-small.jpg)
 
 ## Register device
-
 Before we start prototyping, we need the IMEI and IMSI and register the device in our NB-IoT Developer Platform:
 
 1. Open [this makecode project](https://makecode.microbit.org/_gfV43eEt51Er) and click the «Edit»-button
@@ -71,7 +70,6 @@ Before we start prototyping, we need the IMEI and IMSI and register the device i
 
 
 ## Hello World
-
 Drag-n-drop blocks from the menu to reproduce the blocks below:
 
 ![Hello World example](img/microbit-hello.png)
@@ -91,18 +89,19 @@ Sending a hard-coded text isn't that useful other than to check that everything 
 Here are some examples of what you can do:
 
 ### Temperature logger
-
 Log data at a regular interval. Make sure you don't send too much data too often, or you might run out of data quota.
 
 ![Temperature logger example blocks](img/microbit-temp-logger.png)
 
 ### Sending a message when _something happens_
-
 To reduce power and data consumption, you can choose to only send data when _something happens_. You read a sensor value and send an alert when the value is not within the expected range. What sensor to use depends of the use-case, but you can connect almost any sensor that runs on 3.3V to the micro:bit, and many of the most popular ones have a micro:bit extension already.
 
 Say you have a fridge or freezer with food worth a lot of money in a building you don't visit that often. If the fridge/freezer suddenly stops working you'd like to know as soon as possible. Here is one way that could be solved.
 
 ![Example code for fridge alert](img/microbit-fridge-alert.png)
+
+## API reference
+See the GitHub repository for full [API documentation](https://github.com/ExploratoryEngineering/pxt-nbiot#api-reference) for the micro:bit extension
 
 [1]: https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module
 [2]: https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources
