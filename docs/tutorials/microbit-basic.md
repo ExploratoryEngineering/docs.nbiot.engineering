@@ -41,6 +41,7 @@ See image in full resolution</a>
 
 ### Improvise wire connection
 If you don't have an edge connector nearby and don't have time to wait for one, check out [this guide](https://lorrainbow.wordpress.com/2017/11/11/how-to-connect-wires-to-the-microbit/). Or improvise using what you have available.
+
 ![Improvise connection](img/microbit-screws-small.jpg)
 
 ## Register device
@@ -84,7 +85,7 @@ In the block editor, every chain of blocks starts with an event (something happe
 ![Hello world in NB-IoT Developer Platform](img/payload-hello.png)
 
 ## Sending useful data
-Sending a hard-coded text isn't that useful other than to check that everything works as it should. The fun really begins when we start connecting the physical world with the digital. So try to send some sensor data (like temperature), or send a message when something happens (like a button press or that the micro:bit moves). The micro:bit has a few sensors built in, but if you feel adventorous you can also add other sensors by connecting to one of the pins (definitely get an edge connector breakout board for that). Remember that NB-IoT is meant for small data amounts, so try to keep the size of the data small and don't send too frequently.
+Sending a hard-coded text isn't that useful other than to check that everything works as it should. The fun really begins when we start connecting the physical world with the digital. So try to send some sensor data (like temperature), or send a message when something happens (like a button press or that the micro:bit moves). The micro:bit has a few sensors built in, but if you feel adventurous you can also add other sensors by connecting to one of the pins (definitely get an edge connector breakout board for that). Remember that NB-IoT is meant for small data amounts, so try to keep the size of the data small and don't send too frequently.
 
 Here are some examples of what you can do:
 
