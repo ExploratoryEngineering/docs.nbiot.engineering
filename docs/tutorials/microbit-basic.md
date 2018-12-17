@@ -22,13 +22,13 @@ This tutorial will show you how to send data over NB-IoT from a micro:bit using 
     - Or improvise [how to connect wires](https://lorrainbow.wordpress.com/2017/11/11/how-to-connect-wires-to-the-microbit/)
 
 ## Wiring
-The micro:bit has 3.3V power and on the I/O (input/output) pins, which is a perfect match for the EE-NBIOT-01. However if you power the micro:bit from a battery, be aware that the battery needs to have at least 3.1V - which means that two fully charged AA batteries is not enough.
+The micro:bit has 3.3V power on the I/O (input/output) pins, which is a perfect match for the EE-NBIOT-01. However, if you power the micro:bit from a battery, be aware that the battery needs to have at least 3.1V - which means that two fully charged AA batteries is not enough.
 
 Connect the jumper wires between the following pins:
 
 micro:bit   | EE-NBIOT-01
 -----------:|------------
-3V - red    | VCC
+3V - red    | 3v3
 GND - black | GND
 P0 - yellow | RXD
 P1 - orange | TXD
