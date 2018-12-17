@@ -87,7 +87,7 @@ Run this sketch the same way you did the one for getting the IMSI and IMEI. Once
 ![Hello world in NB-IoT Developer Platform](img/payload-hello.png)
 
 ## Sending useful data
-Sending a hard-coded text isn't that useful other than to check that everything works as it should. The fun really begins when we start connecting the physical world with the digital. So try to send some sensor data (like temperature), or send a message when something happens (like a button press or that the micro:bit moves). The micro:bit has a few sensors built in, but if you feel adventurous you can also add other sensors by connecting to one of the pins (definitely get an edge connector breakout board for that). Remember that NB-IoT is meant for small data amounts, so try to keep the size of the data small and don't send too frequently.
+Sending a hard-coded text isn't that useful other than to check that everything works as it should. The fun really begins when we start connecting the physical world with the digital. So try to send some sensor data (like temperature), or send a message when something happens (like when a button is pressed or the micro:bit moves). The micro:bit has a few sensors built in, but if you feel adventurous you can also add other sensors by connecting to one of the pins (definitely get an edge connector breakout board for that). Remember that NB-IoT is meant for small data amounts, so try to keep the size of the data small and don't send too frequently (no more than once per minute).
 
 Here are some examples of what you can do:
 
