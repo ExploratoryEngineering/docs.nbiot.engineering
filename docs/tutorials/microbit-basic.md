@@ -78,9 +78,11 @@ Drag-n-drop blocks from the menu to reproduce the blocks below:
 ### What's going on here?
 In the block editor, every chain of blocks starts with an event (something happened). All the blocks inside of it will be executed in order from top to bottom.
 
-“on start” is only run once, when the micro:bit starts. So here you typically add blocks that should be run before any other code, and only needs to run once. For the NB-IoT extension to work, we need to tell it what pins on the micro:bit it is connected to, and what server IP and port to send data to.
+“on start” is only run once, when the micro:bit starts. So here you typically add blocks that should be run before any other code and only need to run once. For the NB-IoT extension to work, we need to tell it what pins on the micro:bit it is connected to and what server IP and port to send data to.
 
-“on nbiot connected” is run once, when the device is successfully connected to the NB-IoT nettwork, and get an IP address from our NB-IoT Development Platform. If the device is not registered (see steps above), you'll not get an IP address and will not be able to connect. First show a heart in the LED display to indicate that we connected, then send the text string «Hello World!». If you still have the browser tab from the NB-IoT Developer Platform open (see [Register Device](#register-device)), you should see that some data has arrived. If it shows up as «SGVsbG8gV29ybGQh», you need to tick the «Decode base 64 payload» checkbox to show it as text.
+“on nbiot connected” is run once, when the device is successfully connected to the NB-IoT network has gotten an IP address from our NB-IoT Development Platform. If the device is not registered on the platform (see steps above), you'll not get an IP address and will not be able to connect.
+
+Run this sketch the same way you did the one for getting the IMSI and IMEI. Once we're connected, we first show a heart in the LED display to indicate that we are connected, then we send the text string «Hello World!». If you still have the browser tab from the NB-IoT Developer Platform open (see [Register Device](#register-device)), you should see that some data has arrived. If it shows up as «SGVsbG8gV29ybGQh», you need to tick the «Decode base 64 payload» checkbox to show it as text.
 
 ![Hello world in NB-IoT Developer Platform](img/payload-hello.png)
 
