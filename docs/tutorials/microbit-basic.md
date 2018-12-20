@@ -47,7 +47,7 @@ If you don't have an edge connector nearby and don't have time to wait for one, 
 ## Register device
 Before we start prototyping, we need the IMEI and IMSI and register the device in our NB-IoT Developer Platform:
 
-1. Open [this makecode project](https://makecode.microbit.org/_gfV43eEt51Er) and click the «Edit»-button
+1. Open [this makecode project](https://makecode.microbit.org/_YqicUbdvt1mk) and click the «Edit»-button
 1. Use a micro-USB cable to connect the micro:bit to your computer
 1. The micro:bit should show up as a regular USB memory stick on your computer, called MICROBIT
 1. Click the ![big download](img/makecode-download.png) button to download the sketch and save it to the MICROBIT drive
