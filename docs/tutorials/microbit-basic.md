@@ -34,7 +34,7 @@ P0 - yellow | RXD
 P1 - orange | TXD
 
 ### Edge connector with pin headers
-The recommended method to connect a micro:bit to EE-NBIOT-01
+The recommended method to connect a micro:bit to EE-NBIOT-01. **Make sure the LEDs on the micro:bit are pointing upwards when you insert it into the edge connector.**
 <a href="img/microbit-edge-connector.jpg" target="_blank">![Using an edge connector with pin headers](img/microbit-edge-connector-small.jpg)<br/>
 See image in full resolution</a>
 
