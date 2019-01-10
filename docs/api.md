@@ -1,7 +1,7 @@
 ---
 title: REST API
 lunr: true
-nav_sort: 3
+nav_sort: 4
 nav_groups:
   - primary
 nav_subgroup: true
@@ -12,6 +12,8 @@ tags:
 ---
 
 The REST API is hosted at https://api.nbiot.telenor.io/.
+
+We provide several [client libraries](libs.md) that make it easier to access the API from your favorite programming language.  If your language is not yet supported, then continue reading.
 
 ![The NB-IoT API](undraw_api.png)
 ## Introduction

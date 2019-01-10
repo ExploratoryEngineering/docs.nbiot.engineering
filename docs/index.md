@@ -19,15 +19,9 @@ Start by going through the [interactive terminal](tutorials/interactive-terminal
 tutorial, then [Getting started with Telenor NB-IoT Developer Platform](tutorials/getting-started.md)
 to get a quick feel for how the devices and console works.
 
-If you want to implement a service that receives data you can have a quick look at the documentation
-for the [outputs](api/outputs.md) which shows you how the data is sent to f.e. MQTT.
-
-We have several client libraries available that you can experiment with:
-
-* [Python](https://github.com/telenordigital/nbiot-python)
-* [Go](https://github.com/telenordigital/nbiot-go)
-* [Java](https://github.com/telenordigital/nbiot-java)
-* [C#](https://github.com/telenordigital/nbiot-csharp)
+If you want to implement a service that receives data you can use one of our [client libraries](libs.md).
+If your language is not yet supported, then have a look at the documentation
+for [outputs](api/outputs.md) which shows you how the data is sent to e.g. MQTT.
 
 # Backend IP address and APN
 
