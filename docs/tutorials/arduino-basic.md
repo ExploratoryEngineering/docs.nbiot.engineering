@@ -22,7 +22,7 @@ This tutorial will show you how to send data over NB-IoT from an Arduino using t
 The serial pins for the SARA-N210 use 3.3V logic and are specified to a max of 4.25V. This means we can't directly connect an Arduino with a 5V operating voltage to the TX pin.
 
 ### 3.3V Arduino
-The following Arduino boards have 3.3V operating voltage and can be directly connected to the EE-NBIOT-01: Arduino Zero, Arduino MKR Zero, Arduino M0 and Arduino Duo. These boards also benefit from having extra hardware serial ports, so you don't have to use software serial. The hardware serial pins are hooked up to `Serial1` in the board's core source file, and the pins are marked RX1/TX1 or just RX/TX on the board header connections.
+The following Arduino boards have 3.3V operating voltage and can be directly connected to the EE-NBIOT-01: Arduino Zero, Arduino MKR Zero, Arduino M0 and Arduino Duo. These boards also benefit from having extra hardware serial ports, so you don't have to use software serial. The hardware serial pins are hooked up to `Serial1` in the board's core source file.
 
 In Norway you should be able to find them in any of these stores:
 * [Kjell & Company](https://www.kjell.com/no/)
