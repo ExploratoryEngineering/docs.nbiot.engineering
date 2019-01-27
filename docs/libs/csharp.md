@@ -13,4 +13,4 @@ tags:
   - http
 ---
 
-You can find the C# client library at (https://github.com/telenordigital/nbiot-csharp) and it is distributed from (https://www.nuget.org/packages/TelenorNBIoT/).
+You can find the source code for the C# client library at [https://github.com/telenordigital/nbiot-csharp] (https://github.com/telenordigital/nbiot-csharp) and it is distributed from [https://www.nuget.org/packages/TelenorNBIoT/](https://www.nuget.org/packages/TelenorNBIoT/).
