@@ -14,4 +14,6 @@ tags:
   - http
 ---
 
-You can find the Go client library [here](https://github.com/telenordigital/nbiot-go).
+You can find the Go client library on Github: https://github.com/telenordigital/nbiot-go.
+
+The documentation is available from Godoc: https://godoc.org/github.com/telenordigital/nbiot-go
