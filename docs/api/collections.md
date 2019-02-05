@@ -33,11 +33,52 @@ $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections
       "teamId": "17dh0cf43jfgl8",
       "tags": {
         "name": "My default collection"
+      },
+      "fieldMask": {
+        "imsi": false,
+        "imei": false,
+        "location": true,
+        "msisdn": false
       }
     }
   ]
 }
 ```
+
+### Field masks
+
+Fields with potentially sensitive data can be masked from the API responses.
+These fields can be toggled on and off individually and the fields won't show up
+outside of the API or in the data outputs from the collections.
+
+Even if IMSI and IMEI is masked the fields are still required when creating a
+new device.
+
+Field masks applies to all devices in the collection.
+
+The field mask is configured for the entire system. The field mask configuration
+can be retrieved by querying the `/system` url:
+
+```bash
+$ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/system
+{
+  "defaultFieldMask": {
+    "imsi": false,
+    "imei": false,
+    "location": true,
+    "msisdn": false
+  },
+  "forcedFieldMask": {
+    "imsi": false,
+    "imei": false,
+    "location": false,
+    "msisdn": false
+  }
+}
+```
+
+The `defaultFieldMask` mask parameters shows the default field mask for new collections and the `forcedFieldMask` shows the system's field mask settings.
+The values in the `forcedFieldMask` setting can't be modified.
 
 ### Creating a new collection
 
@@ -54,6 +95,12 @@ $ curl -HX-API-Token:${TOKEN} -XPOST -d'{"tags":{"name": "My first collection"}}
   "teamId": "17dh0cf43jfgl8",
   "tags": {
     "name": "My first collection"
+  },
+  "fieldMask": {
+    "imsi": false,
+    "imei": false,
+    "location": true,
+    "msisdn": false
   }
 }
 ```
@@ -68,6 +115,12 @@ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections/17dh0cf43jf
   "teamId": "17dh0cf43jfgl8",
   "tags": {
     "name": "My first collection"
+  },
+  "fieldMask": {
+    "imsi": false,
+    "imei": false,
+    "location": true,
+    "msisdn": false
   }
 }
 ```
@@ -86,6 +139,12 @@ $ curl -HX-API-Token:${TOKEN} -XPATCH -d'{"teamId": "17dh0cf43jfgl9"}' \
   "teamId": "17dh0cf43jfgl9",
   "tags": {
     "name": "My first collection"
+  },
+  "fieldMask": {
+    "imsi": false,
+    "imei": false,
+    "location": true,
+    "msisdn": false
   }
 }
 ```
