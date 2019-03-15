@@ -43,11 +43,14 @@ $ curl -HX-API-Token:${TOKEN} http://localhost:8080/teams
       "teamId": "17dh0cf43jfgl8",
       "tags": {
         "name": "My private team"
-      }
+      },
+      "private": true
     }
   ]
 }
 ```
+
+The `private` flag is set to true on your private team. The attribute is absent on all other teams.
 
 ### Create a new team
 
@@ -184,6 +187,7 @@ $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/teams/17dh0cf43jfgl9/
 Individual team members can be accessed via the `/team/{teamId}/members/{userId} resource.
 
 ### Adding a team member
+
 Team members can't be added directly but must accept an [invite](invites.md) to the team.
 
 ### Update a team member

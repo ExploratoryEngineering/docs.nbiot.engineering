@@ -106,6 +106,7 @@ $ curl -HX-API-Token:${TOKEN} -XPOST -d'{"tags":{"name": "My first collection"}}
 ```
 
 ## Collection detail: `/collections/{collectionId}`
+
 Details for each collection is available at the detail resource:
 
 ```bash
