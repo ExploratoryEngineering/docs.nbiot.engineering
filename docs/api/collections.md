@@ -47,17 +47,17 @@ $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections
 
 ### Field masks
 
-Fields with potentially sensitive data can be masked from the API responses.
+Fields with potentially sensitive data can be masked (i.e. removed) from the API responses.
 These fields can be toggled on and off individually and the fields won't show up
-outside of the API or in the data outputs from the collections.
+outside of the API or in the data outputs from the collections.  A value of `true` for a
+field mask indicates that the field will _not_ appear in API responses.
 
-Even if IMSI and IMEI is masked the fields are still required when creating a
+Even if IMSI or IMEI are masked, the fields are still required when creating a
 new device.
 
-Field masks applies to all devices in the collection.
+A field mask for a collection applies to all devices in that collection.
 
-The field mask is configured for the entire system. The field mask configuration
-can be retrieved by querying the `/system` url:
+There is a fixed field mask configuration for the entire system, which can be retrieved by querying the `/system` url:
 
 ```bash
 $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/system
@@ -77,8 +77,9 @@ $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/system
 }
 ```
 
-The `defaultFieldMask` mask parameters shows the default field mask for new collections and the `forcedFieldMask` shows the system's field mask settings.
-The values in the `forcedFieldMask` setting can't be modified.
+The `defaultFieldMask` shows the default mask applied to new collections when `fieldMask` is not specified when creating a new collection.
+
+The `forcedFieldMask` shows the system's field mask settings.  A value of `true` in `forcedFieldMask` means the field will never appear in API responses, even if the `fieldMask` for a collection has `false` for that field.
 
 ### Creating a new collection
 
