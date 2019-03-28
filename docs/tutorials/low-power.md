@@ -48,7 +48,7 @@ The 3 most significant bits define the timer unit, while the 5 least significant
 
 Example: `00100110`. Unit: 1 hour. Value: `00110` = 6. Result: 1 hour * 6 = 6 hours.
 
-### T3323 encoding
+### T3324 encoding
 The 3 most significant bits define the timer unit, while the 5 least significant bits define the timer value.
 
 | Bits 6-8 | Timer value unit  |
