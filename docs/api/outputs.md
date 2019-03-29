@@ -114,19 +114,27 @@ The array of messages might contain more than one message if there's a lot of me
 
 ```json
 {
-    "messages": [{
-        "device": {
-            "deviceId":"17dh0cf43jfgl8",
-            "collectionId":"17dh0cf43jfgli",
-            "imei":"111222333444",
-            "imsi":"123456789",
-            "tags":{
-              "name":"My first device"
-            }
-        },
-        "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
-        "received":1538163685141,
-        "type": "data"
+  "messages": [{
+    "device": {
+      "deviceId":"17dh0cf43jfgl8",
+      "collectionId":"17dh0cf43jfgli",
+      "imei":"111222333444",
+      "imsi":"123456789",
+      "tags":{
+        "name":"My first device"
+      }
+    },
+    "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
+    "received":1538163685141,
+    "type": "data",
+    "transport": "<transport used by the device to deliver the data>",
+    "coapMetaData": {
+      "method": "POST",
+      "path": "<path used by device">
+    },
+    "udpMetaData": {
+      "localPort": "<the backend's local port>",
+      "remotePort": "<the port used on the device>"
     }]
 }
 ```
@@ -178,7 +186,16 @@ The payload is a JSON structure identical to the [WebSocket](devices.md) output:
     },
     "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
     "received":1538163685141,
-    "type": "data
+    "type": "data",
+    "transport": "<transport used by the device to deliver the data>",
+    "coapMetaData": {
+      "method": "POST",
+      "path": "<path used by device">
+    },
+    "udpMetaData": {
+      "localPort": "<the backend's local port>",
+      "remotePort": "<the port used on the device>"
+    }
 }
 ```
 

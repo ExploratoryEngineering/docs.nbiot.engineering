@@ -130,7 +130,16 @@ see data from a single device:
   },
   "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
   "received":1538163685141,
-  "type": "data"
+  "type": "data",
+  "transport": "<transport used by the device to deliver the data>",
+  "coapMetaData": {
+    "method": "POST",
+    "path": "<path used by device">
+  },
+  "udpMetaData": {
+    "localPort": "<the backend's local port>",
+    "remotePort": "<the port used on the device>"
+  }
 }
 ```
 
@@ -154,13 +163,29 @@ be supplied through the `api_token` parameter. The API token *must* be readonly.
 If you want to send a message *to* a device you `POST` the following JSON structure
 to the resource:
 
+If you want to send data **to** the devices `POST` to this resource.
+There are three kinds of transports that can be selected via the `transport` field:
+
+1) `udp` which will send a regular udp packet to the device on the specified
+   port immediately. The `port` field is required and the device must be listening
+   on the port to receive the message.
+2) `coap-pull` which will queue the message and send it as a response to a
+   CoAP `GET` request from the device. The device is responsible for polling the
+   backend.
+3) `coap-push` which will send the message to the device immediately as a CoAP
+   `POST` to the path specified in the `path` parameter. The device must be
+   running a CoAP server for this to work.
+
+The `payload` field is required for all types. If the `transport` field is
+blank it will use the `udp` transport by default.
+
 ```json
 {
-  "port": <port number>,
-  "payload": "<base 64 encoded bytes>"
+  "transport": "<udp, coap-push, coap-pull>",
+  "port": <port number, required for udp, optional for coap-push, ignored for coap-pull>,
+  "payload": "<base 64 encoded bytes>",
+  "path": "<path for coap-pull transport>"
 }
 ```
 
-Both port and payload are required fields. Payload is base64 encoded. The device
-must listen on the specified port. If successful the service will respond with
-`204 NO CONTENT`.
+If successful the service will respond with `204 NO CONTENT`.

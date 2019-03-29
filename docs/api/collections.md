@@ -183,9 +183,24 @@ The data sent by the devices are included in the field `payload` and is [base64-
     }
   },
   "payload":"WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=",
-  "received":1538163685141
+  "received":1538163685141,
+  "type": "data",
+  "transport": "<transport used by the device to deliver the data>",
+  "coapMetaData": {
+    "method": "POST",
+    "path": "<path used by device">
+  },
+  "udpMetaData": {
+    "localPort": "<the backend's local port>",
+    "remotePort": "<the port used on the device>"
+  }
 }
 ```
+
+The `transport` field is set to one of the supported transports for upstream
+messages -- currently this is `udp` and `coap-push`. The `coapMetaData` struct
+is only included if the `transport` field is set to `coap-push` and the
+`udpMetaData` struct is only included if the `transport` field is set to `udp`.
 
 At regular intervals the server will send a keepAlive message on the WebSocket:
 
@@ -204,18 +219,30 @@ be supplied through the `api_token` parameter. The API token *must* be readonly.
 
 ## Downstream data: `/collections/{collectionId}/to`
 
-If you want to send data **to** the devices `POST` to this resource. Both the
-port number and the payload fields are required.
+If you want to send data **to** the devices `POST` to this resource.
+There are three kinds of transports that can be selected via the `transport` field:
+
+1) `udp` which will send a regular udp packet to the device on the specified
+   port immediately. The `port` field is required and the device must be listening
+   on the port to receive the message.
+2) `coap-pull` which will queue the message and send it as a response to a
+   CoAP `GET` request from the device. The device is responsible for polling the
+   backend.
+3) `coap-push` which will send the message to the device immediately as a CoAP
+   `POST` to the path specified in the `path` parameter. The device must be
+   running a CoAP server for this to work.
+
+The `payload` field is required for all types. If the `transport` field is
+blank it will use the `udp` transport by default.
 
 ```json
 {
-  "port": <port number>,
-  "payload": "<base 64 encoded bytes>"
+  "transport": "<udp, coap-push, coap-pull>",
+  "port": <port number, required for udp, optional for coap-push, ignored for coap-pull>,
+  "payload": "<base 64 encoded bytes>",
+  "path": "<path for coap-pull transport>"
 }
 ```
-
-Note that the devices *must* be listening on the specified port to receive
-the message.
 
 ### Response
 
