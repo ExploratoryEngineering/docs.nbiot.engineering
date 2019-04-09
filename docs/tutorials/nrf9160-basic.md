@@ -21,7 +21,7 @@ Set up your development environment by following [the instructions here][2].  (H
 
 ## Example application
 
-Download and extract the [example application](nrf9160-basic/example.tar.gz).  Connect the nRF9160 DK to your computer via USB.
+Download and extract the <a href="/tutorials/nrf9160-basic/example.tar.gz" target="_blank">example application</a>.  Connect the nRF9160 DK to your computer via USB.
 
 Before running the example application, you should follow the instructions from another of our tutorials to install a [serial terminal application](interactive-terminal.html#serial-terminal-application).  This way, you can see the serial output of the application – which is not only convenient for seeing log output but also necessary for you to obtain the IMEI and IMSI of the device, both of which are needed in order to register the device on the NB-IoT Developer Platform.
 
