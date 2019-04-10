@@ -81,7 +81,7 @@ Example:
 ## eDRX
 Extended discontinuous reception (eDRX) is a feature to save power when you expect downstream messages (to the device from the network). Instead of listening all the time, the device can tell the network when it's sleeping and when it's listening (receive windows).
 
-If you're only sending data upstream (from the device) (we don't support downstream in our Developer Platform just yet), you should disable eDRX to increase battery life:
+If you're only sending data upstream (from the device), you should disable eDRX to increase battery life:
 
     AT+CEDRXS=3,5
 
