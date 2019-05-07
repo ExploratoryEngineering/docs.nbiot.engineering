@@ -40,10 +40,10 @@ The nRF Connect SDK includes several Git repositories and Python modules, which 
 cd ~
 mkdir ncs
 cd ncs
-git clone https://github.com/NordicPlayground/fw-nrfconnect-zephyr.git -b tags/v1.13.99-ncs2 zephyr
-git clone https://github.com/NordicPlayground/fw-nrfconnect-mcuboot.git -b tags/v1.2.99-ncs2 mcuboot
-git clone https://github.com/NordicPlayground/fw-nrfconnect-nrf.git -b tags/v0.3.0 nrf
-git clone https://github.com/NordicPlayground/nrfxlib.git -b tags/v0.3.0 nrfxlib
+git clone https://github.com/NordicPlayground/fw-nrfconnect-zephyr.git -b v1.13.99-ncs2 zephyr
+git clone https://github.com/NordicPlayground/fw-nrfconnect-mcuboot.git -b v1.2.99-ncs2 mcuboot
+git clone https://github.com/NordicPlayground/fw-nrfconnect-nrf.git -b v0.3.0 nrf
+git clone https://github.com/NordicPlayground/nrfxlib.git -b v0.3.0 nrfxlib
 pip3 install --user -r zephyr/scripts/requirements.txt
 pip3 install --user -r nrf/scripts/requirements.txt
 ```
