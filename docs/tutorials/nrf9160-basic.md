@@ -71,7 +71,7 @@ Before your nRF9160 DK can run user applications in the non-secure domain, you m
 
 ```sh
 source ~/ncs/zephyr/zephyr-env.sh
-cd ~/ncs/nrf/samples/nrf9160/secure-boot
+cd ~/ncs/nrf/samples/nrf9160/secure_boot
 mkdir build
 cd build
 cmake -GNinja -DBOARD=nrf9160_pca10090 ..
