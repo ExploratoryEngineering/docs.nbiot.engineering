@@ -12,6 +12,13 @@ tags:
 
 This tutorial will show you how to send data over NB-IoT from a micro:bit using the Telenor [EE-NBIOT-01][1] module.  The [EE-NBIOT-01][1] is a developer kit we've made to lower the barrier for experimenting with NB-IoT.  It is a breakout board to the [u-blox SARA-N210][2] radio module with a Telenor Norway SIM-card, an antenna, and a voltage regulator. The guide also relies on our self service NB-IoT Developer Platform. See our separate tutorial on how to [setup a device in the NB-IoT Developer Platform](getting-started.html). As of 1st October 2018 the platform is only enabled for Telenor Norway.
 
+<iframe width="960" height="540"
+  src="https://www.youtube.com/embed/UP5r34SP55Y" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
 ## Prerequisites
 - A [micro:bit](https://microbit.org/resellers/)
 - The [EE-NBIOT-01][1] board
