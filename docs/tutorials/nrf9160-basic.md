@@ -20,6 +20,27 @@ This tutorial will show you how to send data over NB-IoT using the [nRF9160 DK][
 
 At the time of the writing of this tutorial, concise and reliable instructions for setting up one's development environment were hard to come by.  You are welcome to follow Nordic's [instructions][2] for setting up the nRF Connect SDK, but we recommend following ours instead.
 
+### Windows
+
+Windows users should follow the Ubuntu instructions after setting up the Windows Subsystem for Linux, as follows:
+
+Run this command in PowerShell as administrator:
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
+Then, reboot your computer.
+
+Next, we need to install a Linux distro.  For this tutorial we will use Ubuntu.  Open PowerShell as administrator and run these commands:
+
+```powershell
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+./Ubuntu.appx
+```
+
+You will then be prompted to install Ubuntu.  Follow the steps in the wizard, including setting up user and password.
+
 ### Install packages
 
 #### Mac OS X
