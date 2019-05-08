@@ -20,9 +20,9 @@ This tutorial will show you how to send data over NB-IoT using the [nRF9160 DK][
 
 At the time of the writing of this tutorial, concise and reliable instructions for setting up one's development environment were hard to come by.  You are welcome to follow Nordic's [instructions][2] for setting up the nRF Connect SDK, but we recommend following ours instead.
 
-The following instructions have only been tested on Mac OS X, and are unlikely to work on other platforms without significant modification.
+### Install packages
 
-### Homebrew packages
+#### Mac OS X
 
 Follow the instructions [here](https://brew.sh/) to install the Homebrew package manager, if you haven't already.  Then, run the following command:
 
@@ -31,6 +31,18 @@ brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-n
 ```
 
 This command may take quite some time to complete.
+
+#### Ubuntu
+
+On Ubuntu, run the following commands to install the necessary packages:
+
+```sh
+sudo apt install git ninja-build gperf ccache dfu-util device-tree-compiler python3-pip python3-setuptools python3-wheel make gdb-multiarch gcc-arm-none-eabi
+pip3 install cmake
+ln -s ~/.local/bin/cmake /usr/bin/
+wget http://no.archive.ubuntu.com/ubuntu/pool/main/d/device-tree-compiler/device-tree-compiler_1.4.7-1_amd64.deb
+sudo apt install ./device-tree-compiler_1.4.7-1_amd64.deb
+```
 
 ### nRF Connect SDK
 
@@ -52,6 +64,8 @@ pip3 install --user -r nrf/scripts/requirements.txt
 
 Finally, to configure the Zephyr environment, you must create a `.zephyrrc` file as follows:
 
+#### Mac OS X
+
 ```sh
 cd ~
 touch .zephyrrc
@@ -59,7 +73,16 @@ echo "export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb" >> ~/.zephyrrc
 echo "export GNUARMEMB_TOOLCHAIN_PATH=/usr/local/opt/gcc-arm-none-eabi/" >> ~/.zephyrrc
 ```
 
-You must run the following command to configure the Zephyr environment whenever you open a new terminal.
+#### Ubuntu
+
+```sh
+cd ~
+touch .zephyrrc
+echo "export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb" >> ~/.zephyrrc
+echo "export GNUARMEMB_TOOLCHAIN_PATH=/usr/" >> ~/.zephyrrc
+```
+
+On all platforms, you must run the following command to configure the Zephyr environment whenever you open a new terminal.
 
 ```sh
 source ~/ncs/zephyr/zephyr-env.sh
