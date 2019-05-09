@@ -48,7 +48,8 @@ You will then be prompted to install Ubuntu.  Follow the steps in the wizard, in
 Follow the instructions [here](https://brew.sh/) to install the Homebrew package manager, if you haven't already.  Then, run the following command:
 
 ```sh
-brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi homebrew/cask-drivers/nordic-nrf5x-command-line-tools	
+brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi \
+             homebrew/cask-drivers/nordic-nrf5x-command-line-tools	
 ```
 
 This command may take quite some time to complete.
@@ -58,7 +59,8 @@ This command may take quite some time to complete.
 On Ubuntu, run the following commands to install the necessary packages:
 
 ```sh
-sudo apt install git ninja-build gperf ccache dfu-util device-tree-compiler python3-pip python3-setuptools python3-wheel make gdb-multiarch gcc-arm-none-eabi
+sudo apt install git ninja-build gperf ccache dfu-util device-tree-compiler python3-pip \
+                 python3-setuptools python3-wheel make gdb-multiarch gcc-arm-none-eabi
 pip3 install cmake
 ln -s ~/.local/bin/cmake /usr/bin/
 wget http://no.archive.ubuntu.com/ubuntu/pool/main/d/device-tree-compiler/device-tree-compiler_1.4.7-1_amd64.deb
