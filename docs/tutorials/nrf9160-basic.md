@@ -120,7 +120,7 @@ source ~/ncs/zephyr/zephyr-env.sh
 cd ~/ncs/nrf/samples/nrf9160/secure_boot
 mkdir build
 cd build
-cmake -GNinja -DBOARD=nrf9160_pca10090 ..
+cmake -GNinja -DBOARD=nrf9160_pca10090ns ..
 ninja flash
 ```
 
@@ -137,7 +137,7 @@ git clone git@github.com:ExploratoryEngineering/nrf9160-example.git
 cd nr9160-example
 mkdir build
 cd build
-cmake -GNinja -DBOARD=nrf9160_pca10090 ..
+cmake -GNinja -DBOARD=nrf9160_pca10090ns ..
 ninja flash
 ```
 
