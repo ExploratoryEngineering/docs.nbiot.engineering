@@ -13,7 +13,7 @@ tags:
 So you've got your EE-NBIOT-01 and are anxious to get started. Before the fun can start we need to complete some steps in the Telenor NB-IoT Developer Platform. Let's go!
 
 ### Login
-Navigate to https://nbiot.engineering. In order to login, you will need a CONNECT account. If you don't have a CONNECT account, you can just enter your phone number and follow the instructions. Once logged in you should be greeted by a simple dashboard:
+Navigate to https://nbiot.engineering. In order to login, you will need a CONNECT account or a GitHub account. Once logged in you should be greeted by a simple dashboard:
 
 ![Screenshot: Just logged in](img/fresh-login.png)
 
