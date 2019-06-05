@@ -17,5 +17,6 @@ tags:
 * [Interactive terminal](tutorials/interactive-terminal.md)
 * [Getting started with Arduino](tutorials/arduino-basic.md)
 * [Getting started with Raspberry Pi](tutorials/raspi-serial.md)
+* [Getting started with NRF9160](tutorials/nrf9160-basic.md)
 * [Arduino as a serial forwarder](tutorials/arduino-serial-forwarder.md)
 * [Conserving battery power](tutorials/low-power.md)
