@@ -49,7 +49,7 @@ Follow the instructions [here](https://brew.sh/) to install the Homebrew package
 
 ```sh
 brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi \
-             homebrew/cask-drivers/nordic-nrf5x-command-line-tools	
+             homebrew/cask-drivers/nordic-nrf5x-command-line-tools
 ```
 
 This command may take quite some time to complete.
@@ -67,61 +67,38 @@ wget http://no.archive.ubuntu.com/ubuntu/pool/main/d/device-tree-compiler/device
 sudo apt install ./device-tree-compiler_1.4.7-1_amd64.deb
 ```
 
-### nRF Connect SDK
+### Zephyr toolchain
 
-The nRF Connect SDK includes several Git repositories and Python modules, which you should install with the following commands:
+In order for Zephyr to find the gcc-arm-none-eabi toolchain you installed earlier, you need to export a couple of environment variables.  It can be most convenient to do this in a `.bash_profile` (or similar) file.
+
+On Mac OS X:
 
 ```sh
-cd ~
-mkdir ncs
-cd ncs
-git clone https://github.com/NordicPlayground/fw-nrfconnect-zephyr.git -b v1.13.99-ncs2 zephyr
-git clone https://github.com/NordicPlayground/fw-nrfconnect-mcuboot.git -b v1.2.99-ncs2 mcuboot
-git clone https://github.com/NordicPlayground/fw-nrfconnect-nrf.git -b v0.3.0 nrf
-git clone https://github.com/NordicPlayground/nrfxlib.git -b v0.3.0 nrfxlib
-pip3 install --user -r zephyr/scripts/requirements.txt
-pip3 install --user -r nrf/scripts/requirements.txt
+export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+export GNUARMEMB_TOOLCHAIN_PATH=/usr/local/opt/gcc-arm-none-eabi/
 ```
 
-### .zephyrrc
-
-Finally, to configure the Zephyr environment, you must create a `.zephyrrc` file as follows:
-
-#### Mac OS X
+On Ubuntu:
 
 ```sh
-cd ~
-touch .zephyrrc
-echo "export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb" >> ~/.zephyrrc
-echo "export GNUARMEMB_TOOLCHAIN_PATH=/usr/local/opt/gcc-arm-none-eabi/" >> ~/.zephyrrc
+export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+export GNUARMEMB_TOOLCHAIN_PATH=/usr/
 ```
 
-#### Ubuntu
+### West
+
+Install [West](https://docs.zephyrproject.org/latest/guides/west/index.html) (Zephyr's meta-tool) as follows:
+
+On Windows and Mac OS X:
 
 ```sh
-cd ~
-touch .zephyrrc
-echo "export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb" >> ~/.zephyrrc
-echo "export GNUARMEMB_TOOLCHAIN_PATH=/usr/" >> ~/.zephyrrc
+pip3 install -U west
 ```
 
-On all platforms, you must run the following command to configure the Zephyr environment whenever you open a new terminal.
+On Ubuntu:
 
 ```sh
-source ~/ncs/zephyr/zephyr-env.sh
-```
-
-## Secure Boot
-
-Before your nRF9160 DK can run user applications in the non-secure domain, you must install the [Secure Boot](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/0.3.0/nrf/samples/nrf9160/secure_boot/README.html) firmware.  Connect the nRF9160 DK to your computer via USB, and run the following commands:
-
-```sh
-source ~/ncs/zephyr/zephyr-env.sh
-cd ~/ncs/nrf/samples/nrf9160/secure_boot
-mkdir build
-cd build
-cmake -GNinja -DBOARD=nrf9160_pca10090 ..
-ninja flash
+pip3 install --user -U west
 ```
 
 ## Example application
@@ -130,18 +107,16 @@ Finally, we can get down to the business of sending data over NB-IoT.  We have c
 
 Before running the example application, you should follow the instructions from another of our tutorials to install a [serial terminal application](interactive-terminal.html#serial-terminal-application).  This way, you can see the serial output of the application – which is not only convenient for seeing log output but also necessary for you to obtain the IMEI and IMSI of the device, both of which are needed in order to register the device on the NB-IoT Developer Platform.
 
-Once you have your serial terminal application open and connected, and you have connected the nRF9160 DK to your computer via USB, use CMake and ninja to build and flash the example application to the nRF9160 DK, as follows:
+Once you have your serial terminal application open and connected, and you have connected the nRF9160 DK to your computer via USB, build and flash the example application to the nRF9160 DK, as follows:
 
 ```sh
 git clone git@github.com:ExploratoryEngineering/nrf9160-example.git
 cd nr9160-example
-mkdir build
-cd build
-cmake -GNinja -DBOARD=nrf9160_pca10090ns ..
-ninja flash
+west build -b nrf9160_pca10090ns
+west flash
 ```
 
-Once the application is flashed to the device, it will immediately begin running.  In your serial terminal application you will see a lot of output about Zephyr booting, and then you will see the following application output:
+Once the application is flashed to the device, it will immediately begin running.  In your serial terminal application you will see a lot of output about Zephyr booting, then possibly some delay, and then you will see the following application output:
 
 	Example application started.
 	IMEI: <imei>
