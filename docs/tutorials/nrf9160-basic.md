@@ -105,13 +105,21 @@ pip3 install --user -U west
 
 Finally, we can get down to the business of sending data over NB-IoT.  We have created an [example application](https://github.com/ExploratoryEngineering/nrf9160-example) for this purpose.
 
+Fetch the example application and its dependencies as follows:
+
+```sh
+mkdir nrf9160-basic
+cd nrf9160-basic
+west init -m https://github.com/ExploratoryEngineering/nrf9160-example
+west update
+```
+
 Before running the example application, you should follow the instructions from another of our tutorials to install a [serial terminal application](interactive-terminal.html#serial-terminal-application).  This way, you can see the serial output of the application – which is not only convenient for seeing log output but also necessary for you to obtain the IMEI and IMSI of the device, both of which are needed in order to register the device on the NB-IoT Developer Platform.
 
 Once you have your serial terminal application open and connected, and you have connected the nRF9160 DK to your computer via USB, build and flash the example application to the nRF9160 DK, as follows:
 
 ```sh
-git clone git@github.com:ExploratoryEngineering/nrf9160-example.git
-cd nr9160-example
+cd nrf9160-example
 west build -b nrf9160_pca10090ns
 west flash
 ```
