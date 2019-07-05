@@ -20,6 +20,10 @@ This tutorial will show you how to send data over NB-IoT using the [nRF9160 DK][
 
 At the time of the writing of this tutorial, concise and reliable instructions for setting up one's development environment were hard to come by.  You are welcome to follow Nordic's [instructions][2] for setting up the nRF Connect SDK, but we recommend following ours instead.
 
+### Virtual Machine
+
+Users of most operating systems have the option of working from inside a virtual machine, using e.g. Virtual Box.  This option is available in case the operating system-specific instructions in later sections do not work for you.  Please see the [VirtualBox tutorial](nrf9160-basic/virtualbox.html) for instructions if this is your situation.
+
 ### Windows
 
 Windows users should follow the Ubuntu instructions after setting up the Windows Subsystem for Linux, as follows:
