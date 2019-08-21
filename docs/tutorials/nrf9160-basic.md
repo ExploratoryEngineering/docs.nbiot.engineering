@@ -52,8 +52,8 @@ You will then be prompted to install Ubuntu.  Follow the steps in the wizard, in
 Follow the instructions [here](https://brew.sh/) to install the Homebrew package manager, if you haven't already.  Then, run the following command:
 
 ```sh
-brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi \
-             homebrew/cask-drivers/nordic-nrf5x-command-line-tools
+brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi
+brew cask install nordic-nrf-command-line-tools
 ```
 
 This command may take quite some time to complete.
