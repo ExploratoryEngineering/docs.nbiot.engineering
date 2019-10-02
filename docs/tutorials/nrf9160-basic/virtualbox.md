@@ -11,11 +11,13 @@ tags:
   - VirtualBox
 ---
 
+**Update 2019-10-02: Fixed breaking change in tooling. nRF9160 appliance updated.**
+
 This tutorial will show you how to set up and use VirtualBox as a development environment for the [nRF9160 DK][1] module from Nordic Semiconductor.  It should also be suitable to use any other virtual machine software that uses [.ova](https://en.wikipedia.org/wiki/Open_Virtualization_Format) files.
 
 ## Install
 
-First, install [VirtualBox](https://www.virtualbox.org/).  Then, download the [nRF9160 appliance](http://resources.exploratory.engineering/eeNRF9160.ova) that we have assembled, and import it into VirtualBox.
+First, install [VirtualBox](https://www.virtualbox.org/).  Then, download the [nRF9160 appliance](http://resources.exploratory.engineering/eeNRF9160_v1.1.ova) that we have assembled, and import it into VirtualBox.
 
 ## Setup
 
