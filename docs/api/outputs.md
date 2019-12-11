@@ -13,12 +13,15 @@ tags:
 **Outputs** are used to forward data from [devices](devices.md) to external systems.
 
 The outputs have three common elements
+
 * `type` -- a string that tells which type of output this is
 * `enabled` -- a flag that can be used to temporarily deactivate an output
 * `config` -- the output configuration. The contents depend on the output type.
 
 ## Output list
+
 The currently listed outputs
+
 ```bash
 $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs
 {
@@ -98,10 +101,11 @@ $ curl -HX-API-Token:${TOKEN} https://api.nbiot.telenor.io/collections/17dh0cf43
 ```
 
 The counters are as follows:
-  * `errorCount` -- number of errors sending messages
-  * `forwarded` -- number of messages successfully forwarded
-  * `received` -- number of messages received
-  * `retries` -- number of retries
+
+* `errorCount` -- number of errors sending messages
+* `forwarded` -- number of messages successfully forwarded
+* `received` -- number of messages received
+* `retries` -- number of retries
 
 The counters are reset when the output is reconfigured or reenabled.
 
@@ -139,7 +143,8 @@ The array of messages might contain more than one message if there's a lot of me
 }
 ```
 
-### Configuration
+### Webhook Configuration
+
 ```json
 {
     "url": "<server URL, required>",
@@ -156,7 +161,7 @@ Just the `url` parameter is required.
 
 The MQTT output sends data to a MQTT broker.
 
-### Configuration
+### MQTT Configuration
 
 ```json
 {
@@ -168,11 +173,13 @@ The MQTT output sends data to a MQTT broker.
     "topicName":        "<topic to use, required>"
 }
 ```
+
 The endpoint must be formatted as `tcp://<host>:<port>` for unencrypted connections, `ssl://<host>:<port>` for TLS connections. TLS connections is highly recommended. If you use a self-signed certificate you can disable the certificate check by setting the check flag.
 
 The host name must be valid and reachable. The port must *always* be included in the endpoint.
 
 The payload is a JSON structure identical to the [WebSocket](devices.md) output:
+
 ```json
 {
     "device": {
@@ -200,10 +207,11 @@ The payload is a JSON structure identical to the [WebSocket](devices.md) output:
 ```
 
 ## IFTTT output
+
 The IFTTT output is a custom webhook integration with IFTTT. The output isn't
 very suited to high volumes of data and the delivery is on a best effort.
 
-### Configuration
+### IFTTT Configuration
 
 The following parameters is used to configure the IFTTT output
 
