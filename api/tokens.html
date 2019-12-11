@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tokens - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tokens - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Tokens - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/api/tokens.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Tokens</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/api.html">REST API</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Tokens</li>
+      </ol>
+      <html><head></head><body><p>The token resource is used to manage tokens. You can only access this resource
+whenever you are logged in through CONNECT ID, not via another API token.</p>
+<h2 id="token-structure">Token structure</h2>
+<pre><code class="hljs json">{
+  <span class="hljs-attr">&quot;resource&quot;</span>: <span class="hljs-string">&quot;/&quot;</span>,
+  <span class="hljs-attr">&quot;write&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;583b2503f03e5ca2d1032e3e906e55cbb178a6025019606d917660c027661e64&quot;</span>,
+  <span class="hljs-attr">&quot;tags&quot;</span>: {
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;value&quot;</span>
+  }
+}</code></pre>
+
+<p>Tokens have two fields &#x2013; <code>resource</code> and <code>write</code>. The <code>resource</code> field shows
+what resource you have access through via the token. You have access to the
+resource itself and all resources under it; if the resource is <code>/teams</code> you
+will have access to <em>all</em> teams but if it is <code>/teams/17dh0cf43jfgl8</code> you
+will only be able to access that particular team via the API token.</p>
+<p>The <code>write</code> flag is simply a read/write flag. If the flag is set to <code>true</code> the
+token will grant read and write access to all resources covered by the <code>resource</code>
+field. If the <code>write</code> flag is set to <code>false</code> the token will only grand read-only
+access.</p>
+<p>The <code>tags</code> element contains <a href="/api/tags.html">user-defined attributes</a>. If there&#x2019;s no tags set on the
+token the element will be omitted.</p>
+<h2 id="token-list-tokens">Token list: <code>/tokens</code></h2>
+<p>The list of available tokens can be queried via GET requests. New tokens can be created by POSTing to the resource.</p>
+<h3 id="list-tokens">List tokens</h3>
+<pre><code class="hljs bash">$ curl https://api.nbiot.telenor.io/tokens
+{
+  <span class="hljs-string">&quot;tokens&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;resource&quot;</span>: <span class="hljs-string">&quot;/&quot;</span>,
+      <span class="hljs-string">&quot;write&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;583b2503f03e5ca2d1032e3e906e55cbb178a6025019606d917660c027661e64&quot;</span>
+    }
+  ]
+}</code></pre>
+
+<h3 id="create-token">Create token</h3>
+<p><code>POST</code> to the <code>/tokens</code> resource to create a new token. The fields <code>resource</code> and <code>write</code> are required.</p>
+<pre><code class="hljs bash">$ curl -XPOST <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;resource&quot;:&quot;/teams&quot;, &quot;write&quot;: false, &quot;tags&quot;:{&quot;name&quot;: &quot;the read-only team token&quot;}}&apos;</span> \
+    https:/api.nbiot.telenor.io/tokens
+{
+  <span class="hljs-string">&quot;resource&quot;</span>: <span class="hljs-string">&quot;/teams&quot;</span>,
+  <span class="hljs-string">&quot;write&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;7c7a20322b726931bbdee283f41286adc25ce38bd5b0ab0dbf1517cbcd58d70d&quot;</span>,
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;the read-only team token&quot;</span>
+  }
+}</code></pre>
+
+<h2 id="token-detail-tokens-token-">Token detail: <code>/tokens/{token}</code></h2>
+<p>The token detail resource works similar to the token list but operates on a single token at a time.</p>
+<h3 id="updating-a-token">Updating a token</h3>
+<p>Use <code>PATCH</code> to update the token:</p>
+<pre><code class="hljs bash">$ curl -XPATCH <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;tags&quot;:{&quot;new&quot;:&quot;attribute&quot;}}&apos;</span> \
+  https://api.nbiot.telenor.io/tokens/7c7a20322b726931bbdee283f41286adc25ce38bd5b0ab0dbf1517cbcd58d70d
+{
+  <span class="hljs-string">&quot;resource&quot;</span>: <span class="hljs-string">&quot;/teams&quot;</span>,
+  <span class="hljs-string">&quot;write&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;7c7a20322b726931bbdee283f41286adc25ce38bd5b0ab0dbf1517cbcd58d70d&quot;</span>,
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;the read-only team token&quot;</span>,
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-string">&quot;attribute&quot;</span>
+  }
+}</code></pre>
+<p>The server responds with the updated token.</p>
+<h3 id="removing-a-token">Removing a token</h3>
+<p>Use <code>DELETE</code> to remove a token:</p>
+<pre><code class="hljs bash">$ curl -XDELETE \
+  https://api.nbiot.telenor.io/tokens/7c7a20322b726931bbdee283f41286adc25ce38bd5b0ab0dbf1517cbcd58d70d</code></pre>
+
+<p>The server responds with <code>204 NO CONTENT</code> when the token is removed.</p>
+</body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/api/tokens.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

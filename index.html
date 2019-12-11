@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>NB-IoT server doc and tutorials - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="description" content="Documentation for Horde NB-IoT server">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NB-IoT server doc and tutorials - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="Documentation for Horde NB-IoT server">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="NB-IoT server doc and tutorials - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/index.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="Documentation for Horde NB-IoT server" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>NB-IoT server doc and tutorials</h1>
+      <html><head></head><body><p>Welcome! This is the documentation site for the Telenor NB-IoT service. Please join our <a href="https://join.slack.com/t/telenor-nbiot/shared_invite/enQtNDQ2MjczOTk4MDM2LWE4MGY3ZjYzMDM0NGFjMzdlMTQ1NzUyOWYwMGI3Mzk2NzFkNmQ2Mjg5MGIxNzEyNmI2ZmUyYWE5MjVmMjRkYzY">Slack channel</a> if you have any questions.</p>
+<p><img src="undraw_programming_2svr.png" alt="Welcome to tutorials"></p>
+<h1 id="getting-started">Getting started</h1>
+<p>Start by going through the <a href="/tutorials/interactive-terminal.html">interactive terminal</a>
+tutorial, then <a href="/tutorials/getting-started.html">Getting started with Telenor NB-IoT Developer Platform</a>
+to get a quick feel for how the devices and console works.</p>
+<p>If you want to implement a service that receives data you can use one of our <a href="/libs.html">client libraries</a>.
+If your language is not yet supported, then have a look at the documentation
+for <a href="/api/outputs.html">outputs</a> which shows you how the data is sent to e.g. MQTT.</p>
+<h1 id="backend-ip-address-and-apn">Backend IP address and APN</h1>
+<p>This is the <strong>official address</strong> for the NB-IoT backend:</p>
+<p>Send data to <code>172.16.15.14</code> on port <code>1234</code></p>
+<p>The APN on your device <strong>must</strong> be set to <code>mda.ee</code> if you want to send data to
+the IoT backend. Other APNs does not work.</p>
+<h1 id="sara-n2-at-command-cheat-sheet">SARA N2 AT command cheat sheet</h1>
+<h2 id="send-udp-packet-on-device">Send UDP packet on device</h2>
+<p>Create socket (NSOCR), send package (NSOST) and close socket (NSOCL)</p>
+<pre><code>AT+NSOCR=<span class="hljs-string">&quot;DGRAM&quot;</span>,<span class="hljs-number">17</span>,<span class="hljs-number">8888</span>,<span class="hljs-number">1</span>
+AT+NSOST=<span class="hljs-number">0</span>,<span class="hljs-string">&quot;172.16.15.14&quot;</span>,<span class="hljs-number">1234</span>,<span class="hljs-number">12</span>,<span class="hljs-string">&quot;48656C6C6F20576F726C6421&quot;</span>
+AT+NSOCL=<span class="hljs-number">0</span></code></pre>
+
+<h2 id="check-imsi-and-imei">Check IMSI and IMEI</h2>
+<pre><code><span class="hljs-keyword">AT</span>+CIMI
+<span class="hljs-keyword">AT</span>+CGSN=<span class="hljs-number">1</span></code></pre>
+
+<h2 id="check-ip-address">Check IP address</h2>
+<p>If the module has an assigned IP address it is online and ready to use</p>
+<pre><code><span class="hljs-keyword">AT</span>+CGPADDR</code></pre>
+
+<h2 id="check-apn-setup">Check APN setup</h2>
+<p>It should say &#x201C;mda.ee&#x201D; if the correct APN is selected</p>
+<pre><code><span class="hljs-keyword">AT</span>+CGDCONT?</code></pre>
+
+<h2 id="ping-an-external-host">Ping an external host</h2>
+<pre><code><span class="hljs-keyword">AT</span>+NPING=<span class="hljs-string">&quot;172.16.0.100&quot;</span></code></pre>
+
+<p>It should say <code>+NPING: &quot;172.16.0.100&quot;,&lt;number&gt;,&lt;number&gt;</code> if successful.</p>
+<h2 id="set-up-for-ee-apn">Set up for EE APN</h2>
+<p>Turn off autoconnect for the module, then reboot</p>
+<pre><code><span class="hljs-keyword">AT</span>+NCONFIG=<span class="hljs-string">&quot;AUTOCONNECT&quot;</span>,<span class="hljs-string">&quot;FALSE&quot;</span>
+<span class="hljs-keyword">AT</span>+NRB</code></pre>
+
+<p>Set the MDA/APN name</p>
+<pre><code><span class="hljs-keyword">AT</span>+CGDCONT=<span class="hljs-number">0</span>,<span class="hljs-string">&quot;IP&quot;</span>,<span class="hljs-string">&quot;mda.ee&quot;</span></code></pre>
+
+<p>Set autoconnect on and reboot</p>
+<pre><code><span class="hljs-keyword">AT</span>+NCONFIG=<span class="hljs-string">&quot;AUTOCONNECT&quot;</span>,<span class="hljs-string">&quot;TRUE&quot;</span>
+<span class="hljs-keyword">AT</span>+NRB</code></pre>
+
+<p>Get IMSI and IMEI</p>
+<pre><code><span class="hljs-keyword">AT</span>+CIMI
+<span class="hljs-keyword">AT</span>+CGSN=<span class="hljs-number">1</span></code></pre>
+
+<p>Register device in Horde, then reboot</p>
+<pre><code><span class="hljs-keyword">AT</span>+NRB</code></pre>
+
+<p>Verify that the MDA/APN is set and that you get an IP address</p>
+<pre><code><span class="hljs-keyword">AT</span>+CGDCONT?
+<span class="hljs-keyword">AT</span>+CGPADDR</code></pre></body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/index.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

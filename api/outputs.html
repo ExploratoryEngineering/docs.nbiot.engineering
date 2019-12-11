@@ -1,0 +1,350 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Outputs - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Outputs - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Outputs - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/api/outputs.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Outputs</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/api.html">REST API</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Outputs</li>
+      </ol>
+      <html><head></head><body><p><strong>Outputs</strong> are used to forward data from <a href="/api/devices.html">devices</a> to external systems.</p>
+<p>The outputs have three common elements</p>
+<ul>
+<li><code>type</code> &#x2013; a string that tells which type of output this is</li>
+<li><code>enabled</code> &#x2013; a flag that can be used to temporarily deactivate an output</li>
+<li><code>config</code> &#x2013; the output configuration. The contents depend on the output type.</li>
+</ul>
+<h2 id="output-list">Output list</h2>
+<p>The currently listed outputs</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs
+{
+  <span class="hljs-string">&quot;collectionId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfglk&quot;</span>,
+  <span class="hljs-string">&quot;outputs&quot;</span>: []
+}</code></pre>
+
+<h3 id="create-a-new-output">Create a new output</h3>
+<p>A new output can be created by <code>POST</code>ing to the <code>outputs</code> resource:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XPOST \
+     <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;type&quot;:&quot;webhook&quot;, &quot;config&quot;:{&quot;url&quot;: &quot;https://webhooks.example.com/webhook/receiver&quot;}}&apos;</span> \
+     https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs
+
+{
+  <span class="hljs-string">&quot;outputId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;collectionId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfglk&quot;</span>,
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;webhook&quot;</span>,
+  <span class="hljs-string">&quot;config&quot;</span>: {
+    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://webhooks.example.com/webhook/receiver&quot;</span>
+  },
+  <span class="hljs-string">&quot;enabled&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;tags&quot;</span>: {}
+}</code></pre>
+
+<p>The server will respond with the output when it is created. Note that the URL for the output must point to a valid host. If the host resolves to a private IP range or an unreachable host you&#x2019;ll get an error message from the server:</p>
+<pre><code class="hljs json">{
+    <span class="hljs-attr">&quot;status&quot;</span>:<span class="hljs-number">400</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>:<span class="hljs-string">&quot;Invalid config&quot;</span>,
+    <span class="hljs-attr">&quot;additionalInfo&quot;</span>:{
+        <span class="hljs-attr">&quot;url&quot;</span>:<span class="hljs-string">&quot;Invalid host name&quot;</span>
+    }
+}</code></pre>
+
+<h2 id="logs-and-status-resource">Logs and Status resource</h2>
+<p>All of the outputs have a <code>logs</code> and <code>status</code> resource that can be used to
+diagnose the state of the output.</p>
+<h2 id="the-logs-resource-at-collections-coolectionid-outputs-outpuid-logs-">The <code>logs</code> resource (at <code>/collections/{coolectionId}/outputs/{outpuId}/logs</code>)</h2>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs/17dh0cf43jfgl9/logs
+{
+  <span class="hljs-string">&quot;logs&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;Output started&quot;</span>,
+      <span class="hljs-string">&quot;timestamp&quot;</span>: 1538163685141,
+      <span class="hljs-string">&quot;repeated&quot;</span>: 0
+    }
+  ]
+}</code></pre>
+
+<p>The logs will be reset each time the output is reconfigured or reenabled. The logs are unavailable if the output is disabled.
+The timestamp is in ms, epoch is 1970-01-01 00:00:00. The <code>repeated</code> field shows how many times the message have been repeated.</p>
+<h2 id="the-status-resource">The <code>status</code> resource</h2>
+<p>The status resource shows counters for the output</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> https://api.nbiot.telenor.io/collections/17dh0cf43jfglk/outputs/17dh0cf43jfgl9/status
+{
+  <span class="hljs-string">&quot;errorCount&quot;</span>: 0,
+  <span class="hljs-string">&quot;forwarded&quot;</span>: 559,
+  <span class="hljs-string">&quot;received&quot;</span>: 559,
+  <span class="hljs-string">&quot;retries&quot;</span>: 0
+}</code></pre>
+
+<p>The counters are as follows:</p>
+<ul>
+<li><code>errorCount</code> &#x2013; number of errors sending messages</li>
+<li><code>forwarded</code> &#x2013; number of messages successfully forwarded</li>
+<li><code>received</code> &#x2013; number of messages received</li>
+<li><code>retries</code> &#x2013; number of retries</li>
+</ul>
+<p>The counters are reset when the output is reconfigured or reenabled.</p>
+<h2 id="webhook-output">Webhook output</h2>
+<p>The Webhook output sends a <code>POST</code> request to a web server. The contents of the body is a a JSON containing data messages.
+The data messages are identical in structure to the <a href="/api/collections.html">data structure used in the collection and device WebSocket</a>.</p>
+<p>The array of messages might contain more than one message if there&#x2019;s a lot of messages received by the backend.</p>
+<pre><code class="hljs json">{
+  <span class="hljs-attr">&quot;messages&quot;</span>: [{
+    <span class="hljs-attr">&quot;device&quot;</span>: {
+      <span class="hljs-attr">&quot;deviceId&quot;</span>:<span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-attr">&quot;collectionId&quot;</span>:<span class="hljs-string">&quot;17dh0cf43jfgli&quot;</span>,
+      <span class="hljs-attr">&quot;imei&quot;</span>:<span class="hljs-string">&quot;111222333444&quot;</span>,
+      <span class="hljs-attr">&quot;imsi&quot;</span>:<span class="hljs-string">&quot;123456789&quot;</span>,
+      <span class="hljs-attr">&quot;tags&quot;</span>:{
+        <span class="hljs-attr">&quot;name&quot;</span>:<span class="hljs-string">&quot;My first device&quot;</span>
+      }
+    },
+    <span class="hljs-attr">&quot;payload&quot;</span>:<span class="hljs-string">&quot;WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=&quot;</span>,
+    <span class="hljs-attr">&quot;received&quot;</span>:<span class="hljs-number">1538163685141</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;data&quot;</span>,
+    <span class="hljs-attr">&quot;transport&quot;</span>: <span class="hljs-string">&quot;&lt;transport used by the device to deliver the data&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;coapMetaData&quot;</span>: {
+      <span class="hljs-attr">&quot;method&quot;</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;&lt;path used by device&quot;</span>&gt;
+    },
+    <span class="hljs-attr">&quot;udpMetaData&quot;</span>: {
+      <span class="hljs-attr">&quot;localPort&quot;</span>: <span class="hljs-string">&quot;&lt;the backend&apos;s local port&gt;&quot;</span>,
+      <span class="hljs-attr">&quot;remotePort&quot;</span>: <span class="hljs-string">&quot;&lt;the port used on the device&gt;&quot;</span>
+    }]
+}</code></pre>
+
+<h3 id="webhook-configuration">Webhook Configuration</h3>
+<pre><code class="hljs json">{
+    <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;&lt;server URL, required&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;basicAuthUser&quot;</span>: <span class="hljs-string">&quot;&lt;user name if basic auth is used, optional&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;basicAuthPass&quot;</span>: <span class="hljs-string">&quot;&lt;password for basic auth, optional&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;customHeaderName&quot;</span>: <span class="hljs-string">&quot;&lt;name of custom header, optional&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;customHeaderValue&quot;</span>: <span class="hljs-string">&quot;&lt;value of custom header, optional&gt;&quot;</span>
+}</code></pre>
+
+<p>Just the <code>url</code> parameter is required.</p>
+<h2 id="mqtt-output">MQTT output</h2>
+<p>The MQTT output sends data to a MQTT broker.</p>
+<h3 id="mqtt-configuration">MQTT Configuration</h3>
+<pre><code class="hljs json">{
+    &quot;endpoint&quot;:         &quot;&lt;endpoint for broker, required&gt;&quot;,
+    &quot;disableCertCheck&quot;: &lt;flag to disable certificate check, optional&gt;,
+    &quot;username&quot;:         &quot;&lt;user name for broker, optional&gt;&quot;,
+    &quot;password&quot;:         &quot;&lt;password for broker, optional&gt;&quot;,
+    &quot;clientId&quot;:         &quot;&lt;client id to use when connecting to broker, required&gt;&quot;,
+    &quot;topicName&quot;:        &quot;&lt;topic to use, required&gt;&quot;
+}</code></pre>
+
+<p>The endpoint must be formatted as <code>tcp://&lt;host&gt;:&lt;port&gt;</code> for unencrypted connections, <code>ssl://&lt;host&gt;:&lt;port&gt;</code> for TLS connections. TLS connections is highly recommended. If you use a self-signed certificate you can disable the certificate check by setting the check flag.</p>
+<p>The host name must be valid and reachable. The port must <em>always</em> be included in the endpoint.</p>
+<p>The payload is a JSON structure identical to the <a href="/api/devices.html">WebSocket</a> output:</p>
+<pre><code class="hljs json">{
+    <span class="hljs-attr">&quot;device&quot;</span>: {
+        <span class="hljs-attr">&quot;deviceId&quot;</span>:<span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+        <span class="hljs-attr">&quot;collectionId&quot;</span>:<span class="hljs-string">&quot;17dh0cf43jfgli&quot;</span>,
+        <span class="hljs-attr">&quot;imei&quot;</span>:<span class="hljs-string">&quot;111222333444&quot;</span>,
+        <span class="hljs-attr">&quot;imsi&quot;</span>:<span class="hljs-string">&quot;123456789&quot;</span>,
+        <span class="hljs-attr">&quot;tags&quot;</span>:{
+            <span class="hljs-attr">&quot;name&quot;</span>:<span class="hljs-string">&quot;My first device&quot;</span>
+        }
+    },
+    <span class="hljs-attr">&quot;payload&quot;</span>:<span class="hljs-string">&quot;WXVwIHRoaXMgaXMgdGhlIHBheWxvYWQ=&quot;</span>,
+    <span class="hljs-attr">&quot;received&quot;</span>:<span class="hljs-number">1538163685141</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;data&quot;</span>,
+    <span class="hljs-attr">&quot;transport&quot;</span>: <span class="hljs-string">&quot;&lt;transport used by the device to deliver the data&gt;&quot;</span>,
+    <span class="hljs-attr">&quot;coapMetaData&quot;</span>: {
+      <span class="hljs-attr">&quot;method&quot;</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;&lt;path used by device&quot;</span>&gt;
+    },
+    <span class="hljs-attr">&quot;udpMetaData&quot;</span>: {
+      <span class="hljs-attr">&quot;localPort&quot;</span>: <span class="hljs-string">&quot;&lt;the backend&apos;s local port&gt;&quot;</span>,
+      <span class="hljs-attr">&quot;remotePort&quot;</span>: <span class="hljs-string">&quot;&lt;the port used on the device&gt;&quot;</span>
+    }
+}</code></pre>
+
+<h2 id="ifttt-output">IFTTT output</h2>
+<p>The IFTTT output is a custom webhook integration with IFTTT. The output isn&#x2019;t
+very suited to high volumes of data and the delivery is on a best effort.</p>
+<h3 id="ifttt-configuration">IFTTT Configuration</h3>
+<p>The following parameters is used to configure the IFTTT output</p>
+<pre><code class="hljs json">{
+    &quot;key&quot;: &quot;&lt;key for the IFTTT webhook, required&gt;&quot;,
+    &quot;eventName&quot;: &quot;&lt;event name to use, required&gt;&quot;,
+    &quot;asIsPayload&quot;: &lt;boolean flag, if set to true the payload is sent as is, optional&gt;
+}</code></pre>
+
+<h3 id="format-of-output">Format of output</h3>
+<p>The request body in the webhook has the <code>value1</code> field set to the device data and <code>value2</code> as the device ID.</p>
+</body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/api/outputs.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

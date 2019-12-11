@@ -1,0 +1,333 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Raspberry Pi getting started - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raspberry Pi getting started - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Raspberry Pi getting started - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/tutorials/raspi-serial.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Raspberry Pi getting started</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/tutorials.html">Tutorials</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Raspberry Pi getting started</li>
+      </ol>
+      <html><head></head><body><h2 id="preface">Preface</h2>
+<p>This tutorial will focus on how to set up, configure, and use serial ports (UART) to communicate with the <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a>. It will not cover how to connect to or configure the IP stack of your Raspberry Pi. </p>
+<h2 id="serial-communication">Serial Communication</h2>
+<p>All versions of the Raspberry Pi have two serial ports, one is simple and flaky and the other is steady and implemented in hardware. We are interested in the hardware serial port for our application but on the Raspberry Pi 3 and the Raspberry Zero, alas, this serial port is used for the on-board Bluetooth module. <strong>So, if you plan to use the Raspberry Pi 3 or the Zero, you will have to configure you Raspberry Pi to free the serial port from the Bluetooth module&#x2019;s shackles.</strong> Fortunately this is quite simple. The first step is to enable the <em>GPIO serial port</em>. This can be done by editing <code>/boot/config.txt</code> and adding the following to the end of the file: </p>
+<pre><code>enable_uart=1</code></pre><p>By default the serial port is used as a <code>console</code> by the operating system, but that&#x2019;s not what we want, so let&#x2019;s change that:</p>
+<p><strong>Do this if you have a Raspberry Pi 3 and Zero:</strong></p>
+<pre><code>sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service</code></pre><p><strong>Do this for other devices:</strong></p>
+<pre><code>sudo systemctl stop serial-getty@ttyAMA0.service
+sudo systemctl disable serial-getty@ttyAMA0.service</code></pre><p>We also need to take a look in <code>/boot/cmdline.txt</code>. The file will probably look something like this:</p>
+<pre><code>dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=2132391a-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</code></pre><p>Delete the <code>console=serial0,115200</code> part and leave the rest as it is.</p>
+<h3 id="raspberry-pi-3-zero-w-specific-step">Raspberry Pi 3 / Zero W specific step</h3>
+<p><strong>This step is for the Raspberry Pi 3 and Zero W only.</strong></p>
+<p>So now we&#x2019;ve disabled the console, let&#x2019;s swap the serial ports around so we can use them for our purposes. <strong>Keep in mind that the Bluetooth performance will probably suffer by completing this step.</strong> Use caution if Bluetooth is important to you or your application. Enough with the warnings. Open up <code>/boot/config.txt</code> and add:</p>
+<pre><code> dtoverlay=pi3-miniuart-bt</code></pre><p>Reboot to apply!</p>
+<h2 id="how-to-connect">How to connect</h2>
+<p><a href="/tutorials/img/raspi-nbiot.jpg" target="_blank"><img src="img/raspi-nbiot-small.jpg" alt="EE-NBIOT-01 connected to a Raspberry Pi"><br>
+  See image in full resolution</a></p>
+<p>The picture above shows how to connect the EE-NBIOT-01 to the Raspberry Pi. The connections are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Raspberry Pi</th>
+<th>EE-NBIOT-01</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PIN 2 (VCC 5V) - red</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td>PIN 6 (GND) - black</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>PIN 8 (TX) - orange</td>
+<td>TXD</td>
+</tr>
+<tr>
+<td>PIN 10 (RX) - yellow</td>
+<td>RXD</td>
+</tr>
+</tbody></table>
+<p>The observant reader might have noticed the absurdity of connecting the RX pin (receive) to another RX pin and vice versa for the TX (transmit). The reason for this is that u-blox designed their SARA-N2 NB-IoT module to switch the pins around internally. See the <a href="https://www.u-blox.com/sites/default/files/SARA-N2_SysIntegrManual_%28UBX-17005143%29.pdf">u-blox SARA-N2 integration manual</a> for more on the serial interface. Also, see <a href="https://www.raspberrypi.org/documentation/usage/gpio/">https://www.raspberrypi.org/documentation/usage/gpio/</a> for more info on the Raspberry Pi pin layout.</p>
+<h2 id="code-examples">Code Examples</h2>
+<p>We&#x2019;ve included two code examples of using serial to communicate with the EE-NBIOT-01, one written in Python and another written in C. They might not be pretty, but should give a glimpse of how to deal with serial communication on our board. In both examples, the command <code>AT+CGMI?</code> is sent to the board, to which it replies:</p>
+<pre><code>u-blox
+
+OK</code></pre><p>Once you have this code working, you should head on over to the <a href="interactive-terminal.html#terminal-commands">Interactive Terminal Tutorial</a> where you can learn about more interesting commands such as those for connecting to a network and sending data.</p>
+<h3 id="python">Python</h3>
+<pre><code>import ctypes
+import fileinput, sys
+import datetime
+import time
+import io
+import os
+import serial
+
+SERIAL_PORT = &apos;/dev/ttyAMA0&apos;
+BAUD_RATE = 9600
+PARITY = &apos;N&apos;
+STOP_BITS = 1
+BYTE_SIZE = 8
+
+def main():
+    ser = serial.Serial(SERIAL_PORT, BAUD_RATE, parity=PARITY, stopbits=STOP_BITS, bytesize=BYTE_SIZE)
+    ser.write(&apos;AT+CGMI?\n\r&apos;)
+    result = ser.readline()
+
+    while(True):
+    if(result.find(&quot;OK&quot;) &gt; 0 or result.find(&quot;ERROR&quot;) &gt; 0):
+        break
+    result = result + ser.read()
+
+    ser.close()
+    print(result)
+
+if __name__ == &apos;__main__&apos;:
+    main()</code></pre><h3 id="c">C</h3>
+<pre><code>#include &lt;errno.h&gt;
+#include &lt;fcntl.h&gt; 
+#include &lt;string.h&gt;
+#include &lt;termios.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int serial_config (int serial_fd, int speed, int parity)
+{
+    struct termios tty;
+    memset (&amp;tty, 0, sizeof tty);
+    if (tcgetattr (serial_fd, &amp;tty) != 0)
+    {
+        printf (&quot;error %d from tcgetattr&quot;, errno);
+        return -1;
+    }
+
+    cfsetospeed (&amp;tty, speed);            /* Setting speed */
+    cfsetispeed (&amp;tty, speed);
+
+    tty.c_cflag = (tty.c_cflag &amp; ~CSIZE) | CS8;    /* 8-bit chars */
+    tty.c_cc[VMIN]  = 0;                       /* Disable block on read */
+    tty.c_cc[VTIME] = 5;                    /* 0.5 seconds read timeout */
+
+    tty.c_iflag &amp;= ~(IXON | IXOFF | IXANY);     /* Disable xon/xoff ctrl*/
+
+    tty.c_cflag |= (CLOCAL | CREAD);        /* Ignore modem controls, enable reading*/
+    tty.c_cflag &amp;= ~(PARENB | PARODD);          /* No parity*/
+    tty.c_cflag |= parity;
+    tty.c_cflag &amp;= ~CSTOPB;                /* 1 stop bit */
+    tty.c_cflag &amp;= ~CRTSCTS;            /* Disable HW flow control */
+
+    if (tcsetattr (serial_fd, TCSANOW, &amp;tty) != 0)
+    {
+        printf (&quot;error %d from tcsetattr&quot;, errno);
+        return -1;
+    }
+    return 0;
+}
+
+int main(void) 
+{
+    char *portname = &quot;/dev/ttyAMA0&quot;;
+    int serial_fd = open (portname, O_RDWR | O_NOCTTY | O_SYNC);
+
+    if (serial_fd &lt; 0)
+    {
+        printf (&quot;error %d opening %s: %s&quot;, errno, portname, strerror (errno));
+        return -1;
+    }
+
+    if(serial_config (serial_fd, B9600, 0))
+    {
+        printf(&quot;Failed to set attributes!\n&quot;);
+        return -1;
+    }
+
+    char *command = &quot;AT+CGMI?\n\r&quot;;
+    printf(&quot;Writing command to NB-IoT module: %s\n&quot;, command);
+    write (serial_fd, command, 10);
+
+    sleep(1);
+
+    int buf_len = 100;
+    char buf [buf_len];
+    bzero(buf, buf_len);
+
+    int n = read (serial_fd, buf, sizeof buf);
+    printf(&quot;Response from NB-IoT module: %s\n&quot;, buf);
+
+    return 0;
+}</code></pre></body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/tutorials/raspi-serial.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

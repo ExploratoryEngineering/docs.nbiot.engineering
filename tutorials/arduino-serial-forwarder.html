@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Arduino as serial adapter - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arduino as serial adapter - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Arduino as serial adapter - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/tutorials/arduino-serial-forwarder.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Arduino as serial adapter</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/tutorials.html">Tutorials</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Arduino as serial adapter</li>
+      </ol>
+      <html><head></head><body><p>If you don&#x2019;t have a USB to serial adapter but would still like to get started playing with the <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a>, it&#x2019;s also possible to use a microcontroller like Arduino to forward serial data between the computer and the <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a>. The easiest is to use an Arduino board with 3.3V operating voltage, which also has 3.3V on the I/O pins. Most Arduino boards, like the popular Arduino Uno, have 5V I/O logic. For those you&#x2019;ll need a voltage divider on TX so we don&#x2019;t damage the EE-NBIOT-01.</p>
+<h3 id="arduino-with-3-3v-operating-voltage">Arduino with 3.3V operating voltage</h3>
+<p>The boards with 3.3V logic don&#x2019;t need a voltage divider and are straightforward to use: Arduino Zero, Arduino MKR Zero, Arduino M0, Arduino Due. See the photo below for how to connect these boards.</p>
+<p><a href="/tutorials/img/mkrzero.jpg" target="_blank"><img src="img/mkrzero-small.jpg" alt="Arduino MKR Zero serial forwarder"><br>
+See image in full resolution</a></p>
+<h3 id="arduino-with-5v-operating-voltage">Arduino with 5V operating voltage</h3>
+<p>Using a 100&#x2126; resistor for R1 and a 220&#x2126; resistor for R2 should give an output of 3.4V - which is well below the max of 4.25V of the SARA-N210. Because the EE-NBIOT-01 uses 3.3V internally, RX will be 3.3V already, which is enough to trigger high on the Arduino pin. In other words we don&#x2019;t need a voltage divider for RX.</p>
+<p><img src="img/arduino-uno-sch.png" alt="Arduino serial forwarder schematics">
+<a href="/tutorials/img/arduino-uno.jpg" target="_blank">[<img src="img/arduino-uno-small.jpg" alt="Arduino serial forwarder breadboard"><br>
+See image in full resolution</a></p>
+<h3 id="arduino-nb-iot-serial-forwarder">Arduino NB-IoT Serial Forwarder</h3>
+<p>You&#x2019;ll also need to upload this sketch to the Arduino board</p>
+<pre><code><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> SERIAL_PORT_HARDWARE_OPEN</span>
+<span class="hljs-comment">// For Arduino boards with a hardware serial port separate from USB serial. This is usually mapped to Serial1.</span>
+<span class="hljs-comment">// Check which pins are used for Serial1 on the board you&apos;re using.</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nbiot SERIAL_PORT_HARDWARE_OPEN</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-comment">// For Arduino boards with only one hardware serial port, like Arduino Uno. It is mapped to USB, so we use</span>
+<span class="hljs-comment">// SoftwareSerial on pin 10 and 11 instead.</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SoftwareSerial.h&gt;</span></span>
+<span class="hljs-built_in">SoftwareSerial</span> nbiot(<span class="hljs-number">10</span>, <span class="hljs-number">11</span>);
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>);
+  nbiot.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+  <span class="hljs-built_in">if</span> (<span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">available</span>()) {      <span class="hljs-comment">// When data on USB serial</span>
+    nbiot.<span class="hljs-built_in">write</span>(<span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">read</span>());  <span class="hljs-comment">// Forward it to pin 11</span>
+  }
+
+  <span class="hljs-built_in">if</span> (nbiot.<span class="hljs-built_in">available</span>()) {       <span class="hljs-comment">// When data on pin 10</span>
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">write</span>(nbiot.<span class="hljs-built_in">read</span>());  <span class="hljs-comment">// Forward it to USB serial</span>
+  }
+}</code></pre>
+
+</body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/tutorials/arduino-serial-forwarder.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

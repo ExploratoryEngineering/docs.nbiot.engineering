@@ -1,0 +1,288 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>NB-IoT on micro:bit - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NB-IoT on micro:bit - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="NB-IoT on micro:bit - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/tutorials/microbit-basic.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>NB-IoT on micro:bit</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/tutorials.html">Tutorials</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">NB-IoT on micro:bit</li>
+      </ol>
+      <html><head></head><body><p>This tutorial will show you how to send data over NB-IoT from a micro:bit using the Telenor <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a> module.  The <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a> is a developer kit we&#x2019;ve made to lower the barrier for experimenting with NB-IoT.  It is a breakout board to the <a href="https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources">u-blox SARA-N210</a> radio module with a Telenor Norway SIM-card, an antenna, and a voltage regulator. The guide also relies on our self service NB-IoT Developer Platform. See our separate tutorial on how to <a href="getting-started.html">setup a device in the NB-IoT Developer Platform</a>. As of 1st October 2018 the platform is only enabled for Telenor Norway.</p>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/UP5r34SP55Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A <a href="https://microbit.org/resellers/">micro:bit</a></li>
+<li>The <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a> board</li>
+<li>4 jumper cables<ul>
+<li>Female to male/female (depends on method below)</li>
+</ul>
+</li>
+<li>A method to connect to the micro:bit<ul>
+<li>Get an <a href="https://www.kitronik.co.uk/5601b-edge-connector-breakout-board-for-bbc-microbit-pre-built.html">Edge connector breakout board</a></li>
+<li>Or improvise <a href="https://lorrainbow.wordpress.com/2017/11/11/how-to-connect-wires-to-the-microbit/">how to connect wires</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="wiring">Wiring</h2>
+<p>The micro:bit has 3.3V power on the I/O (input/output) pins, which is a perfect match for the EE-NBIOT-01. However, if you power the micro:bit from a battery, be aware that the battery needs to have at least 3.1V - which means that two fully charged AA batteries is not enough.</p>
+<p>Connect the jumper wires between the following pins:</p>
+<table>
+<thead>
+<tr>
+<th align="right">micro:bit</th>
+<th>EE-NBIOT-01</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">3V - red</td>
+<td>3v3</td>
+</tr>
+<tr>
+<td align="right">GND - black</td>
+<td>GND</td>
+</tr>
+<tr>
+<td align="right">P0 - yellow</td>
+<td>RXD</td>
+</tr>
+<tr>
+<td align="right">P1 - orange</td>
+<td>TXD</td>
+</tr>
+</tbody></table>
+<h3 id="edge-connector-with-pin-headers">Edge connector with pin headers</h3>
+<p>The recommended method to connect a micro:bit to EE-NBIOT-01. <strong>Make sure the LEDs on the micro:bit are pointing upwards when you insert it into the edge connector.</strong>
+<a href="/tutorials/img/microbit-edge-connector.jpg" target="_blank"><img src="img/microbit-edge-connector-small.jpg" alt="Using an edge connector with pin headers"><br>
+See image in full resolution</a></p>
+<h3 id="improvise-wire-connection">Improvise wire connection</h3>
+<p>If you don&#x2019;t have an edge connector nearby and don&#x2019;t have time to wait for one, check out <a href="https://lorrainbow.wordpress.com/2017/11/11/how-to-connect-wires-to-the-microbit/">this guide</a>. Or improvise using what you have available.</p>
+<p><img src="img/microbit-screws-small.jpg" alt="Improvise connection"></p>
+<h2 id="register-device">Register device</h2>
+<p>Before we start prototyping, we need the IMEI and IMSI and register the device in our NB-IoT Developer Platform:</p>
+<ol>
+<li>Open <a href="https://makecode.microbit.org/_YqicUbdvt1mk">this makecode project</a> and click the &#xAB;Edit&#xBB;-button</li>
+<li>Use a micro-USB cable to connect the micro:bit to your computer</li>
+<li>The micro:bit should show up as a regular USB memory stick on your computer, called MICROBIT</li>
+<li>Click the <img src="img/makecode-download.png" alt="big download"> button to download the sketch and save it to the MICROBIT drive</li>
+<li>The sketch will now magically be flashed to the micro:bit</li>
+<li>After a few seconds you should see &#xAB;PRESS A/B&#xBB; scroll by on the LEDs on the micro:bit</li>
+<li>Get a pen and paper, press the A/B buttons and write down the numbers</li>
+<li>Follow our <a href="getting-started.html">Getting started with the Telenor NB-IoT Developer Platform guide</a> and use the IMEI/IMSI from the step above</li>
+<li>Leave the browser tab with live device data open, so we can see data we send in the next section</li>
+</ol>
+<h2 id="install-nbiot-extension">Install nbiot extension</h2>
+<ol>
+<li>Go to <a href="https://makecode.microbit.org/">makecode.microbit.org</a></li>
+<li>Click on the big <em>&#xAB;New Project&#xBB;-button</em></li>
+<li>Click the <em>gear</em> in the top right, then <em>Extensions</em><ul>
+<li><img src="img/makecode-extensions.png" alt="Extensions screenshot"></li>
+</ul>
+</li>
+<li>In the search field, enter the URL below and click the search button<ol>
+<li><a href="https://github.com/ExploratoryEngineering/pxt-nbiot">https://github.com/ExploratoryEngineering/pxt-nbiot</a></li>
+<li>Select &#xAB;nbiot&#xBB; in the search result</li>
+<li><img src="img/makecode-nbiot-install.png" alt="nbiot extension"></li>
+</ol>
+</li>
+<li>You should now get an &#xAB;NB-IoT&#xBB; category in the blocks menu<ul>
+<li><img src="img/makecode-nbiot-menu.png" alt="nbiot menu"></li>
+</ul>
+</li>
+</ol>
+<h2 id="hello-world">Hello World</h2>
+<p>Drag-n-drop blocks from the menu to reproduce the blocks below:</p>
+<p><img src="img/microbit-hello.png" alt="Hello World example"></p>
+<h3 id="what-s-going-on-here-">What&#x2019;s going on here?</h3>
+<p>In the block editor, every chain of blocks starts with an event (something happened). All the blocks inside of it will be executed in order from top to bottom.</p>
+<p>&#x201C;on start&#x201D; is only run once, when the micro:bit starts. So here you typically add blocks that should be run before any other code and only need to run once. For the NB-IoT extension to work, we need to tell it what pins on the micro:bit it is connected to and what server IP and port to send data to.</p>
+<p>&#x201C;on nbiot connected&#x201D; is run once, when the device is successfully connected to the NB-IoT network has gotten an IP address from our NB-IoT Development Platform. If the device is not registered on the platform (see steps above), you&#x2019;ll not get an IP address and will not be able to connect.</p>
+<p>Run this sketch the same way you did the one for getting the IMSI and IMEI. Once we&#x2019;re connected, we first show a heart in the LED display to indicate that we are connected, then we send the text string &#xAB;Hello World!&#xBB;. If you still have the browser tab from the NB-IoT Developer Platform open (see <a href="#register-device">Register Device</a>), you should see that some data has arrived. If it shows up as &#xAB;SGVsbG8gV29ybGQh&#xBB;, you need to tick the &#xAB;Decode base 64 payload&#xBB; checkbox to show it as text.</p>
+<p><img src="img/payload-hello.png" alt="Hello world in NB-IoT Developer Platform"></p>
+<h2 id="sending-useful-data">Sending useful data</h2>
+<p>Sending a hard-coded text isn&#x2019;t that useful other than to check that everything works as it should. The fun really begins when we start connecting the physical world with the digital. So try to send some sensor data (like temperature), or send a message when something happens (like when a button is pressed or the micro:bit moves). The micro:bit has a few sensors built in, but if you feel adventurous you can also add other sensors by connecting to one of the pins (definitely get an edge connector breakout board for that). Remember that NB-IoT is meant for small data amounts, so try to keep the size of the data small and don&#x2019;t send too frequently (no more than once per minute).</p>
+<p>Here are some examples of what you can do:</p>
+<h3 id="temperature-logger">Temperature logger</h3>
+<p>Log data at a regular interval. Make sure you don&#x2019;t send too much data too often, or you might run out of data quota.</p>
+<p><img src="img/microbit-temp-logger.png" alt="Temperature logger example blocks"></p>
+<h3 id="sending-a-message-when-something-happens">Sending a message when <em>something happens</em></h3>
+<p>To reduce power and data consumption, you can choose to only send data when <em>something happens</em>. You read a sensor value and send an alert when the value is not within the expected range. What sensor to use depends of the use-case, but you can connect almost any sensor that runs on 3.3V to the micro:bit, and many of the most popular ones have a micro:bit extension already.</p>
+<p>Say you have a fridge or freezer with food worth a lot of money in a building you don&#x2019;t visit that often. If the fridge/freezer suddenly stops working you&#x2019;d like to know as soon as possible. Here is one way that could be solved.</p>
+<p><img src="img/microbit-fridge-alert.png" alt="Example code for fridge alert"></p>
+<h2 id="api-reference">API reference</h2>
+<p>See the GitHub repository for full <a href="https://github.com/ExploratoryEngineering/pxt-nbiot#api-reference">API documentation</a> for the micro:bit extension</p>
+</body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/tutorials/microbit-basic.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

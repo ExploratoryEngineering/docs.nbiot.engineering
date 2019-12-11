@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>nRF9160 DK getting started - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="nRF9160 DK getting started - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="nRF9160 DK getting started - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/tutorials/nrf9160-basic.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>nRF9160 DK getting started</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/tutorials.html">Tutorials</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">nRF9160 DK getting started</li>
+      </ol>
+      <p>This tutorial will show you how to send data over NB-IoT using the <a href="https://shop.exploratory.engineering/collections/nb-iot/products/nrf9160-dev-kit">nRF9160 DK</a> module from Nordic Semiconductor.  The guide relies on our <a href="https://nbiot.engineering/">self service NB-IoT Developer Platform</a> which, as of 1st October 2018, is only enabled for Telenor Norway.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The <a href="https://shop.exploratory.engineering/collections/nb-iot/products/nrf9160-dev-kit">nRF9160 DK</a> module with Telenor SIM card</li>
+<li>Micro USB cable</li>
+</ul>
+<h2 id="development-environment">Development environment</h2>
+<p>At the time of the writing of this tutorial, concise and reliable instructions for setting up one’s development environment were hard to come by.  You are welcome to follow Nordic’s <a href="https://www.nordicsemi.com/Software-and-Tools/Software/nRF-Connect-SDK">instructions</a> for setting up the nRF Connect SDK, but we recommend following ours instead.</p>
+<h3 id="virtual-machine">Virtual Machine</h3>
+<p>Users of most operating systems have the option of working from inside a virtual machine, using e.g. Virtual Box.  This option is available in case the operating system-specific instructions in later sections do not work for you.  Please see the <a href="nrf9160-basic/virtualbox.html">VirtualBox tutorial</a> for instructions if this is your situation.</p>
+<h3 id="windows">Windows</h3>
+<p>Windows users should follow the Ubuntu instructions after setting up the Windows Subsystem for Linux, as follows:</p>
+<p>Run this command in PowerShell as administrator:</p>
+<pre><code class="hljs powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre>
+
+<p>Then, reboot your computer.</p>
+<p>Next, we need to install a Linux distro.  For this tutorial we will use Ubuntu.  Open PowerShell as administrator and run these commands:</p>
+<pre><code class="hljs powershell"><span class="hljs-built_in">Invoke-WebRequest</span> -Uri https://aka.ms/wsl-ubuntu-<span class="hljs-number">1804</span> -OutFile Ubuntu.appx -UseBasicParsing
+./Ubuntu.appx</code></pre>
+
+<p>You will then be prompted to install Ubuntu.  Follow the steps in the wizard, including setting up user and password.</p>
+<h3 id="install-packages">Install packages</h3>
+<h4 id="mac-os-x">Mac OS X</h4>
+<p>Follow the instructions <a href="https://brew.sh/">here</a> to install the Homebrew package manager, if you haven’t already.  Then, run the following command:</p>
+<pre><code class="hljs sh">brew install git cmake ninja gperf ccache dfu-util dtc python3 px4/px4/gcc-arm-none-eabi
+brew cask install nordic-nrf-command-line-tools</code></pre>
+
+<p>This command may take quite some time to complete.</p>
+<h4 id="ubuntu">Ubuntu</h4>
+<p>On Ubuntu, run the following commands to install the necessary packages:</p>
+<pre><code class="hljs sh">sudo apt install git ninja-build gperf ccache dfu-util device-tree-compiler python3-pip \
+                 python3-setuptools python3-wheel make gdb-multiarch gcc-arm-none-eabi
+pip3 install cmake
+ln <span class="hljs-_">-s</span> ~/.local/bin/cmake /usr/bin/
+wget http://no.archive.ubuntu.com/ubuntu/pool/main/d/device-tree-compiler/device-tree-compiler_1.4.7-1_amd64.deb
+sudo apt install ./device-tree-compiler_1.4.7-1_amd64.deb</code></pre>
+
+<h3 id="zephyr-toolchain">Zephyr toolchain</h3>
+<p>In order for Zephyr to find the gcc-arm-none-eabi toolchain you installed earlier, you need to export a couple of environment variables.  It can be most convenient to do this in a <code>.bash_profile</code> (or similar) file.</p>
+<p>On Mac OS X:</p>
+<pre><code class="hljs sh"><span class="hljs-built_in">export</span> ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+<span class="hljs-built_in">export</span> GNUARMEMB_TOOLCHAIN_PATH=/usr/<span class="hljs-built_in">local</span>/opt/gcc-arm-none-eabi/</code></pre>
+
+<p>On Ubuntu:</p>
+<pre><code class="hljs sh"><span class="hljs-built_in">export</span> ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+<span class="hljs-built_in">export</span> GNUARMEMB_TOOLCHAIN_PATH=/usr/</code></pre>
+
+<h3 id="west">West</h3>
+<p>Install <a href="https://docs.zephyrproject.org/latest/guides/west/index.html">West</a> (Zephyr’s meta-tool) as follows:</p>
+<p>On Windows and Mac OS X:</p>
+<pre><code class="hljs sh">pip3 install -U west</code></pre>
+
+<p>On Ubuntu:</p>
+<pre><code class="hljs sh">pip3 install --user -U west</code></pre>
+
+<h2 id="example-application">Example application</h2>
+<p>Finally, we can get down to the business of sending data over NB-IoT.  We have created an <a href="https://github.com/ExploratoryEngineering/nrf9160-example">example application</a> for this purpose.</p>
+<p>Fetch the example application and its dependencies as follows:</p>
+<pre><code class="hljs sh">mkdir nrf9160-basic
+<span class="hljs-built_in">cd</span> nrf9160-basic
+west init -m https://github.com/ExploratoryEngineering/nrf9160-example
+west update</code></pre>
+
+<p>Before running the example application, you should follow the instructions from another of our tutorials to install a <a href="interactive-terminal.html#serial-terminal-application">serial terminal application</a>.  This way, you can see the serial output of the application – which is not only convenient for seeing log output but also necessary for you to obtain the IMEI and IMSI of the device, both of which are needed in order to register the device on the NB-IoT Developer Platform.</p>
+<p>Once you have your serial terminal application open and connected, and you have connected the nRF9160 DK to your computer via USB, build and flash the example application to the nRF9160 DK, as follows:</p>
+<pre><code class="hljs sh"><span class="hljs-built_in">cd</span> nrf9160-example
+west build -b nrf9160_pca10090ns
+west flash</code></pre>
+
+<p>Once the application is flashed to the device, it will immediately begin running.  In your serial terminal application you will see a lot of output about Zephyr booting, then possibly some delay, and then you will see the following application output:</p>
+<pre><code>Example application started.
+IMEI: &lt;imei&gt;
+IMSI: &lt;imsi&gt;</code></pre><p>At this point, the application will try to connect to the IoT network, but it will not succeed because the device is not yet registered on the NB-IoT Developer Platform.  Now is the time to copy the IMEI and IMSI and register the device <a href="getting-started.html">as described here</a>.</p>
+<p>After registering the device, restart the application by pressing the RESET button on the nRF9160 DK.  You will see the same output as before, but after some time (15-20 seconds, be patient!) you will additionally see that the device connected to the network and sent a message.  On the device page on the Developer Platform you will also see that the message has been successfully transmitted.</p>
+<p>Well done!</p>
+
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/tutorials/nrf9160-basic.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

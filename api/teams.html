@@ -1,0 +1,350 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Teams - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Teams - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Teams - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/api/teams.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Teams</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/api.html">REST API</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Teams</li>
+      </ol>
+      <html><head></head><body><p>Teams are the main sharing mechanism. Each team have one or more <em>members</em>.
+<strong>Collections</strong> are owned by <strong>teams</strong> and all members of the team can retrieve
+the <strong>devices</strong> and <strong>outputs</strong> in the collection.</p>
+<p>Team management have some simple rules:</p>
+<p>Admins are the only ones allowed to manage teams. As an admin you can&#x2019;t
+administer you <strong>own</strong> membership in the team. If you want to be removed
+from the team you have to assign another administrator and get him/her to
+remove you from the team.</p>
+<p>When you create a new team you are automatically set as an admin for that team</p>
+<p>By default you will have a private team that only you can use. You can&#x2019;t invite
+people into your own team.</p>
+<h2 id="team-list-teams">Team list: <code>/teams</code></h2>
+<p>The team list resource shows all teams you are a member of. You might not have
+administrative access to all of the teams in the list.</p>
+<h3 id="list-teams">List teams</h3>
+<p>Use <code>GET</code> to retrieve a list of teams you have access to:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> http://localhost:8080/teams
+{
+  <span class="hljs-string">&quot;teams&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;teamId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-string">&quot;tags&quot;</span>: {
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;My private team&quot;</span>
+      },
+      <span class="hljs-string">&quot;private&quot;</span>: <span class="hljs-literal">true</span>
+    }
+  ]
+}</code></pre>
+
+<p>The <code>private</code> flag is set to true on your private team. The attribute is absent on all other teams.</p>
+<h3 id="create-a-new-team">Create a new team</h3>
+<p>Use <code>POST</code> to create a new team. There are no required fields when creating a
+new team but it is recommended to set the <code>name</code> attribute. The <code>name</code> attribute
+is used throughout the console to show a readable name. Multiple teams can have
+the same name.</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XPOST <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;tags&quot;:{&quot;name&quot;: &quot;The A-Team&quot;}}&apos;</span> \
+    https://api.nbiot.telenor.io/teams
+{
+  <span class="hljs-string">&quot;teamId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;members&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe1@example.com&quot;</span>,
+      <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+      <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;The A-Team&quot;</span>
+  }
+}</code></pre>
+
+<h3 id="team-detail-teams-teamid-">Team detail: <code>/teams/{teamId}</code></h3>
+<p>You can retrieve the team details by querying the team directly. This will include a list of the team members:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> https:/api.nbiot.telenor.io/teams/17dh0cf43jfgl9
+{
+  <span class="hljs-string">&quot;teamId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;members&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe1@example.com&quot;</span>,
+      <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+      <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;The A-Team&quot;</span>
+  }
+}</code></pre>
+
+<h3 id="update-a-team">Update a team</h3>
+<p>A team can be updated by using the <code>PATCH</code> method:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XPATCH <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;tags&quot;: {&quot;preferredVehicle&quot;:&quot;Van&quot;}}&apos;</span> \
+    https://api.nbiot.telenor.io/teams/17dh0cf43jfgl9
+{
+  <span class="hljs-string">&quot;teamId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;members&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe1@example.com&quot;</span>,
+      <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+      <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;The A-Team&quot;</span>,
+    <span class="hljs-string">&quot;preferredvehicle&quot;</span>: <span class="hljs-string">&quot;Van&quot;</span>
+  }
+}</code></pre>
+
+<h3 id="delete-a-team">Delete a team</h3>
+<p>You can remove a team with the <code>DELETE</code> method:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XDELETE https://api.telenor.io/teams/17dh0cf43jfgl9</code></pre>
+
+<p>The server responds with `204 NO CONTENT&#x2019; when the team is removed.</p>
+<h2 id="managing-members-in-a-team-team-teamid-members">Managing members in a team: `/team/{teamId}/members</h2>
+<h3 id="retrieving-team-members">Retrieving team members</h3>
+<p>The list of members is available in the <code>members</code> resource:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> https://api.nbiot.telenor.io/teams/17dh0cf43jfgl9/members
+{
+  <span class="hljs-string">&quot;teamId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;members&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl8&quot;</span>,
+      <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe1@example.com&quot;</span>,
+      <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+      <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>
+    },
+    {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+      <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Member&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe2@example.com&quot;</span>,
+      <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+      <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;tags&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;The B-Team&quot;</span>
+  }
+}</code></pre>
+
+<p>Individual team members can be accessed via the `/team/{teamId}/members/{userId} resource.</p>
+<h3 id="adding-a-team-member">Adding a team member</h3>
+<p>Team members can&#x2019;t be added directly but must accept an <a href="/api/invites.html">invite</a> to the team.</p>
+<h3 id="update-a-team-member">Update a team member</h3>
+<p>Use <code>PATCH</code> to update a team member. The only field that can be modified is the <code>role</code> field. Only two
+values are accepted &#x2013; <code>admin</code> and <code>member</code>. Only team administrators can update the role of the
+other team members.</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XPATCH <span class="hljs-_">-d</span><span class="hljs-string">&apos;{&quot;role&quot;:&quot;admin&quot;}&apos;</span> \
+    https://api.nbiot.telenor.io/teams/17dh0cf43jfgl9/members/17dh0cf43jfgl9
+{
+  <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;17dh0cf43jfgl9&quot;</span>,
+  <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mr Robot&quot;</span>,
+  <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;doe2@example.com&quot;</span>,
+  <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;555-999-88&quot;</span>,
+  <span class="hljs-string">&quot;verifiedEmail&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;verifiedPhone&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;connectId&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>
+}</code></pre>
+
+<p>The server responds with a <code>200 OK</code> and the updated team member.</p>
+<h3 id="remove-a-team-member">Remove a team member</h3>
+<p>Team members can be removed with the <code>DELETE</code> method:</p>
+<pre><code class="hljs bash">$ curl -HX-API-Token:<span class="hljs-variable">${TOKEN}</span> -XDELETE \
+  http://api.nbiot.telenor.io/teams/17dh0cf43jfgl9/members/17dh0cf43jfgl9</code></pre>
+
+<p>The server responds with a <code>204 NO CONTENT</code> when the member is deleted.</p>
+</body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/api/teams.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

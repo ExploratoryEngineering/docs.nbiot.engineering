@@ -1,0 +1,505 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Interactive terminal - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Interactive terminal - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Interactive terminal - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/tutorials/interactive-terminal.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Interactive terminal</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/tutorials.html">Tutorials</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Interactive terminal</li>
+      </ol>
+      <html><head></head><body><p>The <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a> board is just a breakout board to the <a href="https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources">u-blox SARA-N210</a> radio module with a Telenor Norway SIM-card, antenna and a voltage regulator.</p>
+<p>This guide is a simple walk-through of how to get started with communication with the module directly from your computer without the use of a microcontroller. The same commands can of course be called from a microcontroller instead, so with this knowledge you can implement a library for the EE-NBIOT-01 for any microcontroller in any language you prefer.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#parts-needed">Parts needed</a></li>
+<li><a href="#connecting-to-the-ee-nbiot-01">Connecting to the EE-NBIOT-01</a><ul>
+<li><a href="#usb-to-serial-adapter">USB to serial adapter</a></li>
+<li><a href="#install-serial-adapter-driver">Install serial adapter driver</a></li>
+<li><a href="#serial-terminal-application">Serial terminal application</a></li>
+<li><a href="#connecting-the-cables">Connecting the cables</a></li>
+</ul>
+</li>
+<li><a href="#terminal-commands">Terminal commands</a><ul>
+<li><a href="#preparations">Preparations</a></li>
+<li><a href="#hello-world-">Hello world</a></li>
+<li><a href="#important-at-commands-cheat-sheet">Important AT commands cheat sheet</a></li>
+<li><a href="#apn-config">APN config</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="parts-needed">Parts needed</h2>
+<ul>
+<li>A computer with Windows/macOS/linux</li>
+<li><a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a></li>
+<li>A USB to serial adapter with 3.3V logic (see next section)</li>
+<li>Jumper cables between the serial adapter and the <a href="https://shop.exploratory.engineering/collections/frontpage/products/ee-nbiot-01-v1-1-breakout-module">EE-NBIOT-01</a> board</li>
+</ul>
+<h2 id="connecting-to-the-ee-nbiot-01">Connecting to the EE-NBIOT-01</h2>
+<p>Here is a brief guide on what you need and how to set up the serial communication with the EE-NBIOT-01. If you need more details, <a href="https://learn.sparkfun.com/tutorials/terminal-basics/serial-terminal-overview">SparkFun has an excellent in depth guide on Serial Terminal Basics</a>.</p>
+<h3 id="usb-to-serial-adapter">USB to serial adapter</h3>
+<p>The communication to the u-blox SARA-N210 is just a simple serial connection with text commands. Modern computers don&#x2019;t have a serial port any more, so you need a special USB cable to connect the serial pins (RX/TX) of the EE-NBIOT-01 board to your computer. These cables are often called FTDI, UART, or TTL cables.</p>
+<p>The SARA-N210 RX/TX pins require 3.3V. The absolute max in the SARA-N210 datasheet is 4.25V; more may lead to damaging the SARA-N210 module. So make sure you get a cable that has 3.3V logic for RX/TX.</p>
+<p>Regarding power, the EE-NBIOT-01 has a buck voltage regulator that can handle 1.8V-5.5V input, so it&#x2019;s fine if the USB to serial adapter has 5V VCC.</p>
+<p>Here are a few suggestions for adapters:</p>
+<ul>
+<li><a href="https://www.adafruit.com/product/954">Adafruit USB to TTL Serial Cable</a></li>
+<li><a href="https://www.adafruit.com/product/70">Adafruit FTDI Serial TTL-232 USB Cable</a></li>
+<li><a href="https://www.adafruit.com/product/284">Adafruit FTDI Friend</a></li>
+<li><a href="https://www.sparkfun.com/products/9717">Sparkfun FTDI Cable 5V VCC-3.3V I/O</a></li>
+<li><a href="arduino-serial-forwarder.html">Use an Arduino board as a serial adapter</a></li>
+</ul>
+<p>In Norway you should be able to find them in any of these stores:</p>
+<ul>
+<li><a href="https://www.kjell.com/no/sok?query=ftdi">Kjell &amp; Company</a></li>
+<li><a href="https://www.digitalimpuls.no/search?q=ftdi">Digital Impuls</a></li>
+<li><a href="https://www.elfadistrelec.no/">ELFA Distrelec</a></li>
+</ul>
+<h3 id="install-serial-adapter-driver">Install serial adapter driver</h3>
+<p>Most cables require you to install a driver for the USB serial adapter. Check the product description and it should guide you to the correct driver for your operating system.</p>
+<h3 id="serial-terminal-application">Serial terminal application</h3>
+<p>You can use any serial terminal application you like. We&#x2019;ll only explain how to use CoolTerm in this guide - since it&#x2019;s free, easy to use and works on Windows, macOS and Linux.</p>
+<ol>
+<li><p><a href="http://freeware.the-meiers.org/">Download and install CoolTerm for your OS</a></p>
+</li>
+<li><p>Open app and click the &#xAB;Options&#xBB; button</p>
+</li>
+<li><p>Choose which serial port to use</p>
+<ul>
+<li>This depends on which driver and operating system you use. <ul>
+<li>In Linux the serial ports are treated as files, typical examples would be <code>/dev/ttyS0</code>, <code>/dev/ttyUSB0</code> if you use a USB to serial adapter or <code>/dev/ttyAMA0</code> on the Raspberry Pi.</li>
+<li>In Mac OSX serial ports can have various names, for example <code>usbserial-FTACX955</code>.</li>
+<li>At last there is Windows. In Windows, the serial port is an abstraction called a &#x201C;COM port&#x201D;. You can find these by looking the device manager. In the screenshot below, we have connected a TTL-232 USB cable to the machine:
+<img src="img/device-manager-arrow.png" alt="Device manager screenshot"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Set the baud rate to 9600</p>
+<p><img src="img/coolterm-serialport.png" alt="CoolTerm Serial Port options screenshot"></p>
+</li>
+<li><p>Go to &#xAB;Terminal&#xBB; options (on the left)</p>
+</li>
+<li><p>Change to &#xAB;Line Mode&#xBB;</p>
+</li>
+<li><p>Check &#xAB;Local Echo&#xBB; to see the commands you&#x2019;ve sent</p>
+</li>
+<li><p>Leave the rest of the options as default and click &#xAB;OK&#xBB;</p>
+<p><img src="img/coolterm-terminal.png" alt="CoolTerm Terminal options screenshot"></p>
+</li>
+<li><p>Click the &#xAB;Connect&#xBB;-button</p>
+</li>
+<li><p>Enter commands in the input field near the bottom of the window</p>
+</li>
+</ol>
+<h3 id="connecting-the-cables">Connecting the cables</h3>
+<p>Normally on a serial connection, the TX is the output from one device and RX is the input. So when you connect two devices, you would connect TX-&gt;RX both ways. However, u-blox thought otherwise, so they&#x2019;ve labled the input as TX and output as RX. To avoid an extra layer of confusion we used the same labeling as u-blox on the EE-NBIOT-01. So when connecting the wires - <strong>connect RX to RX and TX to TX</strong>.</p>
+<p><strong>NB! Make sure the cable has 5V to 3.3V logic level conversion on RX&amp;TX</strong></p>
+<p><strong>Table 1:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">Serial adapter</th>
+<th>EE-NBIOT-01</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">VCC +5V/3.3V - red</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td align="right">GND - black</td>
+<td>GND</td>
+</tr>
+<tr>
+<td align="right">RX - yellow</td>
+<td>RXD</td>
+</tr>
+<tr>
+<td align="right">TX (<strong>3.3V</strong>) - orange</td>
+<td>TXD</td>
+</tr>
+</tbody></table>
+<p><a href="/tutorials/img/ftdi.jpg" target="_blank"><img src="img/ftdi-small.jpg" alt="FTDI to EE-NBIOT-01"><br>
+See image in full resolution</a></p>
+<h2 id="terminal-commands">Terminal commands</h2>
+<p>You control the u-blox SARA-N210 by sending it AT-commands over the serial connection. The response will be prefixed with <code>&gt;</code> to indicate it&#x2019;s a response and not something you should write in the terminal.</p>
+<h3 id="preparations">Preparations</h3>
+<p>All EE-NBIOT-01 modules have the APN set manually before we send them out, but in case you have another module or need to set it manually, see <a href="#apn-config">APN config</a>.</p>
+<p>If you haven&#x2019;t registered the devie in the <a href="https://nbiot.engineering">Telenor NB-IoT Developer Platform</a> yet, now is a good time. You&#x2019;ll need the IMSI and IMEI:</p>
+<pre><code>AT+CIMI;+CGSN=1;
+&gt; &lt;IMSI number&gt;
+&gt; OK
+&gt; +CGSN: &lt;IMEI number&gt;
+&gt; OK</code></pre><p>Save these numbers and follow the <a href="getting-started.html">getting started guide</a> to add the device, so you&#x2019;ll be able to watch the incoming data that you&#x2019;re about to send in the next section.</p>
+<h3 id="hello-world-">Hello world!</h3>
+<p>Check if we are registered on the network yet?:</p>
+<pre><code>AT+CEREG?
+&gt; +CEREG: 0,2</code></pre><p>The seccond response value (<code>2</code>) is the registration status. Status <code>2</code> is not registered, but it&#x2019;s currently trying to attach or searching for an operator to register to.</p>
+<p>Wait a few seconds and try again:</p>
+<pre><code>AT+CEREG?
+&gt; +CEREG: 0,1</code></pre><p>Now the registration status is <code>1</code>, which means it&#x2019;s registered to the home network.</p>
+<p>Then open a new UDP socket. If successful, the first line of the response will be the socket number. You need the socket number later when sending data.</p>
+<pre><code>AT+NSOCR=&quot;DGRAM&quot;,17,30000,1
+&gt; 0
+&gt; OK</code></pre><p>Now socket 0 is ready to send UDP data to a server. The APN we configured earlier will forward data from devices in the Telenor network to your application server.</p>
+<pre><code>AT+NSOST=0,&quot;172.16.15.14&quot;,1234,12,&quot;48656C6C6F20576F726C6421&quot;
+&gt; 0,12
+&gt; OK</code></pre><p>The first response line is <code>&lt;socket&gt;</code>,<code>&lt;sent_length&gt;</code>, followed by OK if it was successful.</p>
+<p>To close socket 0:</p>
+<pre><code>AT+NSOCL=0</code></pre><p><img src="img/coolterm-example.jpg" alt="Hello world terminal screenshot"></p>
+<h3 id="important-at-commands-cheat-sheet">Important AT commands cheat sheet</h3>
+<p>This is just a summary of the commands we find the most useful. For the complete list, download the u-blox &#xAB;SARA-N2 AT Commands&#xBB; PDF from the <a href="https://www.u-blox.com/en/product/sara-n2-series#tab-documentation-resources">u-blox website</a> instead.</p>
+<p>Most commands have 3 syntaxes. Read (<code>COMMAND?</code>), set (<code>COMMAND=...</code>) and test (<code>COMMAND=?</code>). Test will list possible values for all arguments.</p>
+<p><strong>Table 2:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Command name</th>
+<th>Syntax</th>
+<th>Response</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Enable/disable radio</td>
+<td><code>AT+CFUN=&lt;fun&gt;</code></td>
+<td>OK</td>
+<td><code>&lt;fun&gt;</code> values:<br><strong>0</strong>: Disable the radio<br><strong>1</strong>: Enable the radio</td>
+</tr>
+<tr>
+<td>Read IMEI</td>
+<td><code>AT+CGSN=1</code> &#xB9;</td>
+<td><code>&lt;imei&gt;</code><br>OK</td>
+<td>Request the IMEI (International Mobile Equipment Identity).</td>
+</tr>
+<tr>
+<td>Read IMSI</td>
+<td><code>AT+CIMI</code></td>
+<td><code>&lt;imsi&gt;</code><br>OK</td>
+<td>Request the IMSI (International Mobile Subscriber Identity).</td>
+</tr>
+<tr>
+<td>Operator selection</td>
+<td><code>AT+COPS=&lt;mode&gt;</code> &#xB9;</td>
+<td>OK</td>
+<td>Force an attempt to select and register with the network operator. Through <code>&lt;mode&gt;</code> parameter the network selection can automatically be performed or forced by this command.<br>Supported <code>&lt;mode&gt;</code> values:<br><strong>0</strong>: (default) automatic<br><strong>1</strong>: manual<br><strong>2</strong>: deregister from network</td>
+</tr>
+<tr>
+<td>GPRS attach/detach</td>
+<td><code>AT+CGATT=[&lt;state&gt;]</code></td>
+<td>OK</td>
+<td>Attach or detach to/from the mobile network. Allowed <code>&lt;state&gt;</code> values:<br><strong>0</strong>: Detach from network<br><strong>1</strong>: Attach to network</td>
+</tr>
+<tr>
+<td>Check if GPRS attached</td>
+<td><code>AT+CGATT?</code></td>
+<td><code>+CGATT: &lt;state&gt;</code><br>OK</td>
+<td>Check if SARA-N210 is attached to the mobile network or not. <code>&lt;state&gt;</code> values:<br><strong>0</strong>: Detached from network<br><strong>1</strong>: Attached to network</td>
+</tr>
+<tr>
+<td>Network registration status</td>
+<td><code>AT+CEREG?</code></td>
+<td><code>+CEREG: &lt;n&gt;,&lt;stat&gt;</code> &#xB9;<br>OK</td>
+<td>This command has 6 different modes, each of which gives different return values. Response is <code>+CEREG: &lt;n&gt;,&lt;stat&gt;[...]</code>, where <code>&lt;n&gt;</code> is the mode number and <code>&lt;stat&gt;</code> is the registration status. See chapter 9.6.3 in &#xAB;SARA-N2 AT Commands&#xBB; for all modes and descriptions. Here are the <code>&lt;stat&gt;</code> number values:<br><strong>0</strong>: not registered, the MT is not currently searching an operator to register to<br><strong>1</strong>: registered, home network<br><strong>2</strong>: not registered,but the MT is currently trying to attach or searching an operator to register to<br><strong>3</strong>: registration denied<br><strong>4</strong>: unknown (e.g. out of E-UTRAN coverage)<br><strong>5</strong>: registered, roaming<br><strong>8</strong>: attached for emergency bearer services only</td>
+</tr>
+<tr>
+<td>Check signal strength</td>
+<td><code>AT+CSQ</code></td>
+<td><code>+CSQ: &lt;signal_power&gt;,&lt;qual&gt;</code><br>OK</td>
+<td>Request <em>signal_power</em> and <em>qual</em>. On the SARA-N210, <em>qual</em> will always be 99. The mapping between <em>signal_power</em> and RSSI dBm is <code>-113 + (signal_power * 2)</code>.<br>Example response:  <code>+CSQ: 25,99</code><br>RSSI = (<code>-113 + (25 * 2)</code>) = -63 dBm</td>
+</tr>
+<tr>
+<td>Create socket</td>
+<td><code>AT+NSOCR=&lt;type&gt;,&lt;protocol&gt;,&lt;listen_port&gt;,&lt;receive_control&gt;</code></td>
+<td><code>&lt;socket&gt;</code><br>OK</td>
+<td>Create a socket. If a port is set, receiving is enabled and +NSONMI URC will appear for any message that is received on that port. Max number of ports: 7.<br>Supported <code>&lt;type&gt;</code>: <code>&quot;DGRAM&quot;</code><br>Supported <code>&lt;protocol&gt;</code>: <code>17</code> (UDP)<br>Port range: 0-65535 except for 5683.<br><code>&lt;receive_control&gt;</code> allowed values:<br><strong>0</strong>: incoming messages will be ignored<br><strong>1</strong>: (default) incoming messages will trigger a +NSONMI URC<br><br><strong>Response</strong>: Socket identifier to be referenced by the other socket AT commands</td>
+</tr>
+<tr>
+<td>Send UDP to IP</td>
+<td><code>AT+NSOST=&lt;socket&gt;,&lt;remote_ip_address&gt;,&lt;remote_port&gt;,&lt;length&gt;,&lt;data&gt;</code></td>
+<td><code>&lt;socket&gt;,&lt;sent_length&gt;</code><br>OK</td>
+<td>Send a UDP datagram to the specified host and port. See Table 3 for parameter descriptions.</td>
+</tr>
+<tr>
+<td>Send UDP to IP with flags</td>
+<td><code>AT+NSOSTF=&lt;socket&gt;,&lt;remote_ip_address&gt;,&lt;remote_port&gt;,&lt;flags&gt;,&lt;length&gt;,&lt;data&gt;</code></td>
+<td><code>&lt;socket&gt;,&lt;sent_length&gt;</code><br>OK</td>
+<td>Send a UDP datagram to the specified host and port with flags. Needed for power saving mode. See Table 3 for parameter descriptions.</td>
+</tr>
+<tr>
+<td>Error report formatting</td>
+<td><code>AT+CMEE=[&lt;n&gt;]</code></td>
+<td>OK</td>
+<td>Configure formatting of errors. List of supported <em><n></n></em> values:<br><strong>0</strong>: ERROR<br><strong>1</strong>: +CME ERROR: _<err>_<br><br>See Appendix A in the &#xAB;SARA-N2 AT Commands&#xBB; documentation for error result code descriptions.</err></td>
+</tr>
+<tr>
+<td>Config</td>
+<td><code>AT+NCONFIG=&lt;function&gt;,&lt;value&gt;</code></td>
+<td>OK</td>
+<td>Configure customizable aspects of the SARA-N210 (e.g Auto Attach). The changes are effective after the module reboot by means of the <code>AT+NRB</code> command. Use <code>AT+NCONFIG?</code> to show current config.</td>
+</tr>
+<tr>
+<td>PDP context definition</td>
+<td><code>AT+CGDCONT=[&lt;cid&gt;[,&lt;PDP_ type&gt;[,&lt;APN&gt;[,&lt;PDP_addr&gt;]]]]</code> &#xB9;</td>
+<td>OK</td>
+<td>Define the connection parameters for a PDP context. Usually to configure APN settings manually. See example further up.</td>
+</tr>
+<tr>
+<td>Device statistics</td>
+<td><code>AT+NUESTATS[=&lt;type&gt;]</code></td>
+<td><code>NUESTATS: &lt;type&gt;,&lt;param_ name&gt;,&lt;value&gt;</code><br>[NUESTATS: &#x2026;]<br>OK</td>
+<td>Request the most recent operational statistics of the module. Should be called right after sending. Some interesting values: TX power, ECL (equipment coverage class), throughput, bytes received, bytes sent, cell info. See chapter 4.8 in &#xAB;SARA-N2 AT Commands&#xBB; for full description of all fields and available <code>&lt;type&gt;</code>s.</td>
+</tr>
+<tr>
+<td>Reboot</td>
+<td><code>AT+NRB</code></td>
+<td>REBOOT_CAUSE_APPLICATION_AT<br>u-blox<br>OK</td>
+<td>Reboot the SARA-N210. There is a short delay after the command issuing before the SARA-N210 reboots.</td>
+</tr>
+<tr>
+<td>Power saving mode settings</td>
+<td><code>AT+CPSMS=[&lt;mode&gt;[,,,&lt;Requested_Periodic_TAU&gt;[,&lt;Requested_Active_Time&gt;]]]</code> &#xB9;</td>
+<td>OK</td>
+<td>Enable and configure the power saving mode. See own <a href="low-power.html">low power tutorial</a> for full details and examples.</td>
+</tr>
+<tr>
+<td>Enable/disable eDRX</td>
+<td><code>AT+CEDRXS=&lt;mode&gt;[,&lt;AcT_type&gt;[,&lt;Requested_eDRX_value&gt;]]</code></td>
+<td>OK</td>
+<td>Configure extended discontinuous reception (eDRX) parameters. See own <a href="low-power.html">low power tutorial</a> for full details and examples.</td>
+</tr>
+<tr>
+<td>Get network time/clock</td>
+<td>AT+CCLK?</td>
+<td><code>+CCLK: &quot;YY/MM/DD,HH:MM:SS+ZZ&quot;</code><br>OK</td>
+<td>Fetches the network time/clock.</td>
+</tr>
+</tbody></table>
+<p>&#xB9; - Simplified syntax. See &#xAB;SARA-N2 AT Commands&#xBB; for full syntax.</p>
+<p><strong>Table 3:  AT+NSOST parameters (from SARA-N2 AT Commands documentation)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>socket</td>
+<td>Number</td>
+<td>Socket identifier returned by <code>AT+NSOCR</code></td>
+</tr>
+<tr>
+<td>remote IP address</td>
+<td>String</td>
+<td>Remote host IP address of the remote host in IPv4 format. IP addresses can be specified in decimal, octal or hexadecimal notation.</td>
+</tr>
+<tr>
+<td>remote port</td>
+<td>Number</td>
+<td>A number in the range 0-65535. Remote port the messages will be received on.</td>
+</tr>
+<tr>
+<td>length</td>
+<td>Number</td>
+<td>Size of the data to send. The maximum length 512 bytes.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td>Data to be sent (as a hexadecimal string)</td>
+</tr>
+<tr>
+<td>flags (for NSOSTF)</td>
+<td>Number</td>
+<td>Specifies the type of message transmission in hexadecimal format. Values of this argument are formed by logically OR&#x2019;ing zero or more of the following flags:<br>&#x2022; 0x000: no flags are set<br>&#x2022; 0x100: exception message. Send message with high priority<br>&#x2022; 0x200: release indicator. Indicate release after next message<br>&#x2022; 0x400: release indicator. Indicate release after next message has been replied to</td>
+</tr>
+</tbody></table>
+<h3 id="apn-config">APN config</h3>
+<p>We need to set the <a href="https://en.wikipedia.org/wiki/Access_Point_Name">APN</a> so that our devices&#x2019; upstream messages are forwarded correctly and so that our devices are assigned IP addresses to which can send downstream messages.</p>
+<p>Before changing the config we must disable auto-connect because we don&#x2019;t want the device to start connecting while we&#x2019;re modifying the config. Then we need to reboot before the changes will take effect.</p>
+<pre><code>AT+NCONFIG=&quot;AUTOCONNECT&quot;,&quot;FALSE&quot;;+NRB
+&gt; OK
+...
+&gt; REBOOT_CAUSE_APPLICATION_AT
+&gt; u-blox 
+&gt; OK</code></pre><p>Now we&#x2019;re ready to update the config. It&#x2019;s not persisted on the SARA-N210, so remember to run this after every reboot:</p>
+<pre><code>AT+CFUN=1;+COPS=1,2,&quot;24201&quot;;+CGDCONT=1,&quot;IP&quot;,&quot;mda.ee&quot;;+CGACT=1,1
+&gt; OK
+&gt; OK
+&gt; OK
+&gt; OK</code></pre></body></html>
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/tutorials/interactive-terminal.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>

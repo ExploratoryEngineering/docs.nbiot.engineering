@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="docs-html">
+
+<head>
+  <meta charset="utf-8">
+  <title>Firmware Over the Air (FOTA) - Telenor NB-IoT Docs and Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Firmware Over the Air (FOTA) - Telenor NB-IoT Docs and Tutorials">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://docs.nbiot.engineering/img/og_image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Firmware Over the Air (FOTA) - Telenor NB-IoT Docs and Tutorials" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://docs.nbiot.engineering/api/firmware.html" />
+  <meta property="og:image" content="https://docs.nbiot.engineering/img/og_image.jpg" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Telenor NB-IoT Docs and Tutorials" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link id="searchIndex" href="/index.json" rel="preload" as="fetch">
+</head>
+
+<body class="docs-body">
+  <div class="docs-brand-border"></div>
+  <div id="docs-topbar" class="docs-topbar no-print">
+    <div id="docs-topbar__inner" class="docs-topbar__inner">
+      <a href="#" id="docs-menu-toggle" class="docs-topbar__icon docs-topbar__icon--menu-toggle hidden-desktop"><i
+          class="material-icons md-24">menu</i></a>
+      <a href="#" id="docs-search-hide" class="docs-topbar__icon docs-topbar__icon--search-hide hidden-desktop"><i
+          class="material-icons md-24">arrow_back</i></a>
+      <div class="docs-topbar__icon docs-topbar__icon--search visible-desktop"><i class="material-icons md-24">search</i></div>
+      <input id="docs-search-box" type="text" class="docs-topbar__search-box" placeholder="Search" tabindex="1"
+        autocapitalize="none" autocomplete="off" autocorrect="off" autofocus />
+      <a href="#" id="docs-search-close" class="docs-topbar__icon docs-topbar__icon--search-close"><i class="material-icons md-24">close</i></a>
+      <a href="#" id="docs-search-show" class="docs-topbar__icon docs-topbar__icon-search-show hidden-desktop"><i class="material-icons md-24">search</i></a>
+
+      <a class="docs-topbar__link visible-desktop" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering">On Github</a>
+    </div>
+    <div id="docs-search" class="docs-search">
+      <ul id="docs-search-results" class="docs-search-results"></ul>
+    </div>
+  </div>
+  <div id="docs-sidebar" class="docs-sidebar visible-desktop no-print">
+    <nav class="docs-nav">
+      <a class="docs-nav__logo" href="/">NB-IoT Docs</a>
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/tutorials.html" class="docs-nav__item">Tutorials</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/getting-started.html" class="docs-nav__item">Getting started with Telenor NB-IoT Developer Platform</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/interactive-terminal.html" class="docs-nav__item">Interactive terminal</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-basic.html" class="docs-nav__item">Arduino getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/microbit-basic.html" class="docs-nav__item">NB-IoT on micro:bit</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/nrf9160-basic.html" class="docs-nav__item">nRF9160 DK getting started</a>
+                              <ul class="docs-nav__ul">
+                                      <li class="docs-nav__li">
+                                                <a href="/tutorials/nrf9160-basic/virtualbox.html" class="docs-nav__item">VirtualBox</a>
+                                      </li>
+                              </ul>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/raspi-serial.html" class="docs-nav__item">Raspberry Pi getting started</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/arduino-serial-forwarder.html" class="docs-nav__item">Arduino as serial adapter</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/tutorials/low-power.html" class="docs-nav__item">Conserving battery power</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/libs.html" class="docs-nav__item">Client libraries</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/libs/csharp.html" class="docs-nav__item">C#</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/go.html" class="docs-nav__item">Go</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/java.html" class="docs-nav__item">Java</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/libs/python.html" class="docs-nav__item">Python</a>
+                          </li>
+                  </ul>
+              </li>
+              <li class="docs-nav__li docs-nav__li--subgroup">
+                        <a href="/api.html" class="docs-nav__item">REST API</a>
+                  <ul class="docs-nav__ul">
+                          <li class="docs-nav__li">
+                                    <a href="/api/collections.html" class="docs-nav__item">Collections</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/devices.html" class="docs-nav__item">Devices</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/outputs.html" class="docs-nav__item">Outputs</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/teams.html" class="docs-nav__item">Teams</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/invites.html" class="docs-nav__item">Team invites</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tags.html" class="docs-nav__item">Tags on resources</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/tokens.html" class="docs-nav__item">Tokens</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/firmware.html" class="docs-nav__item">Firmware Over the Air (FOTA)</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/methods.html" class="docs-nav__item">HTTP Methods</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/status_codes.html" class="docs-nav__item">Status codes</a>
+                          </li>
+                          <li class="docs-nav__li">
+                                    <a href="/api/errors.html" class="docs-nav__item">Errors</a>
+                          </li>
+                  </ul>
+              </li>
+      </ul>
+      <hr class="docs-nav__hr" />
+      <ul class="docs-nav__ul">
+              <li class="docs-nav__li">
+                        <a href="/about.html" class="docs-nav__item">About</a>
+              </li>
+              <li class="docs-nav__li">
+                        <a href="/faq.html" class="docs-nav__item">FAQ</a>
+              </li>
+      </ul>
+      <div class="docs-sidebar__menuLinks hidden-desktop">
+        <hr class="docs-nav__hr" />
+        <ul class="docs-nav__ul">
+          <li class="docs-nav__li">
+            <a href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering" class="docs-nav__item">On Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="barba-wrapper" class="docs-wrapper">
+    <div class="docs-content barba-container">
+      <h1>Firmware Over the Air (FOTA)</h1>
+      <ol class="docs-breadcrumbs tn-breadcrumbs visible-desktop">
+              <li class="tn-breadcrumb">
+                  <a href="/">Home</a>
+              </li>
+            <li class="tn-breadcrumb">
+                    <a href="/api.html">REST API</a>
+            </li>
+          <li class="tn-breadcrumb tn-breadcrumb--active">Firmware Over the Air (FOTA)</li>
+      </ol>
+      <h2 id="firmware-management">Firmware management</h2>
+<p>Firmware management in the API uses LwM2M towards the devices. Please consult the examples for devices to see how this can be implemented and what objects and resources that the LwM2M client must support.</p>
+<h2 id="management-scope">Management scope</h2>
+<p>Firmware can either be managed individually, each device gets its own firmware version or on a collection level where all the devices have the same version of the firmware. When developing and testing devices you will most likely test the firmware on individual devices. The management scope can be set to <code>device</code>, <code>collection</code> or <code>disabled</code> on the collection resource. If the scope is set to <code>disabled</code> the firmware versions on the devices are ignored for the whole collection.</p>
+<pre><code>$ curl -HX-API-<span class="hljs-built_in">Token</span>:[<span class="hljs-built_in">token</span>] -XPATCH -d'{<span class="hljs-string">"firmware"</span>:{<span class="hljs-string">"management"</span>: <span class="hljs-string">"device"</span>}}' https:<span class="hljs-comment">//api.nbiot.engineering/collections/[collectionId]</span>
+{
+  <span class="hljs-string">"collectionId"</span>: <span class="hljs-string">"collectionId"</span>,
+  <span class="hljs-string">"firmware"</span>: {
+    <span class="hljs-string">"management"</span>: <span class="hljs-string">"device"</span>
+  },
+}</code></pre>
+
+<h3 id="the-firmware-image-collection">The firmware image collection</h3>
+<p>The firmware management collection is in the resource <code>/collections/{collectionid}/firmware</code>. It will contain a list of firmware versions uploaded to the backend:</p>
+<pre><code><span class="hljs-variable">$ </span>curl -HX-API-<span class="hljs-symbol">Token:</span>[token] <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/api.nbiot.engineering/collections</span><span class="hljs-regexp">/[collectionId]/firmware</span>
+{
+  <span class="hljs-string">"images"</span>: [
+    {
+      <span class="hljs-string">"imageId"</span>: <span class="hljs-string">"17dh0cf43jfgnk"</span>,
+      <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0"</span>,
+      <span class="hljs-string">"filename"</span>: <span class="hljs-string">"zephyr.signed.bin"</span>,
+      <span class="hljs-string">"sha256"</span>: <span class="hljs-string">"030130c604726ff35ba6c2d8f6bf70d7df1b21c628fa8cae5547603dd8b176d5"</span>,
+      <span class="hljs-string">"length"</span>: <span class="hljs-number">144564</span>,
+      <span class="hljs-string">"collectionId"</span>: <span class="hljs-string">"[collectionId]"</span>,
+      <span class="hljs-string">"created"</span>: <span class="hljs-number">1559653611268</span>,
+      <span class="hljs-string">"tags"</span>: {}
+    }
+  ]
+}</code></pre>
+
+<p>Each image have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>imageId</td>
+<td>The firmware image ID. This is auto-assigned by the API</td>
+</tr>
+<tr>
+<td>version</td>
+<td>The version string that the device will report when the firmware is installed. The version is a string that must be unique for all images in the collection. Firmware updates might not work correctly if the string does not match what the image reports via LwM2M.</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>Name of the original file uploaded to the API</td>
+</tr>
+<tr>
+<td>sha256</td>
+<td>SHA256 checksum of the file. This must be unique for all firmware images in the collection, ie. there can’t be any duplicate images.</td>
+</tr>
+<tr>
+<td>length</td>
+<td>The length of the image file</td>
+</tr>
+<tr>
+<td>collectionId</td>
+<td>The collection that the firmware image is associated with</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Time and date the firmware image was uploaded to the API. Time is in milliseconds since epoch.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>A tag structure for custom attributes on the firmware image</td>
+</tr>
+</tbody></table>
+<p>The <code>sha256</code> checksum can be used to verify that the image has been correctly uploaded to the API.</p>
+<h4 id="uploading-a-new-image">Uploading a new image</h4>
+<p>A new firmware image can be uploaded via any tool that supports file uploads via HTTP:</p>
+<pre><code><span class="hljs-variable">$ </span>curl -HX-API-<span class="hljs-symbol">Token:</span>[token] -F image=<span class="hljs-variable">@build</span>/zephyr/zephyr.signed.bin \
+     <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/api.nbiot.engineering/collections</span><span class="hljs-regexp">/[collectionId]/firmware</span>
+
+{
+    <span class="hljs-string">"imageId"</span>: <span class="hljs-string">"17dh0cf43jfgnk"</span>,
+    <span class="hljs-string">"version"</span>: <span class="hljs-string">"fc8902c5221bb0cb077f54fbefd53b5a4be970384a1496dbb2b8f99be733dd1d"</span>,
+    <span class="hljs-string">"filename"</span>: <span class="hljs-string">"zephyr.signed.bin"</span>,
+    <span class="hljs-string">"sha256"</span>: <span class="hljs-string">"030130c604726ff35ba6c2d8f6bf70d7df1b21c628fa8cae5547603dd8b176d5"</span>,
+    <span class="hljs-string">"length"</span>: <span class="hljs-number">144564</span>,
+    <span class="hljs-string">"collectionId"</span>: <span class="hljs-string">"[collectionId]"</span>,
+    <span class="hljs-string">"created"</span>: <span class="hljs-number">1559653611268</span>,
+    <span class="hljs-string">"tags"</span>: {}
+}</code></pre>
+
+<p>Note that the SHA256 checksum must be unique among the firmware images. You can’t upload two firmware images with the same checksum.</p>
+<p>Note also that the version number is set automatically to a random character string when the firmware is uploaded. This must be set afterwards:</p>
+<pre><code>$ curl -XPATCH -d'{<span class="hljs-string">"version"</span>:<span class="hljs-string">"1.0"</span>}'  -HX-API-<span class="hljs-built_in">Token</span>:[<span class="hljs-built_in">token</span>] https:<span class="hljs-comment">//api.nbiot.engineering/collections/[collectionId]/firmware/17dh0cf43jfh08</span>
+{
+  <span class="hljs-string">"imageId"</span>: <span class="hljs-string">"17dh0cf43jfh08"</span>,
+  <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0"</span>,
+  <span class="hljs-string">"filename"</span>: <span class="hljs-string">"initial-version.signed.bin"</span>,
+  <span class="hljs-string">"sha256"</span>: <span class="hljs-string">"fc8902c5221bb0cb077f54fbefd53b5a4be970384a1496dbb2b8f99be733dd1d"</span>,
+  <span class="hljs-string">"length"</span>: <span class="hljs-number">9250</span>,
+  <span class="hljs-string">"collectionId"</span>: <span class="hljs-string">"17dh0cf43jfhig"</span>,
+  <span class="hljs-string">"created"</span>: <span class="hljs-number">1576083823998</span>,
+  <span class="hljs-string">"tags"</span>: {}
+}</code></pre>
+
+<p>As with most other resources the <code>tags</code> property can be used to set custom properties for the firmware, f.e. an internal version, git hash for the build or something similar.</p>
+<h4 id="upgrading-a-device">Upgrading a device</h4>
+<p>The current reported version is reported as “currentFirmwareId” and the targeted version is set as “targetFirmwareId””. The update process starts when the device is reporting its configuration. This is something set by the firmware itself and can range from seconds, minutes or hours. Once the device reports the firmware version and the target version is different from the current version the update process will start. You can change the firmware to both a newer and older version of the firmware.</p>
+<pre><code>$ curl -XPATCH -d'{<span class="hljs-string">"firmware"</span>:{<span class="hljs-string">"targetFirmwareId"</span>: <span class="hljs-string">"[id of new version]"</span> }}'  -HX-API-<span class="hljs-built_in">Token</span>: [<span class="hljs-built_in">token</span>] https:<span class="hljs-comment">//api.nbiot.engineering/collections/[collectionId]</span>
+{
+  <span class="hljs-string">"collectionId"</span>: <span class="hljs-string">"[collectionId]"</span>,
+  <span class="hljs-string">"firmware"</span>: {
+    <span class="hljs-string">"targetFirmwareId"</span>: <span class="hljs-string">"[id of new version]"</span>,
+    <span class="hljs-string">"currentFirmwareId"</span>: <span class="hljs-string">"[id of current version]"</span>,
+    <span class="hljs-string">"management"</span>: <span class="hljs-string">"collection"</span>
+  },
+  <span class="hljs-string">"tags"</span>: {}
+}</code></pre>
+
+<p>If you are managing firmware per device you must use the <code>firmware</code> property of the device.</p>
+<h3 id="listing-firmware-version-on-devices">Listing firmware version on devices</h3>
+<p>You can get a list of which devices uses (and will use) the firmware by looking at the <code>/collections/{collectionid}/firmware/{firmwareid}/usage</code> resource. It will list all devices that either have the <code>currentFirmwareId</code> or <code>targetFirmwareId</code> property assigned to that particular firmware image:</p>
+<pre><code>$ curl -HX-API-Token:[token] <span class="hljs-link">https://api.nbiot.engineering/collections/</span>[<span class="hljs-string">collectionId</span>]/firmware/17dh0cf43jfh08/usage
+{
+<span class="hljs-code">  "firmwareId": "17dh0cf43jfh08",</span>
+<span class="hljs-code">  "targetedDevices": [</span>
+<span class="hljs-code">    "17dh0cf4465ae6"</span>
+<span class="hljs-code">  ],</span>
+<span class="hljs-code">  "currentDevices": []</span>
+}</code></pre>
+
+<p>In the example above a single device have that firmware as the target version and are either in the process of upgrading or haven’t checked in yet. The <code>currentDevices</code> lists the devices with that firmware image applied.</p>
+
+      <div class="lesson-nav">
+      </div>
+      <a class="docs-edit-btn no-print" href="https://github.com/ExploratoryEngineering/docs.nbiot.engineering/edit/master/docs/api/firmware.md" target="_blank">Edit this page</a>
+    </div>
+  </div>
+  <script src="/script/vendor.js"></script>
+  <script src="/script/script.js"></script>
+</body>
+
+</html>
