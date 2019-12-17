@@ -8,8 +8,8 @@
 <url> <loc>https://docs.nbiot.engineering/tutorials.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/collections.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/devices.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://docs.nbiot.engineering/api/errors.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/firmware.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://docs.nbiot.engineering/api/errors.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/invites.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/methods.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/outputs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -23,8 +23,8 @@
 <url> <loc>https://docs.nbiot.engineering/libs/python.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/arduino-basic.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/arduino-serial-forwarder.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://docs.nbiot.engineering/tutorials/getting-started.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/interactive-terminal.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://docs.nbiot.engineering/tutorials/getting-started.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/low-power.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/microbit-basic.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/tutorials/nrf9160-basic.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
