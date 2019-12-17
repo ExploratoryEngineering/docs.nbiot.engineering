@@ -16,7 +16,3 @@ The backend is written in go and delivers a restful service for simple yet power
 
 ## The team
 The service is delivered to you by [Exploratory Engineering](https://exploratory.engineering) with love and passion for good software and hardware.
-
-## The perfect test page
-
-The about page is never opened. I think. Anyways, here's to testing Github Actions. <3 
