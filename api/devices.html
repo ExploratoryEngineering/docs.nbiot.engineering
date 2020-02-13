@@ -261,7 +261,7 @@ see data from a single device:</p>
   <span class="hljs-attr">&quot;transport&quot;</span>: <span class="hljs-string">&quot;&lt;transport used by the device to deliver the data&gt;&quot;</span>,
   <span class="hljs-attr">&quot;coapMetaData&quot;</span>: {
     <span class="hljs-attr">&quot;method&quot;</span>: <span class="hljs-string">&quot;POST&quot;</span>,
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;&lt;path used by device&quot;</span>&gt;
+    <span class="hljs-attr">&quot;coapPath&quot;</span>: <span class="hljs-string">&quot;&lt;path used by device&quot;</span>&gt;
   },
   <span class="hljs-attr">&quot;udpMetaData&quot;</span>: {
     <span class="hljs-attr">&quot;localPort&quot;</span>: <span class="hljs-string">&quot;&lt;the backend&apos;s local port&gt;&quot;</span>,
@@ -290,7 +290,7 @@ There are three kinds of transports that can be selected via the <code>transport
    CoAP <code>GET</code> request from the device. The device is responsible for polling the
    backend.
 3) <code>coap-push</code> which will send the message to the device immediately as a CoAP
-   <code>POST</code> to the path specified in the <code>path</code> parameter. The device must be
+   <code>POST</code> to the path specified in the <code>coapPath</code> parameter. The device must be
    running a CoAP server for this to work.</p>
 <p>The <code>payload</code> field is required for all types. If the <code>transport</code> field is
 blank it will use the <code>udp</code> transport by default.</p>
@@ -298,7 +298,7 @@ blank it will use the <code>udp</code> transport by default.</p>
   &quot;transport&quot;: &quot;&lt;udp, coap-push, coap-pull&gt;&quot;,
   &quot;port&quot;: &lt;port number, required for udp, optional for coap-push, ignored for coap-pull&gt;,
   &quot;payload&quot;: &quot;&lt;base 64 encoded bytes&gt;&quot;,
-  &quot;path&quot;: &quot;&lt;path for coap-pull transport&gt;&quot;
+  &quot;coapPath&quot;: &quot;&lt;path for coap-pull transport&gt;&quot;
 }</code></pre>
 
 <p>If successful the service will respond with <code>204 NO CONTENT</code>.</p>

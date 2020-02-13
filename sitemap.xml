@@ -9,11 +9,11 @@
 <url> <loc>https://docs.nbiot.engineering/api/collections.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/devices.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/errors.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://docs.nbiot.engineering/api/firmware.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/invites.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://docs.nbiot.engineering/api/firmware.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/methods.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://docs.nbiot.engineering/api/outputs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/status_codes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://docs.nbiot.engineering/api/outputs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/tags.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/teams.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://docs.nbiot.engineering/api/tokens.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
