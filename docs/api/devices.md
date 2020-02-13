@@ -134,7 +134,7 @@ see data from a single device:
   "transport": "<transport used by the device to deliver the data>",
   "coapMetaData": {
     "method": "POST",
-    "path": "<path used by device">
+    "coapPath": "<path used by device">
   },
   "udpMetaData": {
     "localPort": "<the backend's local port>",
@@ -173,7 +173,7 @@ There are three kinds of transports that can be selected via the `transport` fie
    CoAP `GET` request from the device. The device is responsible for polling the
    backend.
 3) `coap-push` which will send the message to the device immediately as a CoAP
-   `POST` to the path specified in the `path` parameter. The device must be
+   `POST` to the path specified in the `coapPath` parameter. The device must be
    running a CoAP server for this to work.
 
 The `payload` field is required for all types. If the `transport` field is
@@ -184,7 +184,7 @@ blank it will use the `udp` transport by default.
   "transport": "<udp, coap-push, coap-pull>",
   "port": <port number, required for udp, optional for coap-push, ignored for coap-pull>,
   "payload": "<base 64 encoded bytes>",
-  "path": "<path for coap-pull transport>"
+  "coapPath": "<path for coap-pull transport>"
 }
 ```
 
