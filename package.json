@@ -86,7 +86,7 @@
     "metalsmith-sitemap": "^1.2.2",
     "mkdirp": "^0.5.1",
     "node-normalize-scss": "^3.0.0",
-    "remark-html": "^6.0.1",
+    "remark-html": "^13.0.2",
     "rimraf": "^2.6.2",
     "swagger-ui-dist": "^3.20.1",
     "textversionjs": "^1.1.3",
